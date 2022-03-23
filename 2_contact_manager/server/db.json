@@ -1,0 +1,34 @@
+{
+    "contacts": [
+        {
+            "id": "1",
+            "name": "nom 1",
+            "email": "test@email.fr",
+            "photo": "https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+            "mobile": "01 10 00 00 00",
+            "company": "entreprise 1",
+            "title": "youtuber",
+            "groupId": "3"
+        },
+        {
+            "id": "1",
+            "name": "nom 1",
+            "email": "test@email.fr",
+            "photo": "https://i.pinimg.com/originals/6f/5e/13/6f5e1344a96a22a14f79bd2a7b4723a8.png",
+            "mobile": "01 10 00 00 00",
+            "company": "entreprise 1",
+            "title": "mathematicien",
+            "groupId": "3"
+        }    
+    ],
+    "groups": [
+        {
+            "id": "1",
+            "name": "youtuber"
+        },
+        {
+            "id": "2",
+            "name": "mathematicien"
+        }
+    ]
+}
