@@ -1,1 +1,61 @@
-<p>contact-manager works!</p>
+<div class="container mt-3">
+    <div class="row">
+        <div class="col">
+            <p class="h3 text-danger fw-bold">
+                Contact
+                <a class="btn btn-success" routerLink="/contact/add">
+                    <i class="fa fa-plus-circle"></i>
+                    Nouveau
+                </a>
+            </p>
+            <p class="fst-italic">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse debitis quae cupiditate? Libero quos saepe labore assumenda corrupti harum, esse adipisci ut dolore, delectus suscipit optio voluptatem eius odio iusto!
+            Non sed impedit hic distinctio iure laboriosam culpa voluptas vel voluptatum ratione perferendis, enim voluptate laudantium fugit quia quos facere accusantium sit consequuntur. Ipsa nobis commodi repellendus, similique nihil perspiciatis.
+            Totam commodi at quia a beatae maxime tempore. A, soluta. Ab possimus tenetur omnis tempore? Dolores accusamus dolore officiis, nemo id cupiditate beatae eius quibusdam earum debitis assumenda odio expedita!</p>
+            <form action="">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" name="" class="form-control" placeholder="chercher un user" id="">
+                            </div>
+                            <div class="col">
+                                <input type="submit" class="btn btn-outline-dark" value="Valider">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- card -->
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-6">
+            
+            <div class="card-body list-group-item-secondary shadow-sm">
+                <div class="row align-items-center">
+                    <div class="col-sm-4">
+                        <img  class="contact-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTi9soQyGqvpLM9k399ohVAl2iQV-XMdwerBvvt7DnfDvY0XZaPZ3psRiXrbRRVyIsuC7E&usqp=CAU" alt="" srcset="">
+                    </div>
+                    <div class="col-sm-7">
+                        <ul class="list-group">
+                            <li class="list-group-item">nom: <span class="fw-bold">nom</span> </li>
+                            <li class="list-group-item">email: <span class="fw-bold">email</span> </li>
+                            <li class="list-group-item">mobile: <span class="fw-bold">mobile</span> </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-1 d-flex flex-column justify-content-center align-items-center">
+                        <a routerLink="/contact/view/:contactID" class="btn btn-warning my-1"><i class="fa fa-eye"></i></a>
+                        <a routerLink="/contact/edit/:contactID" class="btn btn-primary my-1"><i class="fa fa-pen"></i></a>
+                        <button class="btn btn-danger my-1"><i class="fa fa-trash-alt"></i></button>
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+    </div>
+</div>
+
