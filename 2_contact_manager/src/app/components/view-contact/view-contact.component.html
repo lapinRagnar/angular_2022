@@ -9,21 +9,40 @@
     </div>
 </div>
 
+
+<!-- spinner loading -->
+
+<div class="" *ngIf="loading" >
+    <app-spinner></app-spinner>
+</div>
+
+<!-- message d'erreur -->
+<div class="" *ngIf="!loading && errorMessage" >
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p class="h4 text-danger fw-bolder"> {{errorMessage}} </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <!-- contact detail -->
 
-<div class="container">
+<div class="container" *ngIf="!loading && isNotEmpty()">
     <div class="row align-items-center">
         <div class="col-sm-4 ">
-            <img class="contact-image-big" src="https://i.pinimg.com/originals/6f/5e/13/6f5e1344a96a22a14f79bd2a7b4723a8.png" alt="">
+            <img class="contact-image-big" [src]="contact.photo" alt="">
         </div>
         <div class="col-sm-6">
             <ul class="list-group">
-                <li class="list-group-item list-group-item-danger">nom: <span class="fw-bold">nom</span> </li>
-                <li class="list-group-item list-group-item-success">email: <span class="fw-bold">email</span> </li>
-                <li class="list-group-item list-group-item-danger">mobile: <span class="fw-bold">mobile</span> </li>
-                <li class="list-group-item list-group-item-success">Entreprise: <span class="fw-bold">Entreprise</span> </li>
-                <li class="list-group-item list-group-item-danger">titre: <span class="fw-bold">titre</span> </li>
-                <li class="list-group-item list-group-item-success">groupe: <span class="fw-bold">groupe</span> </li>
+                <li class="list-group-item list-group-item-danger">nom: <span class="fw-bold">{{contact.name}}</span> </li>
+                <li class="list-group-item list-group-item-success">email: <span class="fw-bold">{{contact.email}}l</span> </li>
+                <li class="list-group-item list-group-item-danger">mobile: <span class="fw-bold">{{contact.mobile}}</span> </li>
+                <li class="list-group-item list-group-item-success">Entreprise: <span class="fw-bold">{{contact.company}}</span> </li>
+                <li class="list-group-item list-group-item-danger">titre: <span class="fw-bold">{{contact.title}}</span> </li>
+                <li class="list-group-item list-group-item-success">groupe: <span class="fw-bold">{{contact.groupId}}</span> </li>
             </ul>
         </div>
     </div>
@@ -34,5 +53,7 @@
         </div>
     </div>
 </div>
+
+<pre> {{ contact|json }} </pre>
 
 

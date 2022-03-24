@@ -1,3 +1,20 @@
+site du tuto
+https://www.youtube.com/watch?v=xCkybV9mtk8&t=4758s
+
+
+
+- va dans le dossier server, il faut lancer le server de la base de donnée json-server
+run npm start
+
+localhost:9000
+
+- dans le dossier principale, 
+run ng serve
+
+localhost:4200
+
+
+
 # 2ContactManager
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
