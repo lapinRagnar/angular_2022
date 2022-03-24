@@ -24,4 +24,8 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  resetNameToSmith(){
+    this.name = "smith"
+  }
+
 }

@@ -1,3 +1,4 @@
 <p>Bonjour {{ name }} </p>
 <input [(ngModel)]="name">
-<button mat-raised-button [color]="btnColor" (click)="changeBtnColor()"  >Mon super bouton</button>
+<button mat-raised-button color="primary" (click)="resetNameToSmith()"  >reset name to smith</button>
+<button mat-raised-button [color]="btnColor" (click)="changeBtnColor()"  >changer la couleur</button>
