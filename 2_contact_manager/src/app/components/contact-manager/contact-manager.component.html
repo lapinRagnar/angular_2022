@@ -35,6 +35,16 @@
     <app-spinner></app-spinner>
 </div>
 
+<!-- message d'erreur -->
+<div class="" *ngIf="!loading && errorMessage" >
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p class="h4 text-danger fw-bolder"> {{errorMessage}} </p>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- card -->
 <div *ngIf="!loading && contacts.length > 0"   class="container mt-3" >
