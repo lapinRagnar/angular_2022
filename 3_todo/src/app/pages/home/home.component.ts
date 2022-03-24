@@ -28,4 +28,8 @@ export class HomeComponent implements OnInit {
     this.name = "smith"
   }
 
+  updateName(value: string){
+    this.name = value
+  }
+
 }
