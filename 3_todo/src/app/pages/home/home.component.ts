@@ -7,29 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  name = "smith"
-  btnColor = "warn"
+
 
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  changeBtnColor () {
-    if (this.btnColor === "primary"){
-      this.btnColor = 'accent'
-    } else
-    {
-      this.btnColor = "primary"
-    }
-  }
-
-  resetNameToSmith(){
-    this.name = "smith"
-  }
-
-  updateName(value: string){
-    this.name = value
   }
 
 }

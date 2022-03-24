@@ -1,0 +1,36 @@
+.container{
+    display: flex;
+    align-items: center;
+    border: 3px solid rgb(57, 94, 57);
+    padding: 10px;
+}
+
+.container:hover{
+    background-color:grey;
+    cursor:pointer;
+}
+
+#list-item-check, #list-item-options{
+    flex: 0 0 auto;
+}
+
+#list-item-content{
+    flex: 1 1 auto;
+    padding: 0 10px;
+}
+
+#btn-favourite{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    color: coral;
+}
+
+#btn-favourite .material-icons.outlined{
+    color: gray;
+}
+
+#list-item-content .due-date{
+    font-size: x-small;
+    color:lightgreen;
+}
