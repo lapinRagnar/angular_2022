@@ -9,10 +9,19 @@ export class HomeComponent implements OnInit {
 
   name = "smith"
   btnColor = "warn"
-  
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  changeBtnColor () {
+    if (this.btnColor === "primary"){
+      this.btnColor = 'accent'
+    } else
+    {
+      this.btnColor = "primary"
+    }
   }
 
 }
