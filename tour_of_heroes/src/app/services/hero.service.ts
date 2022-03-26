@@ -9,6 +9,8 @@ import { MessageService } from './message.service'
 })
 export class HeroService {
 
+  private heroesUrl = 'api/heroes';  // URL to web api
+
   constructor(private messageService: MessageService) { }
 
   getHeroes(): Observable<Hero[]> {
