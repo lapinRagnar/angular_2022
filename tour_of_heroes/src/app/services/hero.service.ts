@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { HEROES } from './../models/mock-heroes';
-import { Observable, of, catchError } from 'rxjs';
+import { Observable, of, catchError, tap } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { Hero } from '../interfaces/hero'
 import { MessageService } from './message.service'
@@ -27,16 +27,40 @@ export class HeroService {
   // }
 
   /** GET heroes from the server */
+  // getHeroes(): Observable<Hero[]> {
+  //   return this.http.get<Hero[]>(this.heroesUrl).pipe(
+  //     catchError(this.handleError<Hero[]>('getHeroes', []))
+  //   )
+  // }
+
+
+  /** GET heroes from the server */
+  // getHeroes(): Observable<Hero[]> {
+  //   return this.http.get<Hero[]>(this.heroesUrl)
+  //     .pipe(
+  //       tap(_ => this.log('fetched heroes')),
+  //       catchError(this.handleError<Hero[]>('getHeroes', []))
+  //     );
+  // }
+
+  /** GET hero by id. Will 404 if id not found */
   getHeroes(): Observable<Hero[]> {
-    return this.http.get<Hero[]>(this.heroesUrl).pipe(
-      catchError(this.handleError<Hero[]>('getHeroes', []))
-    )
+    return this.http.get<Hero[]>(this.heroesUrl)
+      .pipe(
+        tap(_ => this.log('fetched heroes')),
+        catchError(this.handleError<Hero[]>('getHeroes', []))
+      );
   }
 
+  /** GET hero by id. Will 404 if id not found */
   getHero(id: number): Observable<Hero> {
-    const hero = HEROES.find(h => h.id === id)!
-    this.messageService.add(`HeroService fetched hero id=${id}  `)
-    return of(hero)
+
+    const url = `${this.heroesUrl}/${id}`;
+
+    return this.http.get<Hero>(url).pipe(
+      tap(_ => this.log(`fetched hero id=${id}`)),
+      catchError(this.handleError<Hero>(`getHero id=${id}`))
+    );
   }
 
   /** Log a HeroService message with the MessageService */
@@ -47,14 +71,14 @@ export class HeroService {
 
   private handleError<T>(operation = 'operation', result?: T){
     return (error: any): Observable<T> =>{
-      // TODO: send the error to remote logging infrastructure
-      console.error(error); // log to console instead
+    // TODO: send the error to remote logging infrastructure
+    console.error(error); // log to console instead
 
-      // TODO: better job of transforming error for user consumption
-      this.log(`${operation} failed: ${error.message}`);
+    // TODO: better job of transforming error for user consumption
+    this.log(`${operation} failed: ${error.message}`);
 
-      // Let the app keep running by returning an empty result.
-      return of(result as T);
+    // Let the app keep running by returning an empty result.
+    return of(result as T);
     }
   }
 
