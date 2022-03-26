@@ -1,7 +1,9 @@
+import { MessageService } from './../../services/message.service';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Hero } from 'src/app/interfaces/hero';
 import { HeroService } from 'src/app/services/hero.service';
-import { MessageService } from 'src/app/services/message.service';
+
 
 
 @Component({
@@ -15,7 +17,11 @@ export class HeroesComponent implements OnInit {
 
   
 
-  constructor(private heroService: HeroService, private messageService: MessageService) { }
+  constructor(
+    private heroService: HeroService, 
+    private messageService: MessageService,
+    private http: HttpClient,
+  ) { }
 
   ngOnInit(): void {
 
@@ -30,5 +36,7 @@ export class HeroesComponent implements OnInit {
   // onSelect(hero: Hero): void{
   //   this.messageService.add(` HeroesComponent: selected hero id=${hero.id} `)
   // }
+
+
 
 }
