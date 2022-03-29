@@ -44,7 +44,7 @@ export class HotelListComponent implements OnInit {
     }
   ]
 
-  public showBadge: boolean = false
+  public showBadge: boolean = true
 
   constructor() { }
 

@@ -1,6 +1,14 @@
 <h2 *ngIf="hotels && hotels.length > 0">{{ title }}</h2>
 
-<button class="btn btn-primary" (click)="toggleIsNewBaddge()" >Afficher nouveau</button>
+<button class="btn btn-primary d-flex" (click)="toggleIsNewBaddge()" >
+    <span class="material-icons "> 
+        {{ showBadge ? 'visibility_off' : 'visibility' }} 
+    </span>
+    <span class=" ms-2 me-2">
+        {{ showBadge ? 'cacher ' : 'afficher ' }} 
+    </span>
+    nouveau
+</button>
 <div class="row row-cols-1 row-cols-md-4 g-4">
     <div *ngFor="let hotel of hotels" class="col"   >
       <div class="card" >
@@ -8,7 +16,7 @@
         <div class="card-body">
           <h5 class="card-title">{{hotel.hotelName}} </h5>
           <p class="card-text">{{hotel.description}} </p>
-          <span class="badge bg-warning text-dark"  >Nouveau</span>
+          <span class="badge bg-warning text-dark" *ngIf="showBadge" >Nouveau</span>
         </div>
       </div>
     </div>
