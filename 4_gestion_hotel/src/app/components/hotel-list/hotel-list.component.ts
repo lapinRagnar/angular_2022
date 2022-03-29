@@ -1,3 +1,4 @@
+import { IHotel } from './../../interfaces/hotel';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,7 +10,7 @@ export class HotelListComponent implements OnInit {
 
   public title= "Liste d'hotel"
 
-  public hotels: any[]= [
+  public hotels: IHotel[] = [
     {
           "hotelId": 1,
           "hotelName": "Buea sweet life",
