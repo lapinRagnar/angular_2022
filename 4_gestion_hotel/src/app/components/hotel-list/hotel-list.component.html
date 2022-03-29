@@ -1,6 +1,6 @@
 <h2 *ngIf="hotels && hotels.length > 0">{{ title }}</h2>
 
-<button class="btn btn-primary d-flex" (click)="toggleIsNewBaddge()" >
+<button class="btn btn-primary d-flex mb-5" (click)="toggleIsNewBaddge()" >
     <span class="material-icons "> 
         {{ showBadge ? 'visibility_off' : 'visibility' }} 
     </span>
@@ -11,9 +11,9 @@
 </button>
 
 <div class="my">
-    <div class="row d-flex">
-        <div class="col-md-4">
-            <span class="me-4 filter">Filtre actuel:</span>
+    <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-md-2 d-flex justify-content-center align-items-center mb-5">
+            <span class="me-4 filter form-control">Filtre:</span>
             <b>{{ hotelFilter}} </b>
         </div>
         <div class="col-md-8 form-group">
@@ -25,7 +25,7 @@
 </div>
 
 <div class="row row-cols-1 row-cols-md-4 g-4">
-    <div *ngFor="let hotel of hotels" class="col"   >
+    <div *ngFor="let hotel of filteredHotels" class="col"   >
       <div class="card" >
         <img [src]="hotel.imageUrl" [title]="hotel.hotelName" class="card-img-top" [alt]="hotel.hotelName">
         <div class="card-body">
