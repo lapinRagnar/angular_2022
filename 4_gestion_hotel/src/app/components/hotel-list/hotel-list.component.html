@@ -27,10 +27,17 @@
 <div class="row row-cols-1 row-cols-md-4 g-4">
     <div *ngFor="let hotel of filteredHotels" class="col"   >
       <div class="card" >
+
         <img [src]="hotel.imageUrl" [title]="hotel.hotelName" class="card-img-top" [alt]="hotel.hotelName">
+
         <div class="card-body">
+
           <h5 class="card-title">{{hotel.hotelName | uppercase }} </h5>
+
           <p class="card-text">{{hotel.description}} </p>
+
+          <app-star-rating></app-star-rating>
+
           <span class="badge bg-warning text-dark" *ngIf="showBadge" >Nouveau</span>
         </div>
 

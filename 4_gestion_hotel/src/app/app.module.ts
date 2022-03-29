@@ -1,3 +1,4 @@
+import { StarRatingComponent } from './components/star-rating/star-rating.component';
 import { ReplaceComma } from './shared/pipes/replace-comma.pipe';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
@@ -15,7 +16,8 @@ registerLocaleData(localeFr, 'fr')
   declarations: [
     AppComponent,
     HotelListComponent,
-    ReplaceComma
+    ReplaceComma,
+    StarRatingComponent
   ],
   imports: [
     BrowserModule,
