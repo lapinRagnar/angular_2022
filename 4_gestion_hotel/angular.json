@@ -94,9 +94,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "/bootstrap/dist/css/bootstrap.css"
             ],
-            "scripts": []
+            "scripts": [
+              "4_gestion_hotel/node_modules/bootstrap/dist/js/bootstrap.js"
+            ]
           }
         }
       }
