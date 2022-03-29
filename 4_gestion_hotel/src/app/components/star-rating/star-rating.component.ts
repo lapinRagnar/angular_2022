@@ -1,4 +1,4 @@
-import { Component, OnChanges, SimpleChanges } from "@angular/core";
+import { Component, Input, OnChanges, SimpleChanges } from "@angular/core";
 
 
 @Component({
@@ -11,10 +11,11 @@ export class StarRatingComponent implements OnChanges {
 
     public starWidth: number = 0
 
+    @Input()
     public rating: number = 2
 
     ngOnChanges(changes: SimpleChanges): void {
-        
+
         this.starWidth = this.rating * 125 / 5
     }
 

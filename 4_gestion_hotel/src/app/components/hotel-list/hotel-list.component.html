@@ -36,7 +36,7 @@
 
           <p class="card-text">{{hotel.description}} </p>
 
-          <app-star-rating></app-star-rating>
+          <app-star-rating [rating]="hotel.rating" ></app-star-rating>
 
           <span class="badge bg-warning text-dark" *ngIf="showBadge" >Nouveau</span>
         </div>
