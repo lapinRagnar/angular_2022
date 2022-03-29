@@ -52,6 +52,8 @@ export class HotelListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log("mon cycle de vie - initialisation fonctionne!");
+    
   }
 
   public toggleIsNewBaddge() : void {
