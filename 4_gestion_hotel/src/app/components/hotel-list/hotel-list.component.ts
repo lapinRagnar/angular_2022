@@ -46,6 +46,8 @@ export class HotelListComponent implements OnInit {
 
   public showBadge: boolean = true
 
+  public hotelFilter = 'mot'
+
   constructor() { }
 
   ngOnInit(): void {
