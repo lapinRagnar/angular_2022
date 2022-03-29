@@ -51,6 +51,8 @@ export class HotelListComponent implements OnInit {
 
   public filteredHotels: IHotel[] = []
 
+  public receivedRating: string = ''
+
   constructor() { }
 
   ngOnInit(): void {
@@ -85,5 +87,9 @@ export class HotelListComponent implements OnInit {
     return res
   }
 
+  public receiveRatingClicked(message: string): void {
+
+      this.receivedRating = message
+  }
 
 }
