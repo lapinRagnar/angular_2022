@@ -9,7 +9,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HotelListComponent } from './components/hotel-list/hotel-list.component';
 import { registerLocaleData } from '@angular/common';
-import localeFr from '@angular/common/locales/fr'
+import localeFr from '@angular/common/locales/fr';
+import { HomeComponent } from './pages/home/home.component';
+import { HotelDetailComponent } from './components/hotel-list/hotel-detail/hotel-detail.component'
 
 registerLocaleData(localeFr, 'fr')
 
@@ -18,7 +20,9 @@ registerLocaleData(localeFr, 'fr')
     AppComponent,
     HotelListComponent,
     ReplaceComma,
-    StarRatingComponent
+    StarRatingComponent,
+    HomeComponent,
+    HotelDetailComponent
   ],
   imports: [
     BrowserModule,
