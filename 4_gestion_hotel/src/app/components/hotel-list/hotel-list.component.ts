@@ -21,12 +21,23 @@ export class HotelListComponent implements OnInit {
 
   public receivedRating: string = ''
 
+  public errMsg: string = ''
+
+
+
   constructor(public hotelListService: HotelListService) { }
 
   ngOnInit(): void {
 
-    this.hotels = this.hotelListService.getHotels()
-    this.filteredHotels = this.hotels
+    this.hotelListService.getHotels().subscribe({
+
+      next: hotels => {
+        this.hotels = hotels
+        this.filteredHotels = this.hotels
+      },
+      error: err => this.errMsg = err
+      
+    })
     this.hotelFilter = ""
     
   }

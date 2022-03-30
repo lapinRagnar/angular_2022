@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { StarRatingComponent } from './components/star-rating/star-rating.component';
 import { ReplaceComma } from './shared/pipes/replace-comma.pipe';
 import { FormsModule } from '@angular/forms';
@@ -22,7 +23,8 @@ registerLocaleData(localeFr, 'fr')
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule 
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
