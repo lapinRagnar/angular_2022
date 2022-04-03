@@ -1,6 +1,6 @@
 import { IHotel } from './../../../interfaces/hotel';
 import { HotelListService } from './../../../services/hotel-list.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -14,7 +14,8 @@ export class HotelDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private hotelService: HotelListService
+    private hotelService: HotelListService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -27,11 +28,16 @@ export class HotelDetailComponent implements OnInit {
     // const id = 1
 
     this.hotelService.getHotels().subscribe((hotels: IHotel[]) => {
-      
+
       this.hotel = hotels.find(hotel => hotel.hotelId === id)!
       console.log("mon hotel ", this.hotel);
       
     } )
+    
+  }
+
+  public backToList():void {
+    this.router.navigate(['/hotels'])
   }
 
 }
