@@ -1,6 +1,14 @@
 import { User } from './user';
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormControl, FormGroup, NgForm, ValidatorFn, Validators } from '@angular/forms';
+import { 
+  AbstractControl, 
+  FormBuilder, 
+  FormControl, 
+  FormGroup, 
+  NgForm, 
+  ValidatorFn, 
+  Validators 
+} from '@angular/forms';
 import { debounceTime } from 'rxjs';
 
 
@@ -75,7 +83,7 @@ export class RegisterComponent implements OnInit {
       notification: 'email',
       sendCatalog: true,
 
-      addresses: this.createAddressGroup()
+      addresses: this.fb.array([this.createAddressGroup()])
 
     })
 
