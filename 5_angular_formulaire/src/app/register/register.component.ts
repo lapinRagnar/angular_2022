@@ -1,6 +1,7 @@
 import { User } from './user';
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, NgForm, ValidatorFn, Validators } from '@angular/forms';
+import { debounceTime } from 'rxjs';
 
 
 
@@ -70,7 +71,13 @@ export class RegisterComponent implements OnInit {
       phone: '',
       rating: [null, ratingRangeValidator(1,5)],
       notification: 'email',
-      sendCatalog: false
+      sendCatalog: true,
+      addressType: ['home'],
+      street1: [''],
+      street2: [''],
+      city: [''],
+      state: [''],
+      zip: [''],
     })
 
     this
@@ -79,7 +86,9 @@ export class RegisterComponent implements OnInit {
 
     const emailControl = this.registerForm.get('emailGroup.email')
   
-    emailControl!.valueChanges.subscribe(val => {
+    emailControl!.valueChanges.pipe(
+      debounceTime(2000)
+    ).subscribe(val => {
       console.log(val)      
       this.setMessage(emailControl!)
     })
