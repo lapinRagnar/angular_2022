@@ -32,9 +32,15 @@ export class RegisterComponent implements OnInit {
     console.log('ca marche');
     console.log(this.registerForm);
     console.log('nos valeurs', JSON.stringify(this.registerForm.value));
-    
-    
-    
+  }
+
+  public fillFormData():void {
+    this.registerForm.setValue({
+      firstName: 'john',
+      lastName: 'doe be',
+      email: 'john@free.fr',
+      sendCatalog: true
+    })
   }
 
 }
