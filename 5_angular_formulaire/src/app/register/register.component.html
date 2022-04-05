@@ -23,14 +23,13 @@
                         #lastNameVar="ngModel"
 
                         [ngClass]=" {'is-invalid': lastNameVar.invalid && ( lastNameVar.dirty || lastNameVar.touched )  } "
+
+                        required
                        
                     >
 
                     <!-- afficher les erreurs -->
-                    <div 
-                        class="invalid-feedback" 
-                        *ngIf="lastNameVar.invalid && ( lastNameVar.dirty || lastNameVar.touched ) "
-                    >
+                    <div class="invalid-feedback" >
 
                         <div *ngIf="lastNameVar.errors?.['required'] " >
                             Entrez notre nom
@@ -51,9 +50,30 @@
                         type="text" 
                         class="form-control" 
                         placeholder="prenom" 
-                        [(ngModel)]="user.firstName"
                         name="firstName"
+                        minlength="4"
+                        [(ngModel)]="user.firstName"
+                        #firstName="ngModel"
+                        
+                        [ngClass]=" {'is-invalid': firstName.invalid && ( firstName.dirty || firstName.touched )  } "
+
+                        required
+
                     >
+
+                        <!-- afficher les erreurs -->
+                        <div class="invalid-feedback" >
+
+                            <div *ngIf="firstName.errors?.['required'] " >
+                                Entrez notre nom
+                            </div>
+    
+                            <div *ngIf="firstName.errors?.['minlength'] " >
+                                Minimum 4 caractères
+                            </div>
+    
+                        </div>
+
                 </div>
 
             </div>
@@ -66,9 +86,32 @@
                         type="email" 
                         class="form-control" 
                         placeholder="email" 
-                        [(ngModel)]="user.email"
                         name="email"  
+                        [(ngModel)]="user.email"
+                        #emailVar="ngModel" 
+
+                        email
+
+                        [ngClass]=" {'is-invalid': emailVar.invalid && (emailVar.touched || emailVar.dirty) } "
+
+                        required
                     >
+
+                    <!-- afficher les erreurs -->
+                    <div class="invalid-feedback" >
+
+                        <div *ngIf="emailVar.errors?.['required'] " >
+                            Entrez notre email
+                        </div>
+
+                        <div *ngIf="emailVar.errors?.['email'] " >
+                            email invalide!
+                        </div>
+
+
+                    </div>
+
+
                 </div>
 
             </div>
