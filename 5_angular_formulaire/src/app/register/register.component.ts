@@ -27,6 +27,25 @@ function ratingRangeValidator(min: number, max: number): ValidatorFn {
 
 }
 
+// confirmer l'email
+function emailMatcher(c: AbstractControl): { [key: string]: boolean } | null {
+  
+  const emailControl = c.get('email')
+  const emailConfirmControl = c.get('confirmEmail')
+
+  if (emailControl!.value || emailConfirmControl!.value) {
+    return null
+  }
+
+  if (emailControl!.value === emailConfirmControl!.value) {
+    return null
+  } else
+  {
+    return { 'match': true}
+  }
+}
+
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -57,7 +76,7 @@ export class RegisterComponent implements OnInit {
       emailGroup: this.fb.group({
         email: ['', [Validators.required, Validators.email]],
         confirmEmail: ['', Validators.required],
-      }),
+      }, { Validators: emailMatcher} ),
       phone: '',
       rating: [null, ratingRangeValidator(1,5)],
       notification: 'email',

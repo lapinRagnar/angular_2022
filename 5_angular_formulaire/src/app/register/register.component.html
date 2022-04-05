@@ -87,7 +87,10 @@
 
                         formControlName="email"
 
-                        [ngClass]=" {'is-invalid': registerForm.get('emailGroup.email')!.invalid && (registerForm.get('emailGroup.email')!.touched || registerForm.get('emailGroup.email')!.dirty) } "
+                        [ngClass]=" {'is-invalid': registerForm.get('emailGroup')!.errors || (
+                            registerForm.get('emailGroup.email')!.invalid && 
+                            (registerForm.get('emailGroup.email')!.touched ||
+                            registerForm.get('emailGroup.email')!.dirty)) } "
 
                     >
 
@@ -115,14 +118,19 @@
                         class="form-control" 
                         id="confirmEmailId" 
                         placeholder="confirmer l'email (requis) "
-                        formControlName="confirmEmail"    
+                        formControlName="confirmEmail"   
+                        [ngClass]=" { 'is-invalid' : registerForm.get('emailGroup')!.errors || (
+                            (registerForm.get('emailGroup.confirmEmail')!.touched || 
+                            registerForm.get('emailGroup.confirmEmail')!.dirty
+                            ) && !registerForm.get('emailGroup.confirmEmail')!.valid
+                        )} " 
                     >
 
                     <div class="invalid-feedback">
-                        <span>
+                        <span *ngIf="registerForm.get('emailGroup.confirmEmail')!.errors?.['required']">
                             merci de retaper votre email
                         </span>
-                        <span>
+                        <span *ngIf="registerForm.get('emailGroup')!.errors?.['match']">
                             l'email ne correspond pas
                         </span>
                     </div>
