@@ -1,15 +1,30 @@
 import { User } from './user';
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, NgForm, ValidatorFn, Validators } from '@angular/forms';
 
 
-function ratingRangeValidator(c: AbstractControl): { [key: string]: boolean} | null {
+// function ratingRangeValidator(c: AbstractControl): { [key: string]: boolean} | null {
 
-  if ( !!c && isNaN(c.value) || c.value < 1 || c.value > 5  ) {                // !!c est equivalent de c!==null et undefined
-    return { 'rangeError': true }
+//   if ( !!c && isNaN(c.value) || c.value < 1 || c.value > 5  ) {                // !!c est equivalent de c!==null et undefined
+//     return { 'rangeError': true }
+//   }
+
+//   return null
+// }
+
+
+// validateur personalisée avec parametre
+function ratingRangeValidator(min: number, max: number): ValidatorFn {
+  
+  return (c: AbstractControl): { [key: string]: boolean} | null => {
+
+    if ( !!c && isNaN(c.value) || c.value < min || c.value > max  ) {                // !!c est equivalent de c!==null et undefined
+      return { 'rangeError': true }
+    }
+
+    return null
   }
 
-  return null
 }
 
 @Component({
@@ -41,7 +56,7 @@ export class RegisterComponent implements OnInit {
       lastName: ['', [Validators.required, Validators.minLength(4)]],
       email: ['', [Validators.required, Validators.email]],
       phone: '',
-      rating: [null, ratingRangeValidator],
+      rating: [null, ratingRangeValidator(1,5)],
       notification: 'email',
       sendCatalog: false
     })
