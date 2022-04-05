@@ -104,7 +104,13 @@ export class RegisterComponent implements OnInit {
   }
 
   public get addressList(): FormArray {
-    return <FormArray>this.registerForm.get('addresses')
+    // return <FormArray>this.registerForm.get('addresses')  // estl'equivalent de ci dessous
+    return this.registerForm.get('addresses') as FormArray
+  }
+
+  public addAddress(): void {
+    console.log('marche');    
+    this.addressList.push(this.createAddressGroup())
   }
 
   public saveData() {
