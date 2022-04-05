@@ -6,7 +6,7 @@
 
     <div class="card-body">
 
-        <form (ngSubmit)="saveData(registerForm) "  #registerForm="ngForm" >
+        <form (ngSubmit)="saveData(registerForm) "  #registerForm="ngForm" novalidate>
 
             <div class="row gx-3 gy-2 align-items-center">
 
@@ -17,7 +17,8 @@
                         class="form-control" 
                         placeholder="nom" 
                         [(ngModel)]="user.lastName"
-                        name="lastName"    
+                        name="lastName"   
+                        required 
                     >
                 </div>
                 <div class="col-md-6 mb-3">
