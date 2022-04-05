@@ -122,7 +122,11 @@
                 <div class="col-md-12">
                     <div class="form-check mt-4 pt-3">
                         <label for="sendCatalogId" class="form-check-label">
-                            <input type="checkbox" class="form-check-input">
+                            <input 
+                                type="checkbox" 
+                                class="form-check-input"
+                                [(ngModel)]="user.sendCatalog"    
+                            >
                             Je veux plus d'option
                         </label>
                     </div>
