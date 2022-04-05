@@ -52,4 +52,22 @@ export class RegisterComponent implements OnInit {
     })
   }
 
+  public setNotificationSetting(method: string): void {
+
+    console.log("ca maaaaaaaaarche!");
+    
+    const phoneControl = this.registerForm.get('phone')
+
+    if (method === 'text') {
+      phoneControl?.setValidators(Validators.required)
+    } else 
+    {
+      phoneControl?.clearValidators()
+    }
+
+    phoneControl?.updateValueAndValidity()
+
+  }
+
+
 }

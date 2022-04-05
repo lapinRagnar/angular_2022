@@ -110,24 +110,49 @@
 
                 <div class="col-md-6 mb-3">
                     <label for="phoneId">téléphone</label>
-                    <input type="tel" class="form-control" placeholder="numéro de téléphone">
+                    <input 
+                        type="tel" 
+                        class="form-control" 
+                        placeholder="numéro de téléphone"
+                        formControlName="phone"
+                        [ngClass]=" {'is-invalid' : !registerForm.get('phone')!.valid} "    
+                    >
+
+                    <div class="invalid-feedback">
+                        <span *ngIf="registerForm.get('phone')!.errors?.['required'] ">
+                            entrez votre numéro de téléphone
+                        </span>
+                    </div>
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="">recevoir les notifications</label>
                     <div class="col-md-8">
                         <div class="form-check form-check-inline">
                             <label for="" class="form-check-label">
-                                <input type="radio" class="form-check-input">
+                                <input 
+                                    type="radio" 
+                                    class="form-check-input"
+                                    value="email" 
+                                    formControlName="notification" 
+                                    (click)="setNotificationSetting('email')"  
+                                >
                                 email
                             </label>
                         </div>
                         <div class="form-check form-check-inline">
                             <label for="" class="form-check-label">
-                                <input type="radio" class="form-check-input">
+                                <input 
+                                    type="radio" 
+                                    class="form-check-input"
+                                    value="text"
+                                    formControlName="notification"  
+                                    (click)="setNotificationSetting('text')"    
+                                >
                                 texte
                             </label>
                         </div>
                     </div>
+                    
                 </div>
             </div>
 
