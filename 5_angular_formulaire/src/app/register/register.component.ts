@@ -7,7 +7,8 @@ import {
   FormGroup, 
   NgForm, 
   ValidatorFn, 
-  Validators 
+  Validators,
+  FormArray
 } from '@angular/forms';
 import { debounceTime } from 'rxjs';
 
@@ -100,6 +101,10 @@ export class RegisterComponent implements OnInit {
       this.setMessage(emailControl!)
     })
 
+  }
+
+  public get addressList(): FormArray {
+    return <FormArray>this.registerForm.get('addresses')
   }
 
   public saveData() {
