@@ -71,7 +71,11 @@
 
             </div>
 
-            <div class="row gx-3 gy-2 align-items-center">
+
+            <div 
+                class="row gx-3 gy-2 align-items-center"
+                formGroupName="emailGroup"    
+            >
 
                 <div class="col-md-6 mb-3">
                     <label for="">email</label>
@@ -83,18 +87,18 @@
 
                         formControlName="email"
 
-                        [ngClass]=" {'is-invalid': registerForm.get('email')!.invalid && (registerForm.get('email')!.touched || registerForm.get('email')!.dirty) } "
+                        [ngClass]=" {'is-invalid': registerForm.get('emailGroup.email')!.invalid && (registerForm.get('emailGroup.email')!.touched || registerForm.get('emailGroup.email')!.dirty) } "
 
                     >
 
                     <!-- afficher les erreurs -->
                     <div class="invalid-feedback" >
 
-                        <div *ngIf="registerForm.get('email')!.errors?.['required'] " >
-                            Entrez notre email
+                        <div *ngIf="registerForm.get('emailGroup.email')!.errors?.['required'] " >
+                            Entrez l'email
                         </div>
 
-                        <div *ngIf="registerForm.get('email')!.errors?.['email'] " >
+                        <div *ngIf="registerForm.get('emailGroup.email')!.errors?.['email'] " >
                             email invalide!
                         </div>
 
@@ -104,7 +108,31 @@
 
                 </div>
 
+                <div class="col-md-6 mb-3">
+                    <label for="confirmEmailId">confirmer l'email</label>
+                    <input 
+                        type="email" 
+                        class="form-control" 
+                        id="confirmEmailId" 
+                        placeholder="confirmer l'email (requis) "
+                        formControlName="confirmEmail"    
+                    >
+
+                    <div class="invalid-feedback">
+                        <span>
+                            merci de retaper votre email
+                        </span>
+                        <span>
+                            l'email ne correspond pas
+                        </span>
+                    </div>
+
+                </div>
+
+
             </div>
+
+
 
             <div class="row">
 
