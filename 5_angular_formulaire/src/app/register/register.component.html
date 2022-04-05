@@ -19,8 +19,13 @@
                         [(ngModel)]="user.lastName"
                         name="lastName"   
                         required 
+                        #lastNameVar="ngModel"
+                        [ngClass]="{'is-invalid' : lastNameVar.touched && !lastNameVar.valid } "
                     >
                 </div>
+                <!-- afficher les erreurs -->
+                .invalid-fee
+
                 <div class="col-md-6 mb-3">
                     <label for="">prenom</label>
                     <input 
