@@ -3,15 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, NgForm, ValidatorFn, Validators } from '@angular/forms';
 
 
-// function ratingRangeValidator(c: AbstractControl): { [key: string]: boolean} | null {
-
-//   if ( !!c && isNaN(c.value) || c.value < 1 || c.value > 5  ) {                // !!c est equivalent de c!==null et undefined
-//     return { 'rangeError': true }
-//   }
-
-//   return null
-// }
-
 
 // validateur personalisée avec parametre
 function ratingRangeValidator(min: number, max: number): ValidatorFn {
@@ -58,17 +49,16 @@ export class RegisterComponent implements OnInit {
 
   public user: User = new User();
 
+  public errorMsg: string = ''
+
+  private validationErrorsMessages: {[key: string]: {}} = {
+    required: "entrez l'email",
+    email: 'email invalide!'
+  }
+
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
-
-    // this.registerForm = new FormGroup({
-      
-    //   firstName: new FormControl(),
-    //   lastName: new FormControl(),
-    //   email: new FormControl(),
-    //   sendCatalog: new FormControl(false)
-    // })
 
     this.registerForm = this.fb.group({
       firstName: ['', [Validators.required, Validators.maxLength(20)]],
@@ -86,6 +76,13 @@ export class RegisterComponent implements OnInit {
     this
       .registerForm.get('notification')?.valueChanges
       .subscribe(value => this.setNotificationSetting(value))
+
+    const emailControl = this.registerForm.get('emailGroup.email')
+  
+    emailControl!.valueChanges.subscribe(val => {
+      console.log(val)      
+      this.setMessage(emailControl!)
+    })
 
   }
 
@@ -118,6 +115,22 @@ export class RegisterComponent implements OnInit {
     }
 
     phoneControl?.updateValueAndValidity()
+
+  }
+
+  private setMessage(val: AbstractControl): void {
+    
+    if ((val.touched || val.dirty) && val.errors) {
+      
+      console.log(Object.keys(val.errors));
+      this.errorMsg = Object.keys(val.errors).map(key => {
+        console.log('clé: ',key)
+        this.validationErrorsMessages[key]
+      }).join(' ')
+
+      console.log(' clé message erreur : ', this.errorMsg);
+      
+    }
 
   }
 

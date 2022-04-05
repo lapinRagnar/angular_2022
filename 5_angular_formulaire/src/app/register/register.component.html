@@ -87,25 +87,13 @@
 
                         formControlName="email"
 
-                        [ngClass]=" {'is-invalid': registerForm.get('emailGroup')!.errors || (
-                            registerForm.get('emailGroup.email')!.invalid && 
-                            (registerForm.get('emailGroup.email')!.touched ||
-                            registerForm.get('emailGroup.email')!.dirty)) } "
+                        [ngClass]="{'is-invalid': errorMsg }"
 
                     >
 
                     <!-- afficher les erreurs -->
                     <div class="invalid-feedback" >
-
-                        <div *ngIf="registerForm.get('emailGroup.email')!.errors?.['required'] " >
-                            Entrez l'email
-                        </div>
-
-                        <div *ngIf="registerForm.get('emailGroup.email')!.errors?.['email'] " >
-                            email invalide!
-                        </div>
-
-
+                        {{ errorMsg }}
                     </div>
 
 
