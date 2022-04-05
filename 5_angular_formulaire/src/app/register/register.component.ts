@@ -1,3 +1,4 @@
+import { User } from './user';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+
+  public user: User = new User();
 
   constructor() { }
 
