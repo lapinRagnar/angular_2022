@@ -1,6 +1,6 @@
 import { User } from './user';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, NgForm } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -27,9 +27,9 @@ export class RegisterComponent implements OnInit {
     // })
 
     this.registerForm = this.fb.group({
-      firstName: [''],
-      lastName: {value: 'indisponible', disabled: true},
-      email: '',
+      firstName: ['', [Validators.required, Validators.maxLength(20)]],
+      lastName: ['', [Validators.required, Validators.minLength(4)]],
+      email: ['', [Validators.required, Validators.email]],
       sendCatalog: false
     })
 

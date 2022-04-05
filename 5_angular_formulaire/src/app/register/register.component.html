@@ -18,13 +18,10 @@
                         placeholder="nom" 
                         id="lastName"
                         
-                        minlength="4" 
-                        
                         formControlName="lastName"
 
                         [ngClass]=" {'is-invalid': registerForm.get('lastName')!.invalid && ( registerForm.get('lastName')!.dirty || registerForm.get('lastName')!.touched )  } "
 
-                        required
                        
                     >
 
@@ -51,13 +48,9 @@
                         class="form-control" 
                         placeholder="prenom" 
 
-                        minlength="4"
-
                         formControlName="firstName"
                         
                         [ngClass]=" {'is-invalid': registerForm.get('firstName')!.invalid && ( registerForm.get('firstName')!.dirty || registerForm.get('firstName')!.touched )  } "
-
-                        required
 
                     >
 
@@ -88,13 +81,10 @@
                         placeholder="email" 
                         name="email"  
 
-                        email
-
                         formControlName="email"
 
                         [ngClass]=" {'is-invalid': registerForm.get('email')!.invalid && (registerForm.get('email')!.touched || registerForm.get('email')!.dirty) } "
 
-                        required
                     >
 
                     <!-- afficher les erreurs -->
