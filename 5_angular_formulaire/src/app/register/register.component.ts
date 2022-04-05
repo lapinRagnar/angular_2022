@@ -75,16 +75,7 @@ export class RegisterComponent implements OnInit {
       notification: 'email',
       sendCatalog: true,
 
-      addresses: this.fb.group({
-
-        addressType: ['home'],
-        street1: [''],
-        street2: [''],
-        city: [''],
-        state: [''],
-        zip: [''],
-        
-      }),
+      addresses: this.createAddressGroup()
 
     })
 
@@ -133,6 +124,19 @@ export class RegisterComponent implements OnInit {
 
     phoneControl?.updateValueAndValidity()
 
+  }
+
+  private createAddressGroup(): FormGroup {
+    return this.fb.group({
+
+      addressType: ['home'],
+      street1: [''],
+      street2: [''],
+      city: [''],
+      state: [''],
+      zip: [''],
+
+    })
   }
 
   private setMessage(val: AbstractControl): void {
