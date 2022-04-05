@@ -165,8 +165,23 @@
                         type="number" 
                         id="ratingId" 
                         class="form-control"
-                        formControlName="rating"    
+                        formControlName="rating"   
+                        [ngClass]=" 
+                            {'is-invalid' : 
+                                (registerForm.get('rating')!.touched ||
+                                registerForm.get('rating')!.dirty) &&
+                                !registerForm.get('rating')!.valid 
+                            } 
+                        
+                        " 
                     >
+                    
+                    <div class="invalid-feedback">
+                        <span *ngIf=" registerForm.get('rating')!.errors?.['rangeError'] ">
+                            notez nos services clients entre 1 et 5
+                        </span>
+                    </div>
+
                 </div>
 
                 <div class="col-md-6">

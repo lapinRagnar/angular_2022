@@ -5,7 +5,7 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, NgForm, Validator
 
 function ratingRangeValidator(c: AbstractControl): { [key: string]: boolean} | null {
 
-  if ( !!c && isNaN(c.value || c.value < 1 || c.value > 5 ) ) {                // !!c est equivalent de c!==null et undefined
+  if ( !!c && isNaN(c.value) || c.value < 1 || c.value > 5  ) {                // !!c est equivalent de c!==null et undefined
     return { 'rangeError': true }
   }
 
