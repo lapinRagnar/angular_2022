@@ -125,6 +125,7 @@
                             <input 
                                 type="checkbox" 
                                 class="form-check-input"
+                                name="sendCatalog"
                                 [(ngModel)]="user.sendCatalog"    
                             >
                             Je veux plus d'option
@@ -133,7 +134,7 @@
                 </div>
             </div>
 
-            <div class="">
+            <div *ngIf="user.sendCatalog">
 
                 <div class="row mb-3">
 
