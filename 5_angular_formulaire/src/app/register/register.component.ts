@@ -1,5 +1,6 @@
 import { User } from './user';
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -13,6 +14,15 @@ export class RegisterComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  public saveData(registerForm: NgForm) {
+    console.log('ca marche');
+    console.log(registerForm.form);
+    console.log('nos valeurs', JSON.stringify(registerForm.value));
+    
+    
+    
   }
 
 }
