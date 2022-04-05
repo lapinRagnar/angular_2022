@@ -6,7 +6,7 @@
 
     <div class="card-body">
 
-        <form (ngSubmit)="saveData(registerForm) "  #registerForm="ngForm" novalidate>
+        <form (ngSubmit)="saveData() "  [formGroup]="registerForm" novalidate>
 
             <div class="row gx-3 gy-2 align-items-center">
 
@@ -17,12 +17,12 @@
                         class="form-control" 
                         placeholder="nom" 
                         id="lastName"
-                        name="lastName"   
+                        
                         minlength="4" 
-                        [(ngModel)]="user.lastName"
-                        #lastNameVar="ngModel"
+                        
+                        formControlName="lastName"
 
-                        [ngClass]=" {'is-invalid': lastNameVar.invalid && ( lastNameVar.dirty || lastNameVar.touched )  } "
+                        [ngClass]=" {'is-invalid': registerForm.get('lastName')!.invalid && ( registerForm.get('lastName')!.dirty || registerForm.get('lastName')!.touched )  } "
 
                         required
                        
@@ -31,11 +31,11 @@
                     <!-- afficher les erreurs -->
                     <div class="invalid-feedback" >
 
-                        <div *ngIf="lastNameVar.errors?.['required'] " >
+                        <div *ngIf="registerForm.get('lastName')!.errors?.['required'] " >
                             Entrez notre nom
                         </div>
 
-                        <div *ngIf="lastNameVar.errors?.['minlength'] " >
+                        <div *ngIf="registerForm.get('lastName')!.errors?.['minlength'] " >
                             Minimum 4 caractères
                         </div>
 
@@ -50,12 +50,12 @@
                         type="text" 
                         class="form-control" 
                         placeholder="prenom" 
-                        name="firstName"
+
                         minlength="4"
-                        [(ngModel)]="user.firstName"
-                        #firstName="ngModel"
+
+                        formControlName="registerForm.get('firstName')"
                         
-                        [ngClass]=" {'is-invalid': firstName.invalid && ( firstName.dirty || firstName.touched )  } "
+                        [ngClass]=" {'is-invalid': registerForm.get('firstName')!.invalid && ( registerForm.get('firstName')!.dirty || registerForm.get('firstName')!.touched )  } "
 
                         required
 
@@ -64,11 +64,11 @@
                         <!-- afficher les erreurs -->
                         <div class="invalid-feedback" >
 
-                            <div *ngIf="firstName.errors?.['required'] " >
+                            <div *ngIf="registerForm.get('firstName')!.errors?.['required'] " >
                                 Entrez notre nom
                             </div>
     
-                            <div *ngIf="firstName.errors?.['minlength'] " >
+                            <div *ngIf="registerForm.get('firstName')!.errors?.['minlength'] " >
                                 Minimum 4 caractères
                             </div>
     
@@ -87,12 +87,12 @@
                         class="form-control" 
                         placeholder="email" 
                         name="email"  
-                        [(ngModel)]="user.email"
-                        #emailVar="ngModel" 
 
                         email
 
-                        [ngClass]=" {'is-invalid': emailVar.invalid && (emailVar.touched || emailVar.dirty) } "
+                        formControlName="email"
+
+                        [ngClass]=" {'is-invalid': registerForm.get('email')!.invalid && (registerForm.get('email')!.touched || registerForm.get('email')!.dirty) } "
 
                         required
                     >
@@ -100,11 +100,11 @@
                     <!-- afficher les erreurs -->
                     <div class="invalid-feedback" >
 
-                        <div *ngIf="emailVar.errors?.['required'] " >
+                        <div *ngIf="registerForm.get('email')!.errors?.['required'] " >
                             Entrez notre email
                         </div>
 
-                        <div *ngIf="emailVar.errors?.['email'] " >
+                        <div *ngIf="registerForm.get('email')!.errors?.['email'] " >
                             email invalide!
                         </div>
 
@@ -125,8 +125,7 @@
                             <input 
                                 type="checkbox" 
                                 class="form-check-input"
-                                name="sendCatalog"
-                                [(ngModel)]="user.sendCatalog"    
+                                formControlName="sendCatalog"
                             >
                             Je veux plus d'option
                         </label>
@@ -134,7 +133,7 @@
                 </div>
             </div>
 
-            <div *ngIf="user.sendCatalog">
+            <!-- <div *ngIf="user.sendCatalog">
 
                 <div class="row mb-3">
 
@@ -170,7 +169,7 @@
                     </div>
                 </div>
 
-            </div>
+            </div> -->
 
             <div class="text-right">
                 <button 

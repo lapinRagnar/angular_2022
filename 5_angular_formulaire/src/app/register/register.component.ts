@@ -25,7 +25,7 @@ export class RegisterComponent implements OnInit {
       email: new FormControl(),
       sendCatalog: new FormControl(false)
     })
-    
+
   }
 
   public saveData() {
