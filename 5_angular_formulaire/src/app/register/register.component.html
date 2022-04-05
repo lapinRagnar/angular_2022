@@ -173,7 +173,11 @@
             </div>
 
             <div class="text-right">
-                <button class="btn btn-info" type="submit">
+                <button 
+                    class="btn btn-info" 
+                    type="submit"
+                    [disabled]="!registerForm.valid"
+                >
                     sauvegarder
                 </button>
             </div>
