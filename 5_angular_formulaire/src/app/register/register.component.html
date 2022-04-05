@@ -16,15 +16,34 @@
                         type="text" 
                         class="form-control" 
                         placeholder="nom" 
-                        [(ngModel)]="user.lastName"
+                        id="lastName"
                         name="lastName"   
-                        required 
+                        minlength="4" 
+                        [(ngModel)]="user.lastName"
                         #lastNameVar="ngModel"
-                        [ngClass]="{'is-invalid' : lastNameVar.touched && !lastNameVar.valid } "
+
+                        [ngClass]=" {'is-invalid': lastNameVar.invalid && ( lastNameVar.dirty || lastNameVar.touched )  } "
+                       
                     >
+
+                    <!-- afficher les erreurs -->
+                    <div 
+                        class="invalid-feedback" 
+                        *ngIf="lastNameVar.invalid && ( lastNameVar.dirty || lastNameVar.touched ) "
+                    >
+
+                        <div *ngIf="lastNameVar.errors?.['required'] " >
+                            Entrez notre nom
+                        </div>
+
+                        <div *ngIf="lastNameVar.errors?.['minlength'] " >
+                            Minimum 4 caractères
+                        </div>
+
+                    </div>
+
                 </div>
-                <!-- afficher les erreurs -->
-                .invalid-fee
+
 
                 <div class="col-md-6 mb-3">
                     <label for="">prenom</label>
