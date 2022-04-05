@@ -64,20 +64,28 @@ export class RegisterComponent implements OnInit {
     this.registerForm = this.fb.group({
       firstName: ['', [Validators.required, Validators.maxLength(20)]],
       lastName: ['', [Validators.required, Validators.minLength(4)]],
+
       emailGroup: this.fb.group({
         email: ['', [Validators.required, Validators.email]],
         confirmEmail: ['', Validators.required],
       }, { Validators: emailMatcher} ),
+
       phone: '',
       rating: [null, ratingRangeValidator(1,5)],
       notification: 'email',
       sendCatalog: true,
-      addressType: ['home'],
-      street1: [''],
-      street2: [''],
-      city: [''],
-      state: [''],
-      zip: [''],
+
+      addresses: this.fb.group({
+
+        addressType: ['home'],
+        street1: [''],
+        street2: [''],
+        city: [''],
+        state: [''],
+        zip: [''],
+        
+      }),
+
     })
 
     this
