@@ -1,6 +1,16 @@
 import { User } from './user';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+
+
+function ratingRangeValidator(c: AbstractControl): { [key: string]: boolean} | null {
+
+  if ( !!c && isNaN(c.value || c.value < 1 || c.value > 5 ) ) {                // !!c est equivalent de c!==null et undefined
+    return { 'rangeError': true }
+  }
+
+  return null
+}
 
 @Component({
   selector: 'app-register',
@@ -31,6 +41,7 @@ export class RegisterComponent implements OnInit {
       lastName: ['', [Validators.required, Validators.minLength(4)]],
       email: ['', [Validators.required, Validators.email]],
       phone: '',
+      rating: [null, ratingRangeValidator],
       notification: 'email',
       sendCatalog: false
     })
