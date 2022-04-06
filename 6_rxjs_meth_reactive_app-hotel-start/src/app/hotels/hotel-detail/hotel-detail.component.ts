@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Subscription, Observable, of } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { IHotel } from '../shared/models/hotel';
 import { HotelListService } from '../shared/services/hotel-list.service';
@@ -15,7 +15,7 @@ export class HotelDetailComponent implements OnInit {
   // public hotel: IHotel = <IHotel>{};
   public hotel$: Observable<IHotel> = of(<IHotel>{});
 
-  public subscriptions: Subscription = new Subscription();
+
   constructor(
     private route: ActivatedRoute,
     private hotelService: HotelListService,
