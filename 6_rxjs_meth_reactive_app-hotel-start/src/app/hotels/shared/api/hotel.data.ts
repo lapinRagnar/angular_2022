@@ -14,7 +14,8 @@ export class HotelData implements InMemoryDbService {
         price: 230.5,
         imageUrl: 'assets/img/hotel-room.jpg',
         rating: 3.5,
-        tags: ['nouveau']
+        tags: ['nouveau'],
+        categoryId: 0
       }, {
         id: 2,
         hotelName: 'Marakech',
@@ -22,7 +23,8 @@ export class HotelData implements InMemoryDbService {
         price: 145.5,
         imageUrl: 'assets/img/the-interior.jpg',
         rating: 5,
-        tags: ['nouveau']
+        tags: ['nouveau'],
+        categoryId: 1
       }, {
         id: 3,
         hotelName: 'Abudja new look palace',
@@ -38,7 +40,26 @@ export class HotelData implements InMemoryDbService {
         price: 135.12,
         imageUrl: 'assets/img/window.jpg',
         rating: 2.5,
-        tags: ['nouveau']
+        tags: ['nouveau'],
+        categoryId: 0
+      }, {
+        id: 5,
+        hotelName: 'Cape town city',
+        description: 'Magnifique cadre pour votre séjour',
+        price: 135.12,
+        imageUrl: 'assets/img/window.jpg',
+        rating: 2.5,
+        tags: ['nouveau'],
+        categoryId: 0
+      }, {
+        id: 6,
+        hotelName: 'Cape town city',
+        description: 'Magnifique cadre pour votre séjour',
+        price: 135.12,
+        imageUrl: 'assets/img/window.jpg',
+        rating: 2.5,
+        tags: ['nouveau'],
+        categoryId: 1
       }
     ];
 
