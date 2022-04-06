@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription, Observable, of } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
@@ -10,7 +10,7 @@ import { HotelListService } from '../shared/services/hotel-list.service';
   templateUrl: './hotel-detail.component.html',
   styleUrls: ['./hotel-detail.component.css']
 })
-export class HotelDetailComponent implements OnInit, OnDestroy {
+export class HotelDetailComponent implements OnInit {
   
   // public hotel: IHotel = <IHotel>{};
   public hotel$: Observable<IHotel> = of(<IHotel>{});
@@ -34,9 +34,6 @@ export class HotelDetailComponent implements OnInit, OnDestroy {
 
   }
 
-  ngOnDestroy() {
-    this.subscriptions.unsubscribe();
-  }
 
   public backToList(): void {
     this.router.navigate(['/hotels']);
