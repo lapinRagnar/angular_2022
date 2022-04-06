@@ -1,9 +1,7 @@
 <div class="container">
-  <div class="card" *ngIf="hotel">
+  <div class="card" *ngIf="(hotel$ | async) as hotel">
     <div class="card-header text-white bg-info">
       {{ hotel.hotelName | uppercase }}
-      {{  test| async }}
-      {{ test2 | async }}
     </div>
 
     <div class="card-body">
