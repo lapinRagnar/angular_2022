@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { interval, Observable, Subscription } from 'rxjs';
 
 @Component({
@@ -6,7 +6,7 @@ import { interval, Observable, Subscription } from 'rxjs';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit  {
+export class AppComponent implements OnInit, OnDestroy  {
 
   private subscriptions: Subscription = new Subscription()
   
@@ -14,6 +14,10 @@ export class AppComponent implements OnInit  {
 
 
 
+  }
+
+  ngOnDestroy(): void {
+    this.subscriptions.unsubscribe()
   }
 
   public start(): void {
