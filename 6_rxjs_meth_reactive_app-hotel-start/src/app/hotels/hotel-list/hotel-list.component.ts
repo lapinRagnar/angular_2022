@@ -44,6 +44,13 @@ export class HotelListComponent implements OnInit {
     subject.next(2)
     subject.next(3)
 
+    subject.subscribe({
+      next: (value) => console.log('C: ', value)
+      
+    })
+
+    subject.next(12)
+
 
     this.hotels$ = this.hotelListService.hotelsWithCategories$.pipe(
       catchError((err) => {
