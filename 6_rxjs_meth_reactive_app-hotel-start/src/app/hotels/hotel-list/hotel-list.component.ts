@@ -1,4 +1,4 @@
-import { Observable, of, EMPTY } from 'rxjs';
+import { Observable, of, EMPTY, combineLatest, forkJoin } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { Hotel, IHotel } from '../shared/models/hotel';
 import { HotelListService } from '../shared/services/hotel-list.service';
@@ -28,6 +28,14 @@ export class HotelListComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    const a$ = of(1, 2, 3)
+    const b$ = of(11, 12, 13)
+    const c$ = of(21, 22, 23)
+
+    combineLatest([a$, b$, c$]).subscribe(
+      (val) => console.log("resultat combineLatest : ", val)
+      )
 
     this.hotels$ = this.hotelListService.getHotels().pipe(
       catchError((err) => {
