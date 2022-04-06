@@ -1,4 +1,8 @@
 <div class="container">
+
+  <div class="alert alert-danger" *ngIf="errMsg">
+    {{ errMsg }}
+  </div>
   <!-- <h2 *ngIf="hotels$ && hotels$.length > 0">{{ title }}</h2> -->
   <h2 *ngIf="hotels$">{{ title }}</h2>
 

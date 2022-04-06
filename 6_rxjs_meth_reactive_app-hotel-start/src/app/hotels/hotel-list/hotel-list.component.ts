@@ -1,4 +1,4 @@
-import { Observable, of, throwError, EMPTY } from 'rxjs';
+import { Observable, of, EMPTY } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { Hotel, IHotel } from '../shared/models/hotel';
 import { HotelListService } from '../shared/services/hotel-list.service';
