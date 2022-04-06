@@ -36,6 +36,10 @@ export class HotelListComponent implements OnInit {
     combineLatest([a$, b$, c$]).subscribe(
       (val) => console.log("resultat combineLatest : ", val)
       )
+      
+    forkJoin([a$, b$, c$]).subscribe(
+      (val) => console.log("resultat forkJoin : ", val)
+      )
 
     this.hotels$ = this.hotelListService.getHotels().pipe(
       catchError((err) => {
