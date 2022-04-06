@@ -2,7 +2,7 @@ import { Observable, of, EMPTY, Subject, combineLatest, BehaviorSubject, interva
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Hotel, IHotel } from '../shared/models/hotel';
 import { HotelListService } from '../shared/services/hotel-list.service';
-import { map, catchError, take } from 'rxjs/operators';
+import { map, catchError, take, shareReplay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-hotel-list',
@@ -38,8 +38,9 @@ export class HotelListComponent implements OnInit {
   ngOnInit() {
 
 
-    this.a$ = interval(2000).pipe(
-      take(5)
+    this.a$ = interval(1000).pipe(
+      take(5),
+      shareReplay()
     )
 
     this.a$.subscribe(console.warn)
