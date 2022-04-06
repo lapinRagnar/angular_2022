@@ -12,6 +12,8 @@ import { HotelListService } from '../shared/services/hotel-list.service';
 })
 export class HotelDetailComponent implements OnInit, OnDestroy {
 
+  public test = Promise.resolve('hello')
+  
   public hotel: IHotel = <IHotel>{};
   public subscriptions: Subscription = new Subscription();
   constructor(

@@ -16,6 +16,7 @@ import { NumberValidators } from '../shared/validators/numbers.validator';
 export class HotelEditComponent implements OnInit, AfterViewInit {
 
   @ViewChildren(FormControlName, { read: ElementRef }) inputElements: ElementRef[];
+ 
 
   public hotelForm: FormGroup;
   public hotel: IHotel;
