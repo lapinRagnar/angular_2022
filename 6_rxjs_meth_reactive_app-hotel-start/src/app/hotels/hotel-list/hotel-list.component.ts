@@ -1,4 +1,4 @@
-import { Observable, of, EMPTY} from 'rxjs';
+import { Observable, of, EMPTY, Subject} from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { Hotel, IHotel } from '../shared/models/hotel';
 import { HotelListService } from '../shared/services/hotel-list.service';
@@ -30,6 +30,20 @@ export class HotelListComponent implements OnInit {
   ngOnInit() {
 
     
+    const subject = new Subject<number>()
+    subject.subscribe({
+      next: (value) => console.log('A: ', value)
+      
+    })
+    subject.subscribe({
+      next: (value) => console.log('B: ', value)
+      
+    })
+
+    subject.next(1)
+    subject.next(2)
+    subject.next(3)
+
 
     this.hotels$ = this.hotelListService.hotelsWithCategories$.pipe(
       catchError((err) => {
