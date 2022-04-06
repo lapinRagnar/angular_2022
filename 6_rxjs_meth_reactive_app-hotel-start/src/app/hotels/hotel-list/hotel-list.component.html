@@ -1,5 +1,6 @@
 <div class="container">
-  <h2 *ngIf="hotels && hotels.length > 0">{{ title }}</h2>
+  <!-- <h2 *ngIf="hotels$ && hotels$.length > 0">{{ title }}</h2> -->
+  <h2 *ngIf="hotels$">{{ title }}</h2>
 
   <button class="btn btn-primary d-flex" (click)="toggleIsNewBadge()">
     <span class="material-icons">
@@ -24,7 +25,7 @@
     {{ receivedRating }}
   </div>
   <div class="row row-cols-1 row-cols-md-3">
-    <div class="col mb-4" *ngFor="let hotel of filteredHotels">
+    <div class="col mb-4" *ngFor="let hotel of (filteredHotels$ | async)">
       <div class="card">
         <img
           [src]="hotel.imageUrl"

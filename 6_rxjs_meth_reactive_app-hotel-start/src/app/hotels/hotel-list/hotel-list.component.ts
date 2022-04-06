@@ -1,6 +1,8 @@
+import { Observable, of } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { Hotel, IHotel } from '../shared/models/hotel';
 import { HotelListService } from '../shared/services/hotel-list.service';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-hotel-list',
@@ -10,11 +12,15 @@ import { HotelListService } from '../shared/services/hotel-list.service';
 export class HotelListComponent implements OnInit {
   public title = 'Liste hotels';
 
-  public hotels: IHotel[] = [];
+  // public hotels: IHotel[] = [];
+  public hotels$: Observable<IHotel[]> = of([])   // on cree une observable ici
 
   public showBadge: boolean = true;
   private _hotelFilter = 'mot';
-  public filteredHotels: IHotel[] = [];
+
+  // public filteredHotels: IHotel[] = [];
+  public filteredHotels$: Observable<IHotel[]> = of([]);
+
   public receivedRating: string;
   public errMsg: string;
 
@@ -24,13 +30,18 @@ export class HotelListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.hotelListService.getHotels().subscribe({
-      next: hotels => {
-        this.hotels = hotels;
-        this.filteredHotels = this.hotels;
-      },
-      error: err => this.errMsg = err
-    });
+
+    this.hotels$ = this.hotelListService.getHotels()
+    this.filteredHotels$ = this.hotels$
+
+    // this.hotelListService.getHotels().subscribe({
+    //   next: hotels => {
+    //     this.hotels = hotels;
+    //     this.filteredHotels = this.hotels;
+    //   },
+    //   error: err => this.errMsg = err
+    // });
+
     this.hotelFilter = '';
   }
 
@@ -46,7 +57,15 @@ export class HotelListComponent implements OnInit {
   public set hotelFilter(filter: string) {
     this._hotelFilter = filter;
 
-    this.filteredHotels = this.hotelFilter ? this.filterHotels(this.hotelFilter) : this.hotels;
+    if (this.hotelFilter) {
+      this.filteredHotels$ = this.hotels$.pipe(
+        map((hotels: IHotel[]) => this.filterHotels(filter, hotels) )
+      )
+    } else
+    {
+      this.filteredHotels$ = this.hotels$
+    }
+    // this.filteredHotels = this.hotelFilter ? this.filterHotels(this.hotelFilter) : this.hotels;
   }
 
   public receiveRatingClicked(message: string): void {
@@ -54,10 +73,10 @@ export class HotelListComponent implements OnInit {
   }
 
 
-  private filterHotels(criteria: string): IHotel[] {
+  private filterHotels(criteria: string, hotels: IHotel[]): IHotel[] {
     criteria = criteria.toLocaleLowerCase();
 
-    const res = this.hotels.filter(
+    const res = hotels.filter(
       (hotel: IHotel) => hotel.hotelName.toLocaleLowerCase().indexOf(criteria) !== -1
     );
 
