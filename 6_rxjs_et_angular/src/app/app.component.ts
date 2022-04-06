@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { interval, Observable, Subscription, of, from } from 'rxjs';
+import { interval, Observable, Subscription, of, from, map } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +12,20 @@ export class AppComponent implements OnInit, OnDestroy  {
   
   ngOnInit(): void {
 
+    let foisDeux = (nombre: number): number => {
+      return nombre * 2
+    }
+
+    from([1, 2, 3, 15, 16, 17, 18])
+      .pipe(
+        map(foisDeux)  
+      )
+      .subscribe(
+      (item: number) => console.log(`ma valeur ${item}`),
+      (err: unknown) => console.error(err),
+      () => console.log('terminé')
+    )
+
   }
 
   ngOnDestroy(): void {
@@ -19,21 +33,6 @@ export class AppComponent implements OnInit, OnDestroy  {
   }
 
   
-  double = (source: Observable<number>) => {
-    new Observable<number>((subscriber) => {
-      const subscription = source.subscribe({
-        next: (value) => subscriber.next(2 * value),
-        error: (err) => subscriber.error(err),
-        complete: () => subscriber.complete()
-      })
 
-      return () => {
-        subscription.unsubscribe()
-      }
-
-    })
-  }
-  
-  monObser = of(1, 2, 3).pipe(double).subscribe(console.log)
 
 }
