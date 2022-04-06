@@ -42,6 +42,11 @@ export class HotelListComponent implements OnInit {
     this.hotelFilter = '';
   }
 
+  public filterChange(value: string): void {
+    console.log('vaaaalue', value);
+    
+  }
+
 
   public toggleIsNewBadge(): void {
     this.showBadge = !this.showBadge;
@@ -63,6 +68,11 @@ export class HotelListComponent implements OnInit {
       this.filteredHotels$ = this.hotels$
     }
 
+  }
+
+  public createFilterHotels(filter$: Observable<string>, hotels$: Observable<IHotel[]> ): Observable<IHotel[]> {
+
+    return 
   }
 
   public receiveRatingClicked(message: string): void {
