@@ -2,7 +2,7 @@ import { Observable, of, EMPTY, combineLatest, forkJoin } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { Hotel, IHotel } from '../shared/models/hotel';
 import { HotelListService } from '../shared/services/hotel-list.service';
-import { map, catchError } from 'rxjs/operators';
+import { map, catchError, withLatestFrom } from 'rxjs/operators';
 
 @Component({
   selector: 'app-hotel-list',
@@ -36,10 +36,14 @@ export class HotelListComponent implements OnInit {
     combineLatest([a$, b$, c$]).subscribe(
       (val) => console.log("resultat combineLatest : ", val)
       )
-      
+
     forkJoin([a$, b$, c$]).subscribe(
       (val) => console.log("resultat forkJoin : ", val)
       )
+
+    a$.pipe(
+      withLatestFrom(b$, c$)
+    ).subscribe((val) => console.log('withLatestFrom : ', val))
 
     this.hotels$ = this.hotelListService.getHotels().pipe(
       catchError((err) => {
