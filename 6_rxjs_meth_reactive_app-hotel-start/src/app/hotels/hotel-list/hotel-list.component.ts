@@ -31,7 +31,7 @@ export class HotelListComponent implements OnInit {
 
     
 
-    this.hotels$ = this.hotelListService.getHotels().pipe(
+    this.hotels$ = this.hotelListService.hotelsWithCategories$.pipe(
       catchError((err) => {
         this.errMsg = err
         return EMPTY

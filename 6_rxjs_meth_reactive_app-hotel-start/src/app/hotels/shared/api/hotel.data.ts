@@ -32,7 +32,8 @@ export class HotelData implements InMemoryDbService {
         price: 120.12,
         imageUrl: 'assets/img/indoors.jpg',
         rating: 4,
-        tags: ['nouveau']
+        tags: ['nouveau'],
+        categoryId: 1
       }, {
         id: 4,
         hotelName: 'Cape town city',

@@ -21,8 +21,6 @@ export class Hotel implements IHotel {
     public imageUrl: string,
     public rating: number,
     public tags: string[],
-    public categoryId: number,
-    public category: string
   ) { }
 
   getNewPrice(price: number): number {
