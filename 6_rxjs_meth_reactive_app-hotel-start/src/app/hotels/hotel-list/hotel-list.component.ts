@@ -28,22 +28,12 @@ export class HotelListComponent implements OnInit {
   private errMsgSubject: Subject<string> = new Subject<string>()
   public errMsg$ = this.errMsgSubject.asObservable()
 
-  private a$: Observable<number> 
-
 
   constructor(private hotelListService: HotelListService) {
 
   }
 
   ngOnInit() {
-
-
-    this.a$ = interval(1000).pipe(
-      take(5),
-      shareReplay(3)
-    )
-
-    this.a$.subscribe(console.warn)
 
     this.hotels$ = this.hotelListService.hotelsWithCategories$.pipe(
       catchError((err) => {
@@ -58,9 +48,7 @@ export class HotelListComponent implements OnInit {
     this.hotelFilter = '';
   }
 
-  public test():void {
-    this.a$.subscribe(console.log)
-  }
+
 
   public filterChange(value: string): void {
     this.filterSubject.next(value)
