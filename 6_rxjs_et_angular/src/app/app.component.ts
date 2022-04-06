@@ -35,9 +35,15 @@ export class AppComponent implements OnInit  {
 
   public start(): void {
     this.subscriptions = interval(2000).subscribe(
-      value => console.log("ma valeur est: ", value),
+      value => console.log("observable 1 --- ma valeur est: ", value),
       error => console.error(error),
-      () => console.log('terminé') 
+      () => console.log('observable 1 --- terminé') 
+    )
+
+    this.subscriptions = interval(2000).subscribe(
+      value => console.log("observable 2 --- ma valeur est: ", value),
+      error => console.error(error),
+      () => console.log('observable 2 --- terminé') 
     )
   }
 
