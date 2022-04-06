@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -8,12 +9,22 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit  {
   
   ngOnInit(): void {
-    
+
     const observer = {
       next: (item: unknown) => console.log(`une boite arrive ${item} `),
       error: (err: unknown) => console.log(`oups, il y a une erreur ${err} `),
       complete: () => console.log('terminé, notre sequence est terminée les mecs! ')
     }
+
+    const stream = new Observable(myObserver => {
+      myObserver.next('boite 1')
+      myObserver.next('boite 2')
+      myObserver.next('boite 3')
+      myObserver.complete()
+    })
+
+    stream.subscribe(observer)
+
   }
 
 }
