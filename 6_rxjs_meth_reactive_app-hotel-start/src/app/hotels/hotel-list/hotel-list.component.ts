@@ -12,13 +12,11 @@ import { map, catchError } from 'rxjs/operators';
 export class HotelListComponent implements OnInit {
   public title = 'Liste hotels';
 
-  // public hotels: IHotel[] = [];
   public hotels$: Observable<IHotel[]> = of([])   // on cree une observable ici
 
   public showBadge: boolean = true;
   private _hotelFilter = 'mot';
 
-  // public filteredHotels: IHotel[] = [];
   public filteredHotels$: Observable<IHotel[]> = of([]);
 
   public receivedRating: string;
@@ -34,18 +32,10 @@ export class HotelListComponent implements OnInit {
     this.hotels$ = this.hotelListService.getHotels().pipe(
       catchError((err) => {
         this.errMsg = err
-        return throwError(err)
+        return EMPTY
       })
     )
     this.filteredHotels$ = this.hotels$
-
-    // this.hotelListService.getHotels().subscribe({
-    //   next: hotels => {
-    //     this.hotels = hotels;
-    //     this.filteredHotels = this.hotels;
-    //   },
-    //   error: err => this.errMsg = err
-    // });
 
     this.hotelFilter = '';
   }
@@ -70,7 +60,7 @@ export class HotelListComponent implements OnInit {
     {
       this.filteredHotels$ = this.hotels$
     }
-    // this.filteredHotels = this.hotelFilter ? this.filterHotels(this.hotelFilter) : this.hotels;
+
   }
 
   public receiveRatingClicked(message: string): void {
