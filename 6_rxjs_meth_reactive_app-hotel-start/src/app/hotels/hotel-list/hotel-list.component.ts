@@ -1,4 +1,4 @@
-import { Observable, of, EMPTY, Subject, from} from 'rxjs';
+import { Observable, of, EMPTY, Subject, from, BehaviorSubject} from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { Hotel, IHotel } from '../shared/models/hotel';
 import { HotelListService } from '../shared/services/hotel-list.service';
@@ -31,6 +31,9 @@ export class HotelListComponent implements OnInit {
 
     
     const subject = new Subject<number>()
+    const bSubject = new BehaviorSubject<number>(0)
+
+
     subject.subscribe({
       next: (value) => console.log('A: ', value)
       
@@ -40,21 +43,41 @@ export class HotelListComponent implements OnInit {
       
     })
 
-    const observable$ = from([1, 2, 3])
-    // on qualifie le subject comme étant observable et observer
-    observable$.subscribe(subject)
+    bSubject.subscribe({
+      next: (value) => console.warn('A: ', value)
+      
+    })
+    bSubject.subscribe({
+      next: (value) => console.warn('B: ', value)
+      
+    })
+     
+    subject.next(1)
+    subject.next(2)
+    subject.next(3)
 
-
-    // subject.next(1)
-    // subject.next(2)
-    // subject.next(3)
-
+    bSubject.next(1)
+    bSubject.next(2)
+    bSubject.next(3)
+    
     subject.subscribe({
       next: (value) => console.log('C: ', value)
       
     })
 
-    // subject.next(12)
+    bSubject.subscribe({
+      next: (value) => console.warn('C: ', value)
+      
+    })
+
+    
+    
+    subject.next(12)
+    bSubject.next(12)
+    
+
+
+
 
 
     this.hotels$ = this.hotelListService.hotelsWithCategories$.pipe(
