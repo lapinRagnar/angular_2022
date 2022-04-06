@@ -44,10 +44,10 @@ export class HotelData implements InMemoryDbService {
         categoryId: 0
       }, {
         id: 5,
-        hotelName: 'Cape town city',
+        hotelName: 'Hôtels à Playa d\'en Bossa',
         description: 'Magnifique cadre pour votre séjour',
         price: 135.12,
-        imageUrl: 'assets/img/window.jpg',
+        imageUrl: 'https://www.palladiumhotelgroup.com/content/dam/palladium/content-fragments/es/hoteles/ushua%C3%AFa-ibiza-beach-hotel/im%C3%A1genes/ushuaia-ibiza-beach-hotel.jpg.transform/rendition-md/image.jpg',
         rating: 2.5,
         tags: ['nouveau'],
         categoryId: 0
@@ -56,7 +56,7 @@ export class HotelData implements InMemoryDbService {
         hotelName: 'Cape town city',
         description: 'Magnifique cadre pour votre séjour',
         price: 135.12,
-        imageUrl: 'assets/img/window.jpg',
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Cordoba_Center_Hotel_in_Cordoba%2C_Spain.jpg/1200px-Cordoba_Center_Hotel_in_Cordoba%2C_Spain.jpg',
         rating: 2.5,
         tags: ['nouveau'],
         categoryId: 1
