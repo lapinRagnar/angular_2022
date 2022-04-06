@@ -13,14 +13,18 @@ export class AppComponent implements OnInit, OnDestroy  {
   ngOnInit(): void {
 
 
-    from([1, 2, 3, 15, 16, 17,0 , 18])
+    from([1, 2, 3, 15, 16, 17, 18])
       .pipe(
+        
         map((elem: number) => {
           if (elem === 0) {
             throw new Error('le nombre est zero')
           }
           return 2 * elem
-        } )
+        } ),
+
+        map (item => item - 10 )
+
       )
       .subscribe(
       (item: number) => console.log(`ma valeur ${item}`),
