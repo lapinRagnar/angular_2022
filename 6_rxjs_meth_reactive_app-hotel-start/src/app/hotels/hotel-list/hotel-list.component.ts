@@ -1,8 +1,8 @@
-import { Observable, of, EMPTY, Subject, combineLatest, BehaviorSubject } from 'rxjs';
+import { Observable, of, EMPTY, Subject, combineLatest, BehaviorSubject, interval } from 'rxjs';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Hotel, IHotel } from '../shared/models/hotel';
 import { HotelListService } from '../shared/services/hotel-list.service';
-import { map, catchError } from 'rxjs/operators';
+import { map, catchError, take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-hotel-list',
@@ -28,12 +28,21 @@ export class HotelListComponent implements OnInit {
   private errMsgSubject: Subject<string> = new Subject<string>()
   public errMsg$ = this.errMsgSubject.asObservable()
 
+  private a$: Observable<number> 
+
 
   constructor(private hotelListService: HotelListService) {
 
   }
 
   ngOnInit() {
+
+
+    this.a$ = interval(2000).pipe(
+      take(5)
+    )
+
+    this.a$.subscribe(console.warn)
 
     this.hotels$ = this.hotelListService.hotelsWithCategories$.pipe(
       catchError((err) => {
@@ -46,6 +55,10 @@ export class HotelListComponent implements OnInit {
     this.filteredHotels$ = this.createFilterHotels(this.filterSubject, this.hotels$)
 
     this.hotelFilter = '';
+  }
+
+  public test():void {
+    this.a$.subscribe(console.log)
   }
 
   public filterChange(value: string): void {
