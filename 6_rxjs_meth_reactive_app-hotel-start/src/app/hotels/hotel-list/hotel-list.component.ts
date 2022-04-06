@@ -1,8 +1,8 @@
-import { Observable, of } from 'rxjs';
+import { Observable, of, throwError, EMPTY } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { Hotel, IHotel } from '../shared/models/hotel';
 import { HotelListService } from '../shared/services/hotel-list.service';
-import { map } from 'rxjs/operators';
+import { map, catchError } from 'rxjs/operators';
 
 @Component({
   selector: 'app-hotel-list',
@@ -31,7 +31,12 @@ export class HotelListComponent implements OnInit {
 
   ngOnInit() {
 
-    this.hotels$ = this.hotelListService.getHotels()
+    this.hotels$ = this.hotelListService.getHotels().pipe(
+      catchError((err) => {
+        this.errMsg = err
+        return throwError(err)
+      })
+    )
     this.filteredHotels$ = this.hotels$
 
     // this.hotelListService.getHotels().subscribe({
