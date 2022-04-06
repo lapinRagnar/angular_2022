@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { interval, Observable } from 'rxjs';
+import { interval, Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +8,7 @@ import { interval, Observable } from 'rxjs';
 })
 export class AppComponent implements OnInit  {
 
-  private subscriptions: any
+  private subscriptions: Subscription[] = []
   
   ngOnInit(): void {
 
@@ -34,22 +34,24 @@ export class AppComponent implements OnInit  {
   }
 
   public start(): void {
-    this.subscriptions = interval(2000).subscribe(
+
+    this.subscriptions.push(interval(2000).subscribe(
       value => console.log("observable 1 --- ma valeur est: ", value),
       error => console.error(error),
       () => console.log('observable 1 --- terminé') 
-    )
+    ))
 
-    this.subscriptions = interval(2000).subscribe(
+    this.subscriptions.push(interval(4000).subscribe(
       value => console.log("observable 2 --- ma valeur est: ", value),
       error => console.error(error),
       () => console.log('observable 2 --- terminé') 
-    )
+    ))
   }
 
   public stop():void {
-    this.subscriptions.unsubscribe()
-    console.log("la séquence est terminé!, bye!");
+    this.subscriptions.forEach(elem => {
+      elem.unsubscribe()
+    })
     
   }
 
