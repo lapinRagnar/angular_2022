@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Subscription, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { IHotel } from '../shared/models/hotel';
 import { HotelListService } from '../shared/services/hotel-list.service';
@@ -13,7 +13,8 @@ import { HotelListService } from '../shared/services/hotel-list.service';
 export class HotelDetailComponent implements OnInit, OnDestroy {
 
   public test = Promise.resolve('hello')
-  
+  public test2 = of('observable crée avec of() ')
+
   public hotel: IHotel = <IHotel>{};
   public subscriptions: Subscription = new Subscription();
   constructor(
