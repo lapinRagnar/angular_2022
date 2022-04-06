@@ -40,7 +40,7 @@ export class HotelListComponent implements OnInit {
 
     this.a$ = interval(1000).pipe(
       take(5),
-      shareReplay()
+      shareReplay(3)
     )
 
     this.a$.subscribe(console.warn)
