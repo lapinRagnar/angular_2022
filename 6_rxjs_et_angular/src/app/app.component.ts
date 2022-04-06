@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { interval, Observable, Subscription, of, from, map, tap } from 'rxjs';
+import { interval, Observable, Subscription, of, from, map, tap, take } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -24,7 +24,9 @@ export class AppComponent implements OnInit, OnDestroy  {
           return 2 * elem
         } ),
 
-        map (item => item - 10 )
+        map (item => item - 10 ),
+
+        take(2)
 
       )
       .subscribe(
