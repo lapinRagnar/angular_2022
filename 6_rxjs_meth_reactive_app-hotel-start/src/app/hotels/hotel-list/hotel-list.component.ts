@@ -1,4 +1,4 @@
-import { Observable, of, EMPTY, Subject, from, BehaviorSubject} from 'rxjs';
+import { Observable, of, EMPTY, Subject, combineLatest, BehaviorSubject } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { Hotel, IHotel } from '../shared/models/hotel';
 import { HotelListService } from '../shared/services/hotel-list.service';
@@ -19,6 +19,8 @@ export class HotelListComponent implements OnInit {
 
   public filteredHotels$: Observable<IHotel[]> = of([]);
 
+  public filterSubject: Subject<string> = new BehaviorSubject<string>('');
+
   public receivedRating: string;
   public errMsg: string;
 
@@ -29,71 +31,20 @@ export class HotelListComponent implements OnInit {
 
   ngOnInit() {
 
-    
-    const subject = new Subject<number>()
-    const bSubject = new BehaviorSubject<number>(0)
-
-
-    subject.subscribe({
-      next: (value) => console.log('A: ', value)
-      
-    })
-    subject.subscribe({
-      next: (value) => console.log('B: ', value)
-      
-    })
-
-    bSubject.subscribe({
-      next: (value) => console.warn('A: ', value)
-      
-    })
-    bSubject.subscribe({
-      next: (value) => console.warn('B: ', value)
-      
-    })
-     
-    subject.next(1)
-    subject.next(2)
-    subject.next(3)
-
-    bSubject.next(1)
-    bSubject.next(2)
-    bSubject.next(3)
-    
-    subject.subscribe({
-      next: (value) => console.log('C: ', value)
-      
-    })
-
-    bSubject.subscribe({
-      next: (value) => console.warn('C: ', value)
-      
-    })
-
-    
-    
-    subject.next(12)
-    bSubject.next(12)
-    
-
-
-
-
-
     this.hotels$ = this.hotelListService.hotelsWithCategories$.pipe(
       catchError((err) => {
         this.errMsg = err
         return EMPTY
       })
     )
-    this.filteredHotels$ = this.hotels$
+
+    this.filteredHotels$ = this.createFilterHotels(this.filterSubject, this.hotels$)
 
     this.hotelFilter = '';
   }
 
   public filterChange(value: string): void {
-    console.log('vaaaalue', value);
-    
+    this.filterSubject.next(value)
   }
 
 
@@ -106,22 +57,18 @@ export class HotelListComponent implements OnInit {
   }
 
   public set hotelFilter(filter: string) {
+    
     this._hotelFilter = filter;
-
-    if (this.hotelFilter) {
-      this.filteredHotels$ = this.hotels$.pipe(
-        map((hotels: IHotel[]) => this.filterHotels(filter, hotels) )
-      )
-    } else
-    {
-      this.filteredHotels$ = this.hotels$
-    }
 
   }
 
   public createFilterHotels(filter$: Observable<string>, hotels$: Observable<IHotel[]> ): Observable<IHotel[]> {
 
-    return 
+    return combineLatest(hotels$, filter$, (hotels: IHotel[], filter: string) => {
+      if (filter === '') return hotels
+      return hotels.filter(
+        (hotel: IHotel) => hotel.hotelName.toLocaleLowerCase().indexOf(filter) !== -1)
+    })
   }
 
   public receiveRatingClicked(message: string): void {
