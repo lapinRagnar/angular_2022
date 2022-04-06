@@ -1,4 +1,4 @@
-import { Observable, of, EMPTY, Subject} from 'rxjs';
+import { Observable, of, EMPTY, Subject, from} from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { Hotel, IHotel } from '../shared/models/hotel';
 import { HotelListService } from '../shared/services/hotel-list.service';
@@ -40,16 +40,21 @@ export class HotelListComponent implements OnInit {
       
     })
 
-    subject.next(1)
-    subject.next(2)
-    subject.next(3)
+    const observable$ = from([1, 2, 3])
+    // on qualifie le subject comme étant observable et observer
+    observable$.subscribe(subject)
+
+
+    // subject.next(1)
+    // subject.next(2)
+    // subject.next(3)
 
     subject.subscribe({
       next: (value) => console.log('C: ', value)
       
     })
 
-    subject.next(12)
+    // subject.next(12)
 
 
     this.hotels$ = this.hotelListService.hotelsWithCategories$.pipe(
