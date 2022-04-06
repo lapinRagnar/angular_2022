@@ -12,13 +12,10 @@ export class AppComponent implements OnInit, OnDestroy  {
   
   ngOnInit(): void {
 
-    let foisDeux = (nombre: number): number => {
-      return nombre * 2
-    }
 
     from([1, 2, 3, 15, 16, 17, 18])
       .pipe(
-        map(foisDeux)  
+        map(elem => 2 * elem )
       )
       .subscribe(
       (item: number) => console.log(`ma valeur ${item}`),
@@ -30,9 +27,7 @@ export class AppComponent implements OnInit, OnDestroy  {
 
   ngOnDestroy(): void {
 
-  }
-
-  
+  } 
 
 
 }
