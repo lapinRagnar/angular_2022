@@ -23,7 +23,11 @@ export class AppComponent implements OnInit  {
       myObserver.complete()
     })
 
-    stream.subscribe(observer)
+    const subscription = stream.subscribe(
+      item => console.log(`une boite arrive ${item}`),
+      err => console.log(`oups, il y a une erreur ${err}`),
+      () => console.log('mission accomplie!')            
+    )
 
   }
 
