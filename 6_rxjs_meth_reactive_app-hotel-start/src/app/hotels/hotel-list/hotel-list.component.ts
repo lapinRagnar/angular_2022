@@ -2,7 +2,7 @@ import { Observable, of, EMPTY, Subject, combineLatest, BehaviorSubject, interva
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Hotel, IHotel } from '../shared/models/hotel';
 import { HotelListService } from '../shared/services/hotel-list.service';
-import { map, catchError, take, shareReplay, tap, scan, reduce } from 'rxjs/operators';
+import { map, catchError } from 'rxjs/operators';
 
 @Component({
   selector: 'app-hotel-list',
@@ -35,39 +35,6 @@ export class HotelListComponent implements OnInit {
 
   ngOnInit() {
 
-    of(1, 2, 3, 4, 5).pipe(
-      scan((acc, value) => acc + value, 0)
-    ).subscribe(console.log)
-
-    // scan retourne une valeure successive
-    // retourne : 1 3 6 10 15
-
-    of(1, 2, 3, 4, 5).pipe(
-      scan((acc, value) => [...acc, value], [])
-    ).subscribe(console.log)
-    
-    // retourne [1, 2, 3, 4, 5]
-
-    of(1, 2, 3, 4, 5).pipe(
-      scan((acc, value) => [...acc, value], [3])
-    ).subscribe(console.log)
-
-    // retourne : [3, 1, 2, 3, 4, 5]
-
-    of(1, 2, 3, 4, 5).pipe(
-      scan((acc, value) => [value,...acc ], [0])
-    ).subscribe(console.log)
-    
-    // retourne [5, 4, 3, 2, 1, 0]
-
-    // cas d'utilisation de reduce
-    // retourne une valeur ponctuelle
-
-    of(1, 2, 3, 4, 5).pipe(
-      reduce((acc, value) => [...acc,value], [0])
-    ).subscribe(console.log)
-    
-    // merci
 
     this.hotels$ = this.hotelListService.hotelsWithCategories$.pipe(
       catchError((err) => {
