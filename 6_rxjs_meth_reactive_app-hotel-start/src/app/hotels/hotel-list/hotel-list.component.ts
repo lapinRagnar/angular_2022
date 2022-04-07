@@ -35,18 +35,7 @@ export class HotelListComponent implements OnInit {
 
   ngOnInit() {
 
-    const a = interval(1000).pipe(
-      take(3),
-      tap((valeur) => console.log('a: ', a))
 
-    )
-
-    const b = interval(1000).pipe(
-      take(3),
-      tap((valeur) => console.log('b: ', b))
-    )
-
-    merge(a, b).subscribe(console.log)
 
     this.hotels$ = this.hotelListService.hotelsWithCategories$.pipe(
       catchError((err) => {
