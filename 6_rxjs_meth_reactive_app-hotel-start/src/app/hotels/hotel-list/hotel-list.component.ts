@@ -36,7 +36,7 @@ export class HotelListComponent implements OnInit {
   ngOnInit() {
 
 
-    this.hotels$ = this.hotelListService.hotelsWithCategories$.pipe(
+    this.hotels$ = this.hotelListService.hotelsWithAdd$.pipe(
       catchError((err) => {
         // this.errMsg = err
         this.errMsgSubject.next(err)

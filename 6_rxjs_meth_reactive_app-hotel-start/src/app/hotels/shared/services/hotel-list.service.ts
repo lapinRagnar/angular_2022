@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { IHotel } from '../models/hotel';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Observable, throwError, of, combineLatest } from 'rxjs';
-import { catchError, map, tap, shareReplay } from 'rxjs/operators';
+import { Observable, throwError, of, combineLatest, Subject, merge } from 'rxjs';
+import { catchError, map, tap, shareReplay, scan } from 'rxjs/operators';
 import { Category } from '../models/category';
 
 
@@ -26,15 +26,31 @@ export class HotelListService {
         price: hotel.price * 1.5,
         category: categories.find(category => category.id === hotel.categoryId)?.name
 
-      }) as IHotel )),
-
-      shareReplay(1)
-
+      }) as IHotel ))
     )
+  
 
+
+  private hotelInsertedSubject = new Subject<IHotel>() 
+  public hotelInserted$ = this.hotelInsertedSubject.asObservable()
+
+  public hotelsWithAdd$ = merge(
+    this.hotelsWithCategories$,
+    this.hotelInserted$
+  ).pipe(
+    scan((acc: IHotel[], value: IHotel) => {
+      return [...acc, value]
+    }),
+    shareReplay(1)
+  )
 
   constructor(private http: HttpClient) {
 
+  }
+
+  public addHotel(newHotel: IHotel): void {
+    newHotel = this.transformHotel(newHotel)
+    this.hotelInsertedSubject.next(newHotel)
   }
 
   public getHotels(): Observable<IHotel[]> {
@@ -57,11 +73,7 @@ export class HotelListService {
   }
 
   public createHotel(hotel: IHotel): Observable<IHotel> {
-    hotel = {
-      ...hotel,
-      imageUrl: 'assets/img/hotel-room.jpg',
-      id: null
-    };
+    hotel = this.transformHotel(hotel)
     return this.http.post<IHotel>(this.HOTEL_API_URL, hotel).pipe(
       catchError(this.handleError)
     );
@@ -81,6 +93,14 @@ export class HotelListService {
     return this.http.delete<IHotel>(url).pipe(
       catchError(this.handleError)
     );
+  }
+
+  private transformHotel(hotel: IHotel): IHotel {
+    return {
+      ...hotel,
+      imageUrl: 'assets/img/hotel-room.jpg',
+      id: null
+    };
   }
 
   private getDefaultHotel(): IHotel {
