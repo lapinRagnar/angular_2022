@@ -1,8 +1,8 @@
-import { Observable, of, EMPTY, Subject, combineLatest, BehaviorSubject, interval } from 'rxjs';
+import { Observable, of, EMPTY, Subject, combineLatest, BehaviorSubject, interval, merge } from 'rxjs';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Hotel, IHotel } from '../shared/models/hotel';
 import { HotelListService } from '../shared/services/hotel-list.service';
-import { map, catchError, take, shareReplay } from 'rxjs/operators';
+import { map, catchError, take, shareReplay, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-hotel-list',
@@ -34,6 +34,19 @@ export class HotelListComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    const a = interval(1000).pipe(
+      take(3),
+      tap((valeur) => console.log('a: ', a))
+
+    )
+
+    const b = interval(1000).pipe(
+      take(3),
+      tap((valeur) => console.log('b: ', b))
+    )
+
+    merge(a, b).subscribe(console.log)
 
     this.hotels$ = this.hotelListService.hotelsWithCategories$.pipe(
       catchError((err) => {
