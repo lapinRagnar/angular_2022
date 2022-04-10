@@ -9,13 +9,17 @@ register component page oooh
                 </p>
                 background errors are here
 
-                <form action="">
+                <form action="" 
+                    [formGroup]="form"
+                    (ngSubmit)="onSubmit()"    
+                >
                     <fieldset>
                         <fieldset class="form-group">
                             <input 
                                 type="text" 
                                 class="form-control form-control-lg"
-                                placeholder="username"    
+                                placeholder="username"
+                                formControlName="username"    
                             >
                         </fieldset>
                     </fieldset>
@@ -26,6 +30,7 @@ register component page oooh
                                 type="email" 
                                 class="form-control form-control-lg"
                                 placeholder="email"    
+                                formControlName="email"
                             >
                         </fieldset>
                     </fieldset>
@@ -34,7 +39,8 @@ register component page oooh
                             <input 
                                 type="password" 
                                 class="form-control form-control-lg"
-                                placeholder="password"    
+                                placeholder="password" 
+                                formControlName="password"   
                             >
                         </fieldset>
                     </fieldset>
