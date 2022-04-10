@@ -1,8 +1,11 @@
-import { RouterModule } from '@angular/router';
-import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+
 import { RegisterComponent } from "../components/register/register.component";
+import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
+import { reducers } from './store/reducer';
 
 const routes = [
     {path: 'register', component: RegisterComponent}
@@ -12,7 +15,8 @@ const routes = [
     imports: [
         CommonModule, 
         RouterModule.forChild(routes),
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        StoreModule.forFeature('auth', reducers)
     ],
     declarations: [RegisterComponent]
 })
