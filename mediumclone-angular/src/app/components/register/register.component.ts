@@ -5,6 +5,8 @@ import {
     Validators } 
     
     from "@angular/forms";
+import { Store } from "@ngrx/store";
+import { registerAction } from "src/app/auth/store/actions";
 
 @Component({
     selector: 'mc-register',
@@ -15,7 +17,7 @@ export class RegisterComponent implements OnInit {
 
     form = new FormGroup({})
 
-    constructor(private fb: FormBuilder) {
+    constructor(private fb: FormBuilder, private store: Store) {
 
     }
 
@@ -35,6 +37,7 @@ export class RegisterComponent implements OnInit {
 
     onSubmit(): void {
         console.log('submit: ', this.form.value);
+        this.store.dispatch(registerAction(this.form.value))
         
     }
 }
