@@ -2,11 +2,13 @@ import { Injectable } from "@angular/core";
 import { of, catchError } from 'rxjs';
 import { switchMap, map } from 'rxjs/operators';
 import { createEffect, Actions, ofType } from "@ngrx/effects"
+import { HttpErrorResponse } from '@angular/common/http';
 
 import { registerAction, registerFailureAction } from "../actions/register.actions";
 import { registerSuccessAction } from './../actions/register.actions';
 import { AuthService } from './../../services/auth.service';
 import { CurrentUserInterface } from './../../../shared/types/currentUser.interface';
+import { BackendErrorsInterface } from './../../../shared/types/backendErrors.interface';
 
 @Injectable()
 export class RegisterEffect {
@@ -19,9 +21,12 @@ export class RegisterEffect {
                     map((currentUser: CurrentUserInterface) => {
                         return registerSuccessAction({currentUser})
                     }),
-                    catchError(() => {
-                        return of(registerFailureAction())
+                    catchError((errorResponse: HttpErrorResponse) => {
+                        return of(registerFailureAction({errors: errorResponse.error.errors}))
                     })
+                    // catchError((errors: BackendErrorsInterface) => {
+                    //     return of(registerFailureAction({errors}))
+                    // })
                 )
             } )
         )
