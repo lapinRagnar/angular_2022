@@ -1,12 +1,10 @@
+import { select, Store } from "@ngrx/store";
+import { Observable, of } from 'rxjs';
 import { Component, OnInit } from "@angular/core";
-import { 
-    FormBuilder, 
-    FormGroup, 
-    Validators } 
-    
-    from "@angular/forms";
-import { Store } from "@ngrx/store";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+
 import { registerAction } from "src/app/auth/store/actions";
+import { isSubmittingSelector } from './../../auth/store/selectors';
 
 @Component({
     selector: 'mc-register',
@@ -16,6 +14,7 @@ import { registerAction } from "src/app/auth/store/actions";
 export class RegisterComponent implements OnInit {
 
     form = new FormGroup({})
+    isSubmitting$!: Observable<boolean> 
 
     constructor(private fb: FormBuilder, private store: Store) {
 
@@ -23,6 +22,15 @@ export class RegisterComponent implements OnInit {
 
     ngOnInit():void {
         this.initializeForm()
+        this.initializeValues()
+    }
+
+    initializeValues(): void {
+
+        // this.isSubmitting$ = this.store.select(isSubmittingSelector) est l'equivalent de 
+        this.isSubmitting$ = this.store.pipe(select(isSubmittingSelector))          // nouveau syntax rxjs
+        console.log("is submitting: ", this.isSubmitting$);
+        
     }
 
     initializeForm(): void {

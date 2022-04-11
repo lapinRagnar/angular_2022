@@ -1,5 +1,8 @@
 register component page oooh
 <div class="auth-page">
+
+    ========= {{ isSubmitting$ | async }} ======
+
     <div class="container page">
         <div class="row">
             <div class="col-md-6 offset-md-3 col-xs-12">
@@ -45,7 +48,13 @@ register component page oooh
                         </fieldset>
                     </fieldset>
 
-                    <button class="btn btn-primary btn-lg pull-xs-right" type="submit">Sign Up</button>
+                    <button 
+                        class="btn btn-primary btn-lg pull-xs-right" 
+                        type="submit"
+                        [disabled]="isSubmitting$ | async"
+                        >
+                        Sign Up
+                    </button>
 
                 </form>
 
