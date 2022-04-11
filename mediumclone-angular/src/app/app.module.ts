@@ -1,12 +1,13 @@
+import { HttpClientModule } from '@angular/common/http';
 import { environment } from './../../../6_rxjs_et_angular/src/environments/environment';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { AuthModule } from './auth/auth.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { AuthModule } from './auth/auth.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     AuthModule,
     StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument({
