@@ -1,3 +1,4 @@
+import { EffectsModule } from '@ngrx/effects';
 import { HttpClientModule } from '@angular/common/http';
 import { environment } from './../../../6_rxjs_et_angular/src/environments/environment';
 import { NgModule } from '@angular/core';
@@ -23,7 +24,8 @@ import { AppComponent } from './app.component';
       maxAge: 25,                               // Retains last 25 states
       logOnly: environment.production,          // Restrict extension to log-only mode
       autoPause: true                           // Pauses recording actions and state changes when the extension window is not open
-    })
+    }),
+    EffectsModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent]

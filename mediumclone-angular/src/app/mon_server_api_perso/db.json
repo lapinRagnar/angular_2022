@@ -77,6 +77,23 @@
       "email": "",
       "password": "",
       "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "username": "",
+      "email": "",
+      "password": "",
+      "id": 4
+    },
+    {
+      "user": {
+        "username": "",
+        "email": "",
+        "password": ""
+      },
+      "id": 5
     }
   ]
 }

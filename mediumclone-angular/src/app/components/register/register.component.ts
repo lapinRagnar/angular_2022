@@ -1,12 +1,13 @@
-import { CurrentUserInterface } from './../../shared/types/currentUser.interface';
 import { select, Store } from "@ngrx/store";
 import { Observable, of } from 'rxjs';
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
-import { registerAction } from "src/app/auth/store/actions";
+import { registerAction } from "src/app/auth/store/actions/register.actions";
 import { isSubmittingSelector } from './../../auth/store/selectors';
 import { AuthService } from './../../auth/services/auth.service';           // ceci on va remplacer par register effect prochainement
+import { CurrentUserInterface } from './../../shared/types/currentUser.interface';
+import { RegisterRequestInterface } from 'src/app/auth/types/registerRequest.interface';
 
 @Component({
     selector: 'mc-register',
@@ -52,15 +53,18 @@ export class RegisterComponent implements OnInit {
 
     onSubmit(): void {
         console.log('submit: ', this.form.value);
-        this.store.dispatch(registerAction(this.form.value))
-
-        // ceci on va remplacer par register effect prochainement
-        this.authService
-            .register(this.form.value)
-            .subscribe((currentUser: CurrentUserInterface) => {
-                console.log("current user : ", currentUser);
-                
-            })
         
+        // ceci on va remplacer par register effect prochainement
+        // this.authService
+        //     .register(this.form.value)
+        //     .subscribe((currentUser: CurrentUserInterface) => {
+        //         console.log("current user : ", currentUser);
+            
+        //     })
+        
+        const request: RegisterRequestInterface = {
+            user: this.form.value
+        }    
+        this.store.dispatch(registerAction({request}))
     }
 }
