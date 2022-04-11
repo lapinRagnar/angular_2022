@@ -10,7 +10,13 @@ register component page oooh
                 <p class="text-xs-center">
                     <a [routerLink]="['/login']">Have an account?</a>
                 </p>
-                background errors are here
+                background errors are 
+                
+                <mc-backend-error-messages *ngIf="backendErrors$ | async"
+                
+                >
+
+                </mc-backend-error-messages>
 
                 <form action="" 
                     [formGroup]="form"

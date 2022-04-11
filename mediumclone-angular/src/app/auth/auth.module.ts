@@ -1,3 +1,4 @@
+import { BackendErrorMessagesModule } from './../shared/modules/backendErrorMessages/backendErrorMessages.module';
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { EffectsModule } from "@ngrx/effects"
@@ -20,7 +21,8 @@ const routes = [
         RouterModule.forChild(routes),
         ReactiveFormsModule,
         StoreModule.forFeature('auth', reducers),
-        EffectsModule.forFeature([RegisterEffect])
+        EffectsModule.forFeature([RegisterEffect]),
+        BackendErrorMessagesModule
     ],
     declarations: [RegisterComponent],
     providers: [AuthService]

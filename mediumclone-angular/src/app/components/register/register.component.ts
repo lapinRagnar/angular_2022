@@ -4,10 +4,11 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 import { registerAction } from "src/app/auth/store/actions/register.actions";
-import { isSubmittingSelector } from './../../auth/store/selectors';
+import { isSubmittingSelector, validationErrorsSelector } from './../../auth/store/selectors';
 import { AuthService } from './../../auth/services/auth.service';           // ceci on va remplacer par register effect prochainement
 import { CurrentUserInterface } from './../../shared/types/currentUser.interface';
 import { RegisterRequestInterface } from 'src/app/auth/types/registerRequest.interface';
+import { BackendErrorsInterface } from "src/app/shared/types/backendErrors.interface";
 
 @Component({
     selector: 'mc-register',
@@ -18,6 +19,8 @@ export class RegisterComponent implements OnInit {
 
     form = new FormGroup({})
     isSubmitting$!: Observable<boolean> 
+
+    backendErrors$!: Observable<BackendErrorsInterface | null>
 
     constructor(
         private fb: FormBuilder, 
@@ -38,6 +41,9 @@ export class RegisterComponent implements OnInit {
         // this.isSubmitting$ = this.store.select(isSubmittingSelector) est l'equivalent de 
         this.isSubmitting$ = this.store.pipe(select(isSubmittingSelector))          // nouveau syntax rxjs
         console.log("is submitting: ", this.isSubmitting$);
+        this.backendErrors$ = this.store.pipe(
+            select(validationErrorsSelector)
+        )
         
     }
 
