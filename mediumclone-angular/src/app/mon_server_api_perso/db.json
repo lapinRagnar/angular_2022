@@ -1,0 +1,82 @@
+{
+  "contacts": [
+    {
+      "id": "1",
+      "name": "nom 1",
+      "email": "test@email.fr",
+      "photo": "https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      "mobile": "01 10 00 00 00",
+      "company": "entreprise 1",
+      "title": "youtuber",
+      "groupId": "3"
+    },
+    {
+      "id": "2",
+      "name": "nom 2",
+      "email": "test@email.fr",
+      "photo": "https://i.pinimg.com/originals/6f/5e/13/6f5e1344a96a22a14f79bd2a7b4723a8.png",
+      "mobile": "01 10 00 00 00",
+      "company": "entreprise 1",
+      "title": "mathematicien",
+      "groupId": "3"
+    },
+    {
+      "id": "3",
+      "name": "nom 3",
+      "email": "test@email.fr",
+      "photo": "https://story.backmarket.fr/wp-content/uploads/sites/9/2020/07/pexels-photo-735911-928x580.jpeg",
+      "mobile": "01 10 00 00 00",
+      "company": "entreprise 1",
+      "title": "mathematicien",
+      "groupId": "3"
+    },
+    {
+      "id": "4",
+      "name": "nom 4",
+      "email": "test@email.fr",
+      "photo": "https://geo.img.pmdstatic.net/fit/http.3A.2F.2Fprd2-bone-image.2Es3-website-eu-west-1.2Eamazonaws.2Ecom.2FGEO.2Fvar.2Fgeo.2Fstorage.2Fimages.2Fmedia.2Fsa-domestication-n-a-pas-emousse-l-instinct-de-ce-chasseur-hors-pair.2F2052028-1-fre-FR.2Fsa-domestication-n-a-pas-emousse-l-instinct-de-ce-chasseur-hors-pair.2Ejpg/1200x630/cr/wqkgRGF1Z2lyZGFzIFRvbWFzIFJhY3lzIC8gR2V0dHkgSW1hZ2VzIC8gR0VP/chat-quand-minou-devient-un-tueur-en-serie.jpg",
+      "mobile": "01 10 00 00 00",
+      "company": "entreprise 1",
+      "title": "mathematicien",
+      "groupId": "3"
+    },
+    {
+      "id": "5",
+      "name": "nom 5",
+      "email": "test@email.fr",
+      "photo": "https://www.santevet.com/upload/admin/images/article/Chat%202/portrait_chat/les_5_sens_du_chat.jpg",
+      "mobile": "01 10 00 00 00",
+      "company": "entreprise 1",
+      "title": "mathematicien",
+      "groupId": "3"
+    }
+  ],
+  "groups": [
+    {
+      "id": "1",
+      "name": "youtuber"
+    },
+    {
+      "id": "2",
+      "name": "mathematicien"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "lapin@gmail.com",
+      "created": "1-1-2022",
+      "updateAt": "1-1-2022",
+      "username": "lapin",
+      "bio": "",
+      "image": "",
+      "token": ""
+    },
+    {
+      "username": "",
+      "email": "",
+      "password": "",
+      "id": 2
+    }
+  ]
+}
