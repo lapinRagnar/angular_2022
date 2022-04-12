@@ -126,6 +126,14 @@
         "password": "aaaaaaaa"
       },
       "id": 9
+    },
+    {
+      "user": {
+        "username": "lalala",
+        "email": "lalala@email.fr",
+        "password": "sfjqkflqf"
+      },
+      "id": 10
     }
   ]
 }

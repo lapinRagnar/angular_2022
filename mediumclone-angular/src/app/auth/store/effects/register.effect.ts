@@ -1,6 +1,7 @@
+import { Router } from '@angular/router';
 import { PersistanceService } from './../../services/persistance.service';
 import { Injectable } from "@angular/core";
-import { of, catchError } from 'rxjs';
+import { of, catchError, tap } from 'rxjs';
 import { switchMap, map } from 'rxjs/operators';
 import { createEffect, Actions, ofType } from "@ngrx/effects"
 import { HttpErrorResponse } from '@angular/common/http';
@@ -39,9 +40,20 @@ export class RegisterEffect {
     
     )
 
+    redirectAfterSubmit$ = createEffect(
+        () => this.actions$.pipe(
+            ofType(registerSuccessAction),
+            tap(() => {
+                this.router.navigateByUrl('/')
+            })
+        ),
+        {dispatch: false}
+    )
+
     constructor(
         private actions$: Actions, 
         private authService: AuthService,
-        private persistanceService: PersistanceService
+        private persistanceService: PersistanceService,
+        private router: Router
     ) {}
 }
