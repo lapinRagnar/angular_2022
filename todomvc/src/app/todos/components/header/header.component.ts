@@ -10,9 +10,11 @@ export class HeaderComponent {
     text: string = ""
 
     constructor(private todoService: TodosService) {
-        this.todoService.todos$.subscribe((todos) => {
-            console.log('todo : ', todos)
-        })
+
+        // this.todoService.todos$.subscribe((todos) => {
+        //     console.log('todo : ', todos)
+        // })
+
     }
 
     changeText(event: Event): void {
@@ -22,8 +24,9 @@ export class HeaderComponent {
     }
 
     addTodo():void {
-        console.log('ajouter todo ', this.text);
+        // console.log('ajouter todo ', this.text);
         this.todoService.addTodo(this.text)
+        this.text = ''
         
     }
 
