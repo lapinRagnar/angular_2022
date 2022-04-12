@@ -19,7 +19,7 @@ export class TodosService {
 
         const newTodo: TodoInterface = {
             text,
-            isCompleted: false,
+            isCompleted: true,
             id: Math.random().toString(),
         }
 

@@ -7,7 +7,7 @@
         type="checkbox" 
         id="toggle-all" 
         class="toggle-all" 
-        
+        [checked]="isAllTodosSelected$ | async"
     >
     <label for="toggle-all">mark all as completed</label>
 
