@@ -10,6 +10,7 @@ import { StoreModule } from '@ngrx/store';
 import { reducers } from './store/reducer';
 import { AuthService } from './services/auth.service';
 import { RegisterEffect } from './store/effects/register.effect';
+import { PersistanceService } from './services/persistance.service';
 
 const routes = [
     {path: 'register', component: RegisterComponent}
@@ -25,6 +26,6 @@ const routes = [
         BackendErrorMessagesModule
     ],
     declarations: [RegisterComponent],
-    providers: [AuthService]
+    providers: [AuthService, PersistanceService]
 })
 export class AuthModule {}

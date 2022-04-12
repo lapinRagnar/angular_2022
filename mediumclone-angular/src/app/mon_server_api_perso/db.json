@@ -118,6 +118,14 @@
         "password": ""
       },
       "id": 8
+    },
+    {
+      "user": {
+        "username": "lapin",
+        "email": "lapinragnar@gmail.com",
+        "password": "aaaaaaaa"
+      },
+      "id": 9
     }
   ]
 }
