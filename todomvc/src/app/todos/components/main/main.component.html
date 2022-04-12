@@ -1,9 +1,13 @@
-Bonjour
-{{ this.visibleTodos$ | async | json }}
+<!-- Bonjour
+{{ this.visibleTodos$ | async | json }} -->
 
 <ul class="todo-list">
-    <li *ngFor="let todo of visibleTodos$ | async">
-        {{ todo.text }}
-    </li>
+    <!-- <app-todos-todo *ngFor="let todo of visibleTodos$ | async" [todo]="todo" > </app-todos-todo> -->
+    <app-todos-todo 
+        *ngFor="let todo of visibleTodos$ | async"
+        [todo]="todo" 
+    >
+    
+    </app-todos-todo>
 </ul>
 
