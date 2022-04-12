@@ -1,6 +1,6 @@
 import { map } from 'rxjs/operators';
 import { Component } from '@angular/core';
-import { Observable, combineLatest, of, forkJoin } from 'rxjs';
+import { Observable, combineLatest, of, forkJoin, BehaviorSubject } from 'rxjs';
 
 import { TodoInterface } from 'src/app/todos/types/todo.interface';
 import { FilterEnum } from './../../types/filter.enum';
@@ -13,8 +13,13 @@ import { TodosService } from 'src/app/todos/services/todos.service';
 export class MainComponent {
 
     visibleTodos$: Observable<any>
+    noTodoClass$: Observable<boolean>
 
     constructor(private todosService: TodosService) {
+
+        this.noTodoClass$ = this.todosService.todos$.pipe(
+            map((todos => todos.length === 0))
+        )
 
         this.visibleTodos$ = combineLatest<[TodoInterface[], FilterEnum]>([this.todosService.todos$, this.todosService.filter$])  
         .pipe(

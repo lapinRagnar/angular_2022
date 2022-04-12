@@ -1,13 +1,25 @@
 <!-- Bonjour
 {{ this.visibleTodos$ | async | json }} -->
 
-<ul class="todo-list">
-    <!-- <app-todos-todo *ngFor="let todo of visibleTodos$ | async" [todo]="todo" > </app-todos-todo> -->
-    <app-todos-todo 
+<section class="main" [ngClass]="{hidden: noTodoClass$ | async}" >
+
+    <input 
+        type="checkbox" 
+        id="toggle-all" 
+        class="toggle-all" 
+        
+    >
+    <label for="toggle-all">mark all as completed</label>
+
+    <ul class="todo-list">
+        
+        <app-todos-todo 
         *ngFor="let todo of visibleTodos$ | async"
         [todo]="todo" 
-    >
-    
-    </app-todos-todo>
-</ul>
+        >
+        
+        </app-todos-todo>
+    </ul>
 
+
+</section>
