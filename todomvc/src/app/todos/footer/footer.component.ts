@@ -38,9 +38,10 @@ export class FooterComponent {
         this.filter$ = this.todoService.filter$
     }
 
-    changeFilter(event: Event, filterEnum: FilterEnum): void {
+    changeFilter(event: Event, filterName: FilterEnum): void {
         event.preventDefault()
-        console.log('change filter ', filterEnum);
+        console.log('change filter ', filterName);
+        this.todoService.changeFilter(filterName)
         
     }
     

@@ -38,4 +38,8 @@ export class TodosService {
         
     }
 
+    changeFilter(filterName: FilterEnum): void {
+        this.filter$.next(filterName)
+    }
+
 }
