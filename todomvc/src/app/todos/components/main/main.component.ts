@@ -1,6 +1,6 @@
 import { map } from 'rxjs/operators';
 import { Component } from '@angular/core';
-import { Observable, combineLatest, of, forkJoin, BehaviorSubject } from 'rxjs';
+import { Observable, combineLatest} from 'rxjs';
 
 import { TodoInterface } from 'src/app/todos/types/todo.interface';
 import { FilterEnum } from './../../types/filter.enum';
@@ -30,8 +30,6 @@ export class MainComponent {
         .pipe(
             map(([todos, filter]: [TodoInterface[], FilterEnum]) => {
                 
-                console.log('mikambana ', todos, filter)
-
                 if (filter === FilterEnum.active) {
                     return todos.filter(todo => !todo.isCompleted)
                 } else if (filter === FilterEnum.completed) {
@@ -41,5 +39,10 @@ export class MainComponent {
                 return todos
             })
         )
+    }
+
+    toggleAllTodos(event: Event): void {
+        const target = event.target as HTMLInputElement
+        this.todosService.toggleAll(target.checked)
     }
 }
