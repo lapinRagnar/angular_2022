@@ -15,6 +15,7 @@ export class MainComponent {
     visibleTodos$: Observable<any>
     noTodoClass$: Observable<boolean>
     isAllTodosSelected$: Observable<any>
+    editingId: string | null = null 
 
     constructor(private todosService: TodosService) {
 
@@ -45,4 +46,9 @@ export class MainComponent {
         const target = event.target as HTMLInputElement
         this.todosService.toggleAll(target.checked)
     }
+
+    setEditingId(editingId: string | null):void {
+        this.editingId = editingId
+    }
+
 }
