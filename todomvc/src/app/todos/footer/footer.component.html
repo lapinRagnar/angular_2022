@@ -6,4 +6,36 @@
         <strong> {{ activeCount$ | async}} </strong>
         {{ itemsLeftText$ | async }}
     </span>
+    <ul class="filters">
+        <li>
+            <a 
+                href="/" 
+                [ngClass]="{ selected: (filter$ | async) === filterEnum.all}" 
+                (click)="changeFilter($event, filterEnum.all) "
+            >
+                all   
+            </a>
+        </li>
+
+        <li>
+            <a 
+                href="/" 
+                [ngClass]="{ selected: true }" 
+                (click)="changeFilter($event, filterEnum.active) "
+            >
+                active   
+            </a>
+        </li>
+
+        <li>
+            <a 
+                href="/" 
+                [ngClass]="{ selected: true }" 
+                (click)="changeFilter($event, filterEnum.completed) "
+            >
+                completed   
+            </a>
+        </li>
+
+    </ul>
 </footer>
