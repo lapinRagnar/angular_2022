@@ -13,7 +13,7 @@
   <mat-card-actions>
     <button 
       mat-icon-button
-      color="warn"
+      [color]=" pet.favorite ? 'warn' : '' "
       >
       <mat-icon>favorite</mat-icon>
     </button>
