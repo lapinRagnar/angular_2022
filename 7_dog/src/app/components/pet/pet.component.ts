@@ -13,6 +13,8 @@ export class PetComponent implements OnInit {
 
   @Output() onAddFavorite: EventEmitter<PetInterface> = new EventEmitter()
 
+  @Output() onDeletePet: EventEmitter<PetInterface> = new EventEmitter()
+
   constructor() { }
 
   ngOnInit(): void {
@@ -21,6 +23,12 @@ export class PetComponent implements OnInit {
   toggleCoeur(): void {
     console.log("clique sur favorite");
     this.onAddFavorite.emit()
+  }
+
+  OnSupprimerBouton(pet: PetInterface): void {
+    console.log("je clique sur le bouton supprimé", pet);
+    this.onDeletePet.emit(pet)
+    
   }
 
 }

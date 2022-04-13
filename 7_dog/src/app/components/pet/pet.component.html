@@ -19,7 +19,12 @@
       <mat-icon>favorite</mat-icon>
     </button>
 
-    <button mat-button>DELETE</button>
+    <button 
+      mat-button
+      (click)="OnSupprimerBouton(pet)"
+    >
+      DELETE
+  </button>
   </mat-card-actions>
 </mat-card>
   
