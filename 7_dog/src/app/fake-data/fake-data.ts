@@ -1,4 +1,6 @@
-export const FakeData = [
+import { PetInterface } from './../interfaces/pet.interface';
+
+export const FakeData: PetInterface[]  = [
     {
         id: 1, 
         breed: 'Shiba Inu',
