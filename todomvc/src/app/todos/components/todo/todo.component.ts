@@ -38,6 +38,7 @@ export class TodoComponent implements OnInit {
 
     toggleTodo(): void {
         console.log("quand on change - on toggle");
+        this.todosService.toggleTodo(this.todoProps.id)
         
     }
 
