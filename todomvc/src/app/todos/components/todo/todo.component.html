@@ -15,7 +15,8 @@
     <ng-container *ngIf="isEditingProps">
         <input 
             type="text" 
-            class="edit" 
+            class="edit"
+            #textInput 
             [value]="editingText" 
             (keyup)="changeText($event)"
             (keyup.enter)="changeTodo()"
