@@ -1,9 +1,3 @@
-<p>pets works!</p>
 
+<app-pet *ngFor="let pet of pets" [pet]="pet" ></app-pet>
 
-
-<app-pet></app-pet>
-
-<p *ngFor="let pet of pets">
-    le nom : {{ pet.breed }}
-</p>
