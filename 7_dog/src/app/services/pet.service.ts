@@ -16,7 +16,8 @@ const httpOptions = {
 })
 export class PetService {
 
-  private url = "https://6256ef9a6ea7037005426160.mockapi.io/pets"
+  // private url = "https://6256ef9a6ea7037005426160.mockapi.io/pets"
+  private url = "http://localhost:9000/pets"
 
   constructor(private http: HttpClient) { }
 
