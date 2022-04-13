@@ -1,9 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { PetInterface } from 'src/app/interfaces/pet.interface';
 import { FakeData } from 'src/app/fake-data/fake-data';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json'
+  })
+}
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +24,13 @@ export class PetService {
     // const pets = of(FakeData)
     // return pets
     return this.http.get<PetInterface[]>(this.url)
+  }
+
+  updatePetFavorite(pet: PetInterface): Observable<PetInterface> {
+    const updateUrl = `${this.url}/${pet.id}`
+    console.log(updateUrl);
+    
+    return this.http.put<PetInterface>(updateUrl, pet, httpOptions)
   }
 
 }

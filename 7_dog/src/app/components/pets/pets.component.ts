@@ -20,4 +20,9 @@ export class PetsComponent implements OnInit {
     this.petService.getPets().subscribe(pets => this.pets = pets)
   }
 
+  addFavorite(pet: PetInterface):void {
+    pet.favorite = !pet.favorite
+    this.petService.updatePetFavorite(pet).subscribe()
+  }
+
 }
