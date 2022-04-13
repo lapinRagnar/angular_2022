@@ -1,4 +1,10 @@
 <!-- c'est le composant enfant -->
 
-<app-pet *ngFor="let pet of pets" [pet]="pet" ></app-pet>
+<mat-grid-list cols="4" rowHeight="500px">
+    <mat-grid-tile *ngFor="let pet of pets" >
+        
+        <app-pet  [pet]="pet" ></app-pet>
+
+    </mat-grid-tile>
+</mat-grid-list>
 
