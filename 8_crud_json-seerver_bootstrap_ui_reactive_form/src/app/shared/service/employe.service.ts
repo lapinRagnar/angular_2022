@@ -19,7 +19,12 @@ export class EmpolyeService {
     )
   }
 
-  getEmploye(data: EmployeInterface): Observable<EmployeInterface> {
+  // getEmploye(data: EmployeInterface): Observable<EmployeInterface> {
+  //   return this.http.get<EmployeInterface>(this.url).pipe(
+  //     map((res: EmployeInterface) => {return res})
+  //   )
+  // }
+  getEmploye(): Observable<EmployeInterface> {
     return this.http.get<EmployeInterface>(this.url).pipe(
       map((res: EmployeInterface) => {return res})
     )

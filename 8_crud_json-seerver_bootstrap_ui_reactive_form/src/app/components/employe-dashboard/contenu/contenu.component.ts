@@ -1,4 +1,7 @@
+import { EmployeInterface } from './../../../shared/types/employe.interface';
 import { Component, OnInit } from '@angular/core';
+
+import { EmpolyeService } from './../../../shared/service/employe.service';
 
 @Component({
   selector: 'app-contenu',
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContenuComponent implements OnInit {
 
-  constructor() { }
+  employeData !: any
+
+  constructor(private employeService : EmpolyeService) { }
 
   ngOnInit(): void {
+    this.getAllEmploye()
+  }
+
+  getAllEmploye() {
+    this.employeService.getEmploye().subscribe(
+      res => {
+        this.employeData = res
+      }
+      
+    )
   }
 
 }
