@@ -31,13 +31,13 @@ export class EmpolyeService {
   }
 
   updateEmploye(data: EmployeInterface, id: number ): Observable<EmployeInterface> {
-    return this.http.put<EmployeInterface>(this.url+id, data).pipe(
+    return this.http.put<EmployeInterface>(this.url+'/'+id, data).pipe(
       map((res: EmployeInterface) => {return res})
     )
   }
 
   deleteEmploye(id: number): Observable<EmployeInterface> {
-    return this.http.delete<EmployeInterface>(this.url + id).pipe(
+    return this.http.delete<EmployeInterface>(this.url + '/'+ id).pipe(
       map((res: EmployeInterface) => {return res})
     )
   }

@@ -27,4 +27,13 @@ export class ContenuComponent implements OnInit {
     )
   }
 
+  deleteEmploye(employe: EmployeInterface) {
+    this.employeService.deleteEmploye(employe.id).subscribe(
+      res => {
+        alert('employe supprimé! ')
+        this.getAllEmploye()
+      }
+    )
+  }
+
 }

@@ -17,10 +17,10 @@
             <td>{{employe.lastName}}</td>
             <td>{{employe.email}}</td>
             <td>{{employe.mobile}}</td>
-            <td>{{employe.salary}} </td>
+            <td>{{employe.salary + " €"}} </td>
             <td>
                 <button class="btn btn-info mx-3">Edit</button>
-                <button class="btn btn-danger">Effacer</button>
+                <button (click)="deleteEmploye(employe)" class="btn btn-danger">Effacer</button>
             </td>
         </tr>
     </tbody>
