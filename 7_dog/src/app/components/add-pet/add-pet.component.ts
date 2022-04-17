@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddPetComponent implements OnInit {
 
+  breed: string = ''
+  url: string = ''
+  description: string = ''
+  favorite: boolean = false
+
+
   constructor() { }
 
   ngOnInit(): void {

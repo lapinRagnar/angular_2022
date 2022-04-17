@@ -1,1 +1,19 @@
-<p>add-pet works!</p>
+<form class="container">
+    <mat-form-field class="add-margin" appearance="fill">
+      <mat-label>breed</mat-label>
+      <input matInput placeholder="shiba inu" [(ngModel)]="breed"  name="breed" >
+    </mat-form-field>
+
+    <mat-form-field class="add-margin" appearance="fill">
+        <mat-label>image url</mat-label>
+        <input matInput [(ngModel)]="url" name="url">
+    </mat-form-field>
+
+    <mat-form-field class="add-margin" appearance="fill">
+        <mat-label>description</mat-label>
+        <input matInput [(ngModel)]="description" name="description">
+    </mat-form-field>
+  
+    <button mat-button >ajouter</button>
+</form>
+  

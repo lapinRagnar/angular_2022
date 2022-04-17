@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { AddPetComponent } from './components/add-pet/add-pet.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { AddPetComponent } from './components/add-pet/add-pet.component';
     MatGridListModule,
     HttpClientModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
