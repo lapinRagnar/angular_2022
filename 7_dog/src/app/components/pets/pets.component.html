@@ -1,6 +1,6 @@
 <!-- c'est le composant enfant -->
 
-<app-add-pet></app-add-pet>
+<app-add-pet (onAddPet)="addPet($event)" ></app-add-pet>
 
 <mat-grid-list cols="4" rowHeight="350px">
     <mat-grid-tile *ngFor="let pet of pets" >

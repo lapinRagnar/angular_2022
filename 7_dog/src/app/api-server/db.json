@@ -90,6 +90,12 @@
       "url": "https://learnenglishteens.britishcouncil.org/sites/teens/files/styles/article/public/field/image/istock_000026063468small.jpg?itok=ygDbIVyV",
       "description": "This intelligent, friendly breed is basically the movie star of the group with starring roles on Full House, Air Bud, and Homeward Bound.",
       "favorite": false
+    },
+    {
+      "breed": "rajako",
+      "url": "https://images.theconversation.com/files/292276/original/file-20190912-190044-1eef468.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop",
+      "description": "rajako",
+      "id": 9
     }
   ]
 }

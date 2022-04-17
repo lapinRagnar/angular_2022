@@ -1,4 +1,4 @@
-<form class="container">
+<form class="container" (ngSubmit)="onSubmit()">
     <mat-form-field class="add-margin" appearance="fill">
       <mat-label>breed</mat-label>
       <input matInput placeholder="shiba inu" [(ngModel)]="breed"  name="breed" >
