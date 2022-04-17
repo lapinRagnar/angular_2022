@@ -47,6 +47,8 @@ export class NavbarComponent implements OnInit {
       res => {
         console.log(res)
         alert("employe bien enregistré! ")
+        let ref = document.getElementById('fermerApresAjoutEmploye')
+        ref?.click()
         this.formValue.reset()
         
       },
