@@ -1,3 +1,4 @@
+import { FormGroup, FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 declare var windows: any
@@ -9,14 +10,21 @@ declare var windows: any
 })
 export class NavbarComponent implements OnInit {
 
-  formModal: any
+  formValue !: FormGroup
 
-  constructor() { }
+
+  constructor(private formbuilder: FormBuilder) { }
 
   ngOnInit(): void {
-    
-    // this.formModal = new window.Bootstrap.Modal
-    // this.formModal = new window.bootstrap.Modal(document.getElementById('myModal'))
+
+    this.formValue = this.formbuilder.group({
+      firstName: [''],
+      lastName: [''],
+      email: [''],
+      mobile: [''],
+      salary: ['']
+    })
+
 
   }
 
