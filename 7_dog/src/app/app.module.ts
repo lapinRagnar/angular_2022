@@ -15,6 +15,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { AddPetComponent } from './components/add-pet/add-pet.component';
 import { FormsModule } from '@angular/forms';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { FormsModule } from '@angular/forms';
     PetComponent,
     PetsComponent,
     AddPetComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
