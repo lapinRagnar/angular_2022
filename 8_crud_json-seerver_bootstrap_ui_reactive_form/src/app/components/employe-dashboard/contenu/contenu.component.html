@@ -19,7 +19,14 @@
             <td>{{employe.mobile}}</td>
             <td>{{employe.salary + " €"}} </td>
             <td>
-                <button class="btn btn-info mx-3">Edit</button>
+                <button 
+                    class="btn btn-info mx-3"
+                    data-bs-toggle="modal" 
+                    data-bs-target="#exampleModal"
+                    (click)="onEditEmploye(employe)"
+                    >
+                    Edit
+                </button>
                 <button (click)="deleteEmploye(employe)" class="btn btn-danger">Effacer</button>
             </td>
         </tr>
