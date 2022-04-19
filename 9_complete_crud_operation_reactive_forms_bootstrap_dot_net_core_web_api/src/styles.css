@@ -1,15 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: slategrey;
+}
+.menu-a-gauche {
+    display: flex;
+    align-items: center;
+}
+
 .header {
+    display: flex;
     width: 100%;
     background-color: lightblue;
-    height: 40px;
+    margin: 0 -10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header li {
+    list-style: none;
+}
+
+.header li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #000;
+}
+
+.push-right {
+    margin-right: 40px;
 }
 
 .menulink {
     padding: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    color: #000;
+
 }
 
 .error {

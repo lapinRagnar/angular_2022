@@ -1,13 +1,33 @@
-<div class="header">
-  <img 
-    width="40" 
-    src="https://previews.123rf.com/images/krasnoshchek/krasnoshchek1605/krasnoshchek160500055/56555901-black-cat-assis-sur-un-fond-blanc-logo-design-illustrations-minimalistes-modernes-ic%C3%B4nes-plates-art.jpg" 
-    alt=""
-    >
 
-  <a routerLink="" class="menulink">home</a>
-  <a routerLink="employee" class="menulink">employee</a>
-  <a routerLink="login" style="float: right" class="menulink">logout</a>
-</div>
+<nav class="navigation">
+
+
+
+  <ul class="header">
+
+  <div class="menu-a-gauche">
+    <li>
+      <img 
+      width="40" 
+      src="https://previews.123rf.com/images/krasnoshchek/krasnoshchek1605/krasnoshchek160500055/56555901-black-cat-assis-sur-un-fond-blanc-logo-design-illustrations-minimalistes-modernes-ic%C3%B4nes-plates-art.jpg" 
+      alt=""
+      >
+    </li>
+
+    <li>
+      <a routerLink="" class="menulink">home</a>
+    </li>
+ 
+    <li>
+      <a routerLink="employee" class="menulink">employee</a>
+    </li>
+  </div>
+
+    <li>
+      <a routerLink="login" style="float: right" class="push-right">logout</a>
+    </li>
+
+  </ul>
+</nav>
 
 <router-outlet></router-outlet>
