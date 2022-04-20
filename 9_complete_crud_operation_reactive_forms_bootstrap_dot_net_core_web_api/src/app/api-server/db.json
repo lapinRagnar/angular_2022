@@ -137,5 +137,42 @@
     "code": "tester",
     "name": "lead test"
     }
+  ], 
+  "employee": [
+    {
+      "code": 1,
+      "name": "lapin",
+      "email": "lapin@gmail.com",
+      "phone": "01 01 00 44 55",
+      "designation": "developper"
+    },
+    {
+      "code": 2,
+      "name": "bitro",
+      "email": "bitro@gmail.com",
+      "phone": "01 01 00 44 55",
+      "designation": "manager"
+    },
+    {
+      "code": 3,
+      "name": "canard",
+      "email": "canard@gmail.com",
+      "phone": "01 01 00 44 55",
+      "designation": "developper"
+    },
+    {
+      "code": 4,
+      "name": "banane",
+      "email": "banane@gmail.com",
+      "phone": "01 01 00 44 55",
+      "designation": "developper"
+    },
+    {
+      "code": 5,
+      "name": "manioc",
+      "email": "manioc@gmail.com",
+      "phone": "01 01 00 44 55",
+      "designation": "tester"
+    }
   ]
 }
