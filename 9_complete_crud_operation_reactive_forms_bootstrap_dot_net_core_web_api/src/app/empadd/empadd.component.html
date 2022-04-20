@@ -49,8 +49,8 @@
                     <label>Designation</label>
                     <select class="form-control" formControlName="designation">
                         <option value="">Select</option>
-                        <option >
-                            
+                        <option *ngFor="let item of designationData" value="{{item.code}}" >
+                            {{ item.name }}
                         </option>
                     </select>
                     <span class="error">Please enter designation</span>
