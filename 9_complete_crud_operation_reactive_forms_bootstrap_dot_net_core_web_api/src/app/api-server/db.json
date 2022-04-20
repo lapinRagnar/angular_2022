@@ -123,5 +123,19 @@
       "mobile": 975454454545,
       "salary": 35454512
     }
+  ],
+  "designation": [
+    {
+    "code": "developper",
+    "name": "developper"
+    },
+    {
+    "code": "manager",
+    "name": "manager"
+    },
+    {
+    "code": "tester",
+    "name": "lead test"
+    }
   ]
 }
