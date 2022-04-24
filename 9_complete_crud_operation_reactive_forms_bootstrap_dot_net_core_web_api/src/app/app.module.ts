@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { EmplistingComponent } from './emplisting/emplisting.component';
 import { EmpaddComponent } from './empadd/empadd.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { EmpaddComponent } from './empadd/empadd.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

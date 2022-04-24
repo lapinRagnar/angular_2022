@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -27,7 +27,16 @@ export class EmployeeService {
   }
 
   saveEmployee(inputData: any) {
-    return this.http.post(this.apiurl, inputData)
+    console.log("je passe par ici!");
+    console.log(inputData);
+    console.log(this.http.post(this.apiurl, inputData));
+    
+    
+    return this.http.post(this.apiurl, inputData, this.httpOptions)
+  }
+
+  httpOptions = {
+    headers: new HttpHeaders({'Content-type': 'application/json'})
   }
 
 }
