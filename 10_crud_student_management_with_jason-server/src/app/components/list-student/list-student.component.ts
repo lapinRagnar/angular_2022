@@ -1,3 +1,4 @@
+import { StudentsService } from './../../services/students.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListStudentComponent implements OnInit {
 
-  constructor() { }
+  studentData: any = []
+
+  constructor(private student: StudentsService ) { }
 
   ngOnInit(): void {
+
+    this.student.getAllStudent().subscribe((allData) => {
+
+      console.log(allData);
+      this.studentData = allData
+      
+    })
   }
 
 }

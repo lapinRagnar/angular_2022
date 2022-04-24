@@ -1,9 +1,9 @@
 {
-    "posts": [
-      { "id": 1, "title": "json-server", "author": "typicode" }
-    ],
-    "comments": [
-      { "id": 1, "body": "some comment", "postId": 1 }
-    ],
-    "profile": { "name": "typicode" }
+    "students": [
+      { "id": 1, "name": "etudiant 1", "email": "etudiant1@email.com" },
+      { "id": 2, "name": "etudiant 2", "email": "etudiant2@email.com" },
+      { "id": 3, "name": "etudiant 3", "email": "etudiant3@email.com" },
+      { "id": 4, "name": "etudiant 4", "email": "etudiant4@email.com" },
+      { "id": 5, "name": "etudiant 5", "email": "etudiant5@email.com" }
+    ]
 }
