@@ -10,6 +10,7 @@ import { ListStudentComponent } from './components/list-student/list-student.com
 import { LoginStudentComponent } from './components/login-student/login-student.component';
 import { RegistrationStudentComponent } from './components/registration-student/registration-student.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

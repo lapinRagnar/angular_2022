@@ -1,9 +1,34 @@
 {
-    "students": [
-      { "id": 1, "name": "etudiant 1", "email": "etudiant1@email.com" },
-      { "id": 2, "name": "etudiant 2", "email": "etudiant2@email.com" },
-      { "id": 3, "name": "etudiant 3", "email": "etudiant3@email.com" },
-      { "id": 4, "name": "etudiant 4", "email": "etudiant4@email.com" },
-      { "id": 5, "name": "etudiant 5", "email": "etudiant5@email.com" }
-    ]
+  "students": [
+    {
+      "id": 1,
+      "name": "etudiant 1",
+      "email": "etudiant1@email.com"
+    },
+    {
+      "id": 2,
+      "name": "etudiant 2",
+      "email": "etudiant2@email.com"
+    },
+    {
+      "id": 3,
+      "name": "etudiant 3",
+      "email": "etudiant3@email.com"
+    },
+    {
+      "id": 4,
+      "name": "etudiant 4",
+      "email": "etudiant4@email.com"
+    },
+    {
+      "id": 5,
+      "name": "etudiant 5",
+      "email": "etudiant5@email.com"
+    },
+    {
+      "name": "salut",
+      "email": "salut@a.fr",
+      "id": 6
+    }
+  ]
 }

@@ -1,1 +1,18 @@
-<h3>add-student works!</h3>
+<h3>ajouter works!</h3>
+
+<form [formGroup]="addStudent" (ngSubmit)="saveData()" >
+
+    <div class="mb-3">
+        <label class="form-label">name</label>
+        <input type="text" class="form-control" placeholder="entre ton nom" formControlName="name">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">email</label>
+      <input type="email" class="form-control" placeholder="entre ton email" formControlName="email">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
