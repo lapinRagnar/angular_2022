@@ -14,6 +14,8 @@ export class AddStudentComponent implements OnInit {
     email: new FormControl('')
   })
 
+  message: boolean = false
+
   constructor(private studentService: StudentsService) { }
 
   ngOnInit(): void {
@@ -24,7 +26,7 @@ export class AddStudentComponent implements OnInit {
     console.log(this.addStudent.value);
     this.studentService.saveStudentData(this.addStudent.value).subscribe((result) => {
       console.log(result);
-      
+      this.message = true
     })
   }
 
