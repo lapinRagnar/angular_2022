@@ -30,4 +30,8 @@ export class AddStudentComponent implements OnInit {
     })
   }
 
+  removeMessage() {
+    this.message = false
+  }
+
 }
