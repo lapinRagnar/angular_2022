@@ -25,7 +25,8 @@ export class AddStudentComponent implements OnInit {
   saveData() {
     console.log(this.addStudent.value);
     this.studentService.saveStudentData(this.addStudent.value).subscribe((result) => {
-      console.log(result);
+      console.log(result)
+      this.addStudent.reset()
       this.message = true
     })
   }
