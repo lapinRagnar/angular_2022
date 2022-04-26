@@ -1,25 +1,46 @@
+
 import { StudentsService } from './../../services/students.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-list-student',
   templateUrl: './list-student.component.html',
   styleUrls: ['./list-student.component.css']
 })
-export class ListStudentComponent implements OnInit {
+export class ListStudentComponent implements OnInit, OnDestroy {
 
   studentData: any = []
+
+  dtOptions:DataTables.Settings = {}
+
+  dtTrigger: Subject<any> = new Subject<any>();
 
   constructor(private student: StudentsService ) { }
 
   ngOnInit(): void {
 
+    this.dtOptions = {
+      pagingType: 'full_numbers',
+      pageLength: 2,
+      // lengthMenu: [5, 10, 15, 50] ,
+      // autoWidth: true ,
+      // processing: true
+    }
+
     this.student.getAllStudent().subscribe((allData) => {
 
       console.log(allData);
       this.studentData = allData
+
+      this.dtTrigger.next(allData);
       
     })
+  }
+
+  ngOnDestroy(): void {
+    // Do not forget to unsubscribe the event
+    this.dtTrigger.unsubscribe();
   }
 
   deleteStudent(student_id: any) {
