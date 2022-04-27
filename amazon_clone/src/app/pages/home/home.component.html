@@ -1,18 +1,1 @@
-<app-products></app-products>
-<div class="products">
-    <div class="product" *ngFor="let product of products">
-        <mat-card class="example-card"> 
-            <mat-card-content>
-                <p>
-                    {{ product.title }}
-                </p>
-                <p>{{ product.price }} €</p>
-            </mat-card-content>
-            <img src="{{product.image}}" alt="" >
-            <mat-card-actions>
-                <button class="bouton_panier" mat-button (click)="addToCart()" >ajouter au panier</button>
-            </mat-card-actions>
-        </mat-card>
-    </div>
-
-</div>
+<app-products [products]="productsParent" ></app-products>

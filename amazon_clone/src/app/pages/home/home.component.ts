@@ -9,7 +9,7 @@ import { ProductsService } from './../../services/products.service';
 })
 export class HomeComponent implements OnInit {
 
-  products : any
+  productsParent : any
 
   constructor(private productsService: ProductsService ) { }
 
@@ -20,13 +20,10 @@ export class HomeComponent implements OnInit {
   getProducts() {
     this.productsService.getProducts().subscribe((result) => {
       console.log(result)
-      this.products = result
+      this.productsParent = result
     })
   }
 
-  addToCart() {
-    console.log("ajouter le panier");
-    
-  }
+
 
 }
