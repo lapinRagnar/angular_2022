@@ -1,7 +1,12 @@
 <div class="header">
     <nav class="header_top">
-      <div class="header_menu">
-        <img class="header_menu_logo" src="https://upload.wikimedia.org/wikipedia/donate/thumb/f/fd/Amazon-logo-white.svg/2560px-Amazon-logo-white.svg.png" alt="">
+      <div class="header_menu" routerLink="/">
+        <img
+
+          class="header_menu_logo" 
+          src="https://upload.wikimedia.org/wikipedia/donate/thumb/f/fd/Amazon-logo-white.svg/2560px-Amazon-logo-white.svg.png" 
+          alt=""
+          >
       </div>
   
       <div class="header_menu_sign_in">
@@ -20,7 +25,7 @@
         </div>
       </div>
       
-      <div class="header_menu_sign_in">
+      <div class="header_menu_sign_in" routerLink="/login" >
         <div class="header_menu_top_item">
           Bonjour, Identifiez-vous
         </div>
@@ -29,7 +34,7 @@
         </div>
       </div>
   
-      <div class="header_menu_sign_in">
+      <div class="header_menu_sign_in" routerLink="/checkout">
         <div class="header_menu_top_item">
           Retour
         </div>
@@ -38,7 +43,7 @@
         </div>
       </div>
   
-      <div class="header_menu_cart">
+      <div class="header_menu_cart" routerLink="/checkout">
         <p class="header_cart_number"> {{ shoppingCart.getCartLength()}} </p>
         <mat-icon>shopping_cart</mat-icon>
       </div>
@@ -48,7 +53,7 @@
   
   <div class="menu">
     <nav class="header_botton">
-      <div class="header_menu_icon">
+      <div class="header_menu_icon" >
         <mat-icon>menu</mat-icon>
       </div>
   

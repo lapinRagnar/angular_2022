@@ -2,9 +2,9 @@
 /* la barre de navigation */
 
 .header {
-    position: fixed;
+    /* position: fixed;
     z-index: 100;
-    top: 0;
+    top: 0; */
     width: 100%;
 }
 .header_top {
@@ -21,6 +21,7 @@
     object-fit: contain;
     width: 100px;
     margin: 12px 20px 0px 2px;
+    cursor: pointer;
 }
 
 
@@ -38,6 +39,7 @@
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
+    cursor: pointer;
 }
 
 .header_menu_top_item  {
@@ -57,6 +59,7 @@
     border: #febd69;
     margin: 0;
     padding: 0;
+    cursor: pointer;
 }
 
 .header_menu_searchbar:hover{
@@ -68,6 +71,7 @@
     width: 700px;
     height: 30px;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .header_menu_searchbar .header_menu_input:focus {
@@ -101,6 +105,7 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    cursor: pointer;
 }
 
 .header_cart_number {
