@@ -37,4 +37,14 @@ export class ShoppingCartService {
     return (items?.reduce((acc: any, item: any) => acc + item.price, 0) ).toFixed(2)
   }
 
+  removeItem(produit: any) {
+    let items = this.getShoppingCartItems()
+    const index = items.findIndex((item: any) => item.id === produit.id)
+
+    if (index>=0) {
+      items.splice(index, 1)
+      return localStorage.setItem('shopping_cart', JSON.stringify(items))
+    }
+  }
+
 }

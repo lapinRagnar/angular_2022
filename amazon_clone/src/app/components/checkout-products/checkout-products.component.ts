@@ -1,5 +1,5 @@
 import { ShoppingCartService } from 'src/app/services/shopping-cart.service';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-checkout-products',
@@ -10,6 +10,7 @@ export class CheckoutProductsComponent implements OnInit {
 
 
   @Input() checkout_products: any
+  @Output() deleteEvent: EventEmitter<any> = new EventEmitter()
 
   constructor(public shoppingCartService: ShoppingCartService) { }
 
@@ -19,7 +20,11 @@ export class CheckoutProductsComponent implements OnInit {
 
 
   removeItem(product: any) {
-
+    console.log("effacer un produit!");
+    this.shoppingCartService.removeItem(product)
+    this.deleteEvent.emit(product)
   }
+
+  
 
 }

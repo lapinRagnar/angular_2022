@@ -6,7 +6,7 @@
         </div>
         <div class="checkout_not_empty">
             <h2>Votre commande</h2>
-            <app-checkout-products [checkout_products]="items" ></app-checkout-products>
+            <app-checkout-products [checkout_products]="items" (deleteEvent)="deleteEventHandler($event)" ></app-checkout-products>
         </div>
     </div>
     <div class="checkout_right">

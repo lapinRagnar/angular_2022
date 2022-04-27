@@ -66,6 +66,17 @@
     height: 20px;
     font-size: 17px;
     border-left: 1px solid gray;
+    cursor: pointer;
+}
+
+
+.checkout_options > a:hover {
+    color: red;
+    background-color:rgb(194, 200, 70);
+}
+
+.checkout_options:hover{
+    transform: scale(1.05)
 }
 
 .tittre_prix {
