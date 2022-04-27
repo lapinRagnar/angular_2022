@@ -16,7 +16,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { LoginComponent } from './pages/login/login.component';
 import { BannerComponent } from './components/banner/banner.component';
-import { ProductsComponent } from './components/products/products.component'
+import { ProductsComponent } from './components/products/products.component';
+import { CheckoutProductsComponent } from './components/checkout-products/checkout-products.component';
+import { CheckoutSubtotalComponent } from './components/checkout-subtotal/checkout-subtotal.component'
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { ProductsComponent } from './components/products/products.component'
     CheckoutComponent,
     LoginComponent,
     BannerComponent,
-    ProductsComponent
+    ProductsComponent,
+    CheckoutProductsComponent,
+    CheckoutSubtotalComponent
   ],
   imports: [
     BrowserModule,
