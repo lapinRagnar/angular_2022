@@ -24,4 +24,9 @@ export class HomeComponent implements OnInit {
     })
   }
 
+  addToCart() {
+    console.log("ajouter le panier");
+    
+  }
+
 }
