@@ -1,6 +1,12 @@
 
 /* la barre de navigation */
 
+.header {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    width: 100%;
+}
 .header_top {
     background-color: #131921;
     height: 60px;
@@ -17,9 +23,7 @@
     margin: 12px 20px 0px 2px;
 }
 
-.header_menu_icon {
 
-}
 
 .header_menu {
     display: flex;

@@ -27,4 +27,9 @@ export class ShoppingCartService {
     return JSON.parse(items)
   }
 
+  getCartLength() {
+    let items = this.getShoppingCartItems()
+    return items ? this.getShoppingCartItems() : 0
+  }
+
 }
