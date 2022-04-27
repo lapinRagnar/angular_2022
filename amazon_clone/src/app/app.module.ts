@@ -4,8 +4,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { mdiMenu } from '@mdi/js';
+
 import {MatIconModule} from '@angular/material/icon';
+import {MatCardModule} from '@angular/material/card'
+import {MatButtonModule} from '@angular/material/button'
+
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -27,7 +30,9 @@ import { BannerComponent } from './components/banner/banner.component'
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
