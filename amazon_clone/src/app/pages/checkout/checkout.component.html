@@ -4,8 +4,12 @@
             <h2>le panier est vide</h2>
             <p>vous n'avez aucun article pour l'instant.</p>
         </div>
+        <div class="checkout_not_empty">
+            <h2>Votre commande</h2>
+            <app-checkout-products [checkout_products]="items" ></app-checkout-products>
+        </div>
     </div>
     <div class="checkout_right">
-
+        <app-checkout-subtotal></app-checkout-subtotal>
     </div>_
 </div>

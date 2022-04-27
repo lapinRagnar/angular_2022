@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { ShoppingCartService } from 'src/app/services/shopping-cart.service';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-checkout-products',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CheckoutProductsComponent implements OnInit {
 
-  constructor() { }
+
+  @Input() checkout_products: any
+
+  constructor(public shoppingCartService: ShoppingCartService) { }
 
   ngOnInit(): void {
+    console.log("on est dans checkout component", this.checkout_products);
+  }
+
+
+  removeItem(product: any) {
+
   }
 
 }

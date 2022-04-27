@@ -1,3 +1,4 @@
+import { ShoppingCartService } from 'src/app/services/shopping-cart.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CheckoutSubtotalComponent implements OnInit {
 
-  constructor() { }
+  constructor(public shoppingCartService: ShoppingCartService ) { }
 
   ngOnInit(): void {
+    
   }
 
 }

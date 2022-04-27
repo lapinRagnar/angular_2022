@@ -32,4 +32,9 @@ export class ShoppingCartService {
     return items ? this.getShoppingCartItems().length : 0
   }
 
+  getTotal() {
+    let items = this.getShoppingCartItems()
+    return (items?.reduce((acc: any, item: any) => acc + item.price, 0) ).toFixed(2)
+  }
+
 }

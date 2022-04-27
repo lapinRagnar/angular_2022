@@ -1,1 +1,15 @@
 <p>checkout-subtotal works!</p>
+<div class="subtotal" *ngIf="shoppingCartService.getCartLength() > 0" >
+
+    <p>
+        Subtotal
+        ({{ shoppingCartService.getCartLength() }} produit(s))
+        <strong> {{ shoppingCartService.getTotal()}} € </strong>
+    </p>
+
+    <div class="subtotal_gift">
+        <input type="checkbox" name="" id="">
+        <p>les cadeaux</p>
+    </div>
+    <button>passer la commande</button>
+</div>

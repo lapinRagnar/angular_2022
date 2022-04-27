@@ -15,6 +15,7 @@ export class CheckoutComponent implements OnInit {
 
   ngOnInit(): void {
     console.log("quantiqué produit selectionné! ",this.shoppingCart.getCartLength().length);
+    this.getShoppingCart()
     
   }
 

@@ -1,1 +1,51 @@
-<p>checkout-products works!</p>
+
+<div class="checkout_products">
+    <p class="price">Prix</p>
+    <div class="checkout_product" *ngFor="let product of checkout_products">
+        <img src="{{product.image}} " alt="" class="checkout_product_img">
+        <div class="checkout_product_info">
+            <p class="checkout_product_title">
+                {{ product.title }}
+            </p>
+
+            <p class="check_out_product_in_stock">En stock!</p>
+            <div class="checkout_product_gift">
+                <input type="checkbox" name="" id="">
+                <p>C'est un cadeau</p>
+                <a href="">Lire....</a>
+            </div>
+
+            <div class="checkout_options">
+                <div class="checkout_dropdown">
+
+                </div>
+
+                <a (click)="removeItem(product)" >Effacer</a>
+                <a href="">enregistrer</a>
+                <a href="">comparer</a>
+
+            </div>
+
+        </div>
+        
+        
+
+        <div class="checkout_product_price" >
+            <h3 >{{ product.price + " €"}}  </h3>
+        </div>
+    
+
+
+        
+    </div>
+
+    <div class="checkout_product_subtotal">
+        <p class="ligne"></p>
+        <p>
+            sous-total
+            ( {{shoppingCartService.getCartLength()}} produit(s) :) 
+            <strong> {{shoppingCartService.getTotal()}} € </strong>
+        </p>
+    </div>
+
+</div>
