@@ -11,9 +11,11 @@ export class CheckoutComponent implements OnInit {
 
   items: any = []
 
-  constructor(private shoppingCart: ShoppingCartService) { }
+  constructor(public shoppingCart: ShoppingCartService) { }
 
   ngOnInit(): void {
+    console.log("quantiqué produit selectionné! ",this.shoppingCart.getCartLength().length);
+    
   }
 
   getShoppingCart() {

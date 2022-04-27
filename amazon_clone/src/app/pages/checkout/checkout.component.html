@@ -1,8 +1,11 @@
 <div class="checkout">
     <div class="checkout_left">
-
+        <div class="checkout_empty" *ngIf="shoppingCart.getCartLength() == 0 ">
+            <h2>le panier est vide</h2>
+            <p>vous n'avez aucun article pour l'instant.</p>
+        </div>
     </div>
     <div class="checkout_right">
-        
+
     </div>_
 </div>

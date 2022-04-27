@@ -29,7 +29,7 @@ export class ShoppingCartService {
 
   getCartLength() {
     let items = this.getShoppingCartItems()
-    return items ? this.getShoppingCartItems() : 0
+    return items ? this.getShoppingCartItems().length : 0
   }
 
 }
