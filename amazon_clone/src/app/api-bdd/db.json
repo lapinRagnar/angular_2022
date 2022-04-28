@@ -2,10 +2,10 @@
     "products": [
         {
             "id": 1,
-            "title": " Amazon Basics Housse pour ordinateur portable 17,3\" - Bleu clair",
+            "title": " Amazon Basics AMZSC-002 Sac de Transport à Parois Souples pour Animal de Compagnie Noir Taille M",
             "desc": "desc 1",
-            "price": 22.99,
-            "image": "https://m.media-amazon.com/images/I/91I7CmeK6lL._AC_SX451_SY423_.jpg",
+            "price": 30.99,
+            "image": "https://m.media-amazon.com/images/I/81P2gcWpPXL._AC_SX679_.jpg",
             "rating": 4
 
         },
@@ -15,7 +15,7 @@
             "desc": "desc 1",
             "price": 10,
             "image" : "https://m.media-amazon.com/images/I/91I7CmeK6lL._AC_SX451_SY423_.jpg",
-            "rating": 4
+            "rating": 0
         },
         {
             "id": 3,
@@ -23,14 +23,38 @@
             "desc": "desc 1",
             "price": 100,
             "image" : "https://m.media-amazon.com/images/I/61x+X+FNU-S._AC_SX451_SY423_.jpg",
-            "rating": 4
+            "rating": 1
         },
         {
-            "id": 2,
+            "id": 4,
             "title": " Amazon Basics Sacoche pour Ordinateur Portable, Feutre, pour Écran jusqu'à 11 Pouces, Gris Clair",
             "desc": "desc 1",
             "price": 300,
             "image" : "https://m.media-amazon.com/images/I/91oWNg5GSML._AC_SX425_.jpg",
+            "rating": 4
+        },
+        {
+            "id": 5,
+            "title": " Amazon Basics Sacoche pour Ordinateur Portable, Feutre, pour Écran jusqu'à 11 Pouces, Gris Clair",
+            "desc": "desc 1",
+            "price": 300,
+            "image" : "https://m.media-amazon.com/images/I/91oWNg5GSML._AC_SX425_.jpg",
+            "rating": 6
+        },
+        {
+            "id": 6,
+            "title": " Amazon Basics Sacoche pour Ordinateur Portable, Feutre, pour Écran jusqu'à 11 Pouces, Gris Clair",
+            "desc": "desc 1",
+            "price": 300,
+            "image" : "https://m.media-amazon.com/images/I/91oWNg5GSML._AC_SX425_.jpg",
+            "rating": 2
+        },
+        {
+            "id": 7,
+            "title": " AmazonBasics - Enclos en plastique pour animal de compagnie, Noir",
+            "desc": "Enclos 4 panneaux de 60 cm pour animal de compagnie avec porte à verrou ; idéal pour chiens toy ou de petite taille et autre petits animaux de compagnie non grimpeurs",
+            "price": 300,
+            "image" : "https://m.media-amazon.com/images/I/81o1u++uaLL._AC_SX679_.jpg",
             "rating": 4
         }
 
