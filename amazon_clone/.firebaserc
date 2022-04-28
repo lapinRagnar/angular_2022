@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "monclone-56c09": {
+      "hosting": {
+        "amazon_clone": [
+          "monclone-56c09"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "monclone-56c09"
+  }
+}

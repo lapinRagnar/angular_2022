@@ -100,6 +100,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "amazon_clone:build:production",
+            "firebaseProject": "monclone-56c09",
+            "firebaseHostingSite": "monclone-56c09"
+          }
         }
       }
     }

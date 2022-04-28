@@ -18,7 +18,14 @@ import { LoginComponent } from './pages/login/login.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { ProductsComponent } from './components/products/products.component';
 import { CheckoutProductsComponent } from './components/checkout-products/checkout-products.component';
-import { CheckoutSubtotalComponent } from './components/checkout-subtotal/checkout-subtotal.component'
+import { CheckoutSubtotalComponent } from './components/checkout-subtotal/checkout-subtotal.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { providePerformance,getPerformance } from '@angular/fire/performance';
+import { provideRemoteConfig,getRemoteConfig } from '@angular/fire/remote-config';
+import { provideStorage,getStorage } from '@angular/fire/storage'
 
 @NgModule({
   declarations: [
@@ -40,7 +47,13 @@ import { CheckoutSubtotalComponent } from './components/checkout-subtotal/checko
     MatIconModule,
     MatCardModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
+    providePerformance(() => getPerformance()),
+    provideRemoteConfig(() => getRemoteConfig()),
+    provideStorage(() => getStorage())
   ],
   providers: [],
   bootstrap: [AppComponent]
