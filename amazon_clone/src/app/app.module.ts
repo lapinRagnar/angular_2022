@@ -26,6 +26,8 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { providePerformance,getPerformance } from '@angular/fire/performance';
 import { provideRemoteConfig,getRemoteConfig } from '@angular/fire/remote-config';
 import { provideStorage,getStorage } from '@angular/fire/storage'
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -53,7 +55,8 @@ import { provideStorage,getStorage } from '@angular/fire/storage'
     provideFirestore(() => getFirestore()),
     providePerformance(() => getPerformance()),
     provideRemoteConfig(() => getRemoteConfig()),
-    provideStorage(() => getStorage())
+    provideStorage(() => getStorage()),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

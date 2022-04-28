@@ -9,13 +9,13 @@
 
         <div class="login_form">
             <h1>créer un compte</h1>
-            <form action="">
+            <form [formGroup]="loginForm" >
 
                 <h5>email</h5>
-                <input type="email" name="" id="">
+                <input type="email" name="" id="" formControlName="email">
 
                 <h5>mot de passe</h5>
-                <input type="password" name="" id="">
+                <input type="password" name="" id="" formControlName="password">
 
                 <button class="login_signIn_button">se connecter</button>
 
