@@ -27,4 +27,8 @@ export class LoginComponent implements OnInit {
     console.log("valeur du formulaire", this.loginForm.value);
   }
 
+  createAccount() {
+    console.log("ca marche!")
+  }
+
 }
