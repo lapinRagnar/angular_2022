@@ -35,18 +35,18 @@
         },
         {
             "id": 5,
-            "title": " Amazon Basics Sacoche pour Ordinateur Portable, Feutre, pour Écran jusqu'à 11 Pouces, Gris Clair",
+            "title": " Gran Turismo 7 (PlayStation 5)",
             "desc": "desc 1",
             "price": 300,
-            "image" : "https://m.media-amazon.com/images/I/91oWNg5GSML._AC_SX425_.jpg",
+            "image" : "https://m.media-amazon.com/images/I/81d9pBu-M6L._AC_SX679_.jpg",
             "rating": 6
         },
         {
             "id": 6,
-            "title": " Amazon Basics Sacoche pour Ordinateur Portable, Feutre, pour Écran jusqu'à 11 Pouces, Gris Clair",
-            "desc": "desc 1",
-            "price": 300,
-            "image" : "https://m.media-amazon.com/images/I/91oWNg5GSML._AC_SX425_.jpg",
+            "title": "CHUWI Ordinateur Portable GemiBook Pro 14",
+            "desc": "CHUWI Ordinateur Portable GemiBook Pro 14\" Windows 10 Intel Celeron N5100 Léger Notebook avec 8 Go de RAM 256 Go SSD 2160 x 1440 Pixels IPS Display Clavier rétroéclairé Wi-FI, BT5.1, USB-C",
+            "price": 60,
+            "image" : "https://m.media-amazon.com/images/I/71VZCOgkm1L._AC_SX679_.jpg",
             "rating": 2
         },
         {
