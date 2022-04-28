@@ -23,4 +23,8 @@ export class LoginComponent implements OnInit {
     })
   }
 
+  signIn() {
+    console.log("valeur du formulaire", this.loginForm.value);
+  }
+
 }
