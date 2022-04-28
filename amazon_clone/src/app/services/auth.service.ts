@@ -12,90 +12,65 @@ import {
 })
 export class AuthService {
 
+  userData: any
+  userLoggedIn: boolean = false
+
   constructor(
-    private auth: Auth, 
+    public auth: Auth, 
     private ngZone: NgZone,
     private router: Router
   ) {
-
+    this.auth.onAuthStateChanged((user) => {
+      if (user) {
+        this.userLoggedIn = true
+        this.userData = user
+        localStorage.setItem('user', this.userData.email)
+      } else
+      {
+        this.userLoggedIn = false
+      }
+    })
   }
 
   signIn(email: any, password: any) {
     return signInWithEmailAndPassword(this.auth, email, password).then((result) => {
-      console.log("on est connecté! ", result.user.email);
+      const user = result.user
+      console.log("on est connecté! ", user);
       this.router.navigate(['/'])
     }).catch((error) => {
-      console.log('misy probleme', error.message)
+      console.log('misy probleme - erreur code: ', error.code, "message : ", error.message)
     })
 
   }
 
   signUp(email: any, password: any) {
 
-    createUserWithEmailAndPassword(this.auth, email, password)
+    return createUserWithEmailAndPassword(this.auth, email, password)
     .then((result: any) => {
-      console.log("utilisateur crée ", result.user)
+      const user = result.user
+      console.log("utilisateur crée ", user)
       this.router.navigate(['/'])
     }).catch((err) => {
-      console.log("misy pb", err.message)
+      const errorCode = err.code
+      const errorMessage = err.message
+      console.log("misy pb - code :", errorCode , "message : ", errorMessage)
     })  
 
   }
 
   logOut() {
-    signOut(this.auth).then(() => {
+    return signOut(this.auth).then(() => {
       console.log("tu es bien deconnecté!")
+      localStorage.removeItem('user')
+    }).catch((error) => {
+      // An error happened.
     })
+  }
+
+  getUser() {
+    const user = localStorage.getItem('user')
+    return user ? true : null
   }
 
 
 }
-
-
-
-// import { Injectable, NgZone } from '@angular/core';
-// import { AngularFireAuth } from '@angular/fire/compat/auth'
-// import { Router } from '@angular/router';
-
-// @Injectable({
-//   providedIn: 'root'
-// })
-// export class AuthService {
-
-//   constructor(
-//     private fbAuth: AngularFireAuth, 
-//     private ngZone: NgZone,
-//     private router: Router
-//   ) {
-
-//     this.fbAuth.authState.subscribe((user) => {
-//       if (user) {
-//         console.log("utilisateur", user)
-//       }
-//     })
-//   }
-
-//   signIn(email: any, password: any) {
-//     return this.fbAuth.signInWithEmailAndPassword(email, password).then((result) => {
-//       this.router.navigate(['/'])
-//     }).catch((error) => {
-//       console.log('misy probleme', error.message)
-//     })
-//   }
-
-//   signUp(email: any, password: any) {
-//     return this.fbAuth.createUserWithEmailAndPassword(email, password).then((result) => {
-//       this.router.navigate(['/'])
-//     }).catch((error) => {
-//       console.log('misy probleme', error.message)
-//     })
-//   }
-
-//   logOut() {
-//     return this.fbAuth.signOut().then(() => {
-//       this.router.navigate(['/login'])
-//     })
-//   }
-
-
-// }

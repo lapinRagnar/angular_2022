@@ -10,8 +10,8 @@
       </div>
   
       <div class="header_menu_sign_in">
-        <div class="header_menu_top_item">
-          Bonjour
+        <div class="header_menu_top_item" *ngIf="auth.userLoggedIn">
+          Bonjour ({{ auth.userData.email }})
         </div>
         <div class="header_menu_bottom_item">
           Entrez votre adresse
@@ -26,11 +26,17 @@
       </div>
       
       <div class="header_menu_sign_in" routerLink="/login" >
-        <div class="header_menu_top_item">
+        <div class="header_menu_top_item" *ngIf="!auth.userLoggedIn">
           Bonjour, Identifiez-vous
         </div>
-        <div class="header_menu_bottom_item">
+        <div class="header_menu_top_item" *ngIf="auth.userLoggedIn">
+          Bonjour, ({{ auth.userData.email }})
+        </div>
+        <div class="header_menu_bottom_item" *ngIf="!auth.userLoggedIn" >
           Compte et listes
+        </div>
+        <div class="header_menu_bottom_item" *ngIf="auth.userLoggedIn" (click)="auth.logOut()" >
+          Se deconnecter
         </div>
       </div>
   
