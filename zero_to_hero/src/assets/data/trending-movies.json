@@ -5,6 +5,31 @@
       "cover": "https://fr.web.img5.acsta.net/c_310_420/pictures/15/02/03/18/22/311253.jpg",
       "rating": 3.45,
       "reviews": [
+        {
+          "author": "Albus Dumbledore",
+          "published_on": "2021-10-13 11:27:39",
+          "review": "Awesome movie!",
+          "rating": 4.5
+        },
+        {
+          "author": "moi moi",
+          "published_on": "2021-10-13 11:27:39",
+          "review": "Awesome movie!",
+          "rating": 4.5
+        },
+        {
+          "author": "le plateau",
+          "published_on": "2021-10-13 11:27:39",
+          "review": "Awesome movie!",
+          "rating": 4.5
+        },
+        {
+          "author": "dahalobe ooh",
+          "published_on": "2021-10-13 11:27:39",
+          "review": "Awesome movie!",
+          "rating": 4.5
+        }
+
       ]
     },
     {
@@ -41,7 +66,7 @@
       "id": 5,
       "name": "Los Angeles Bad Girls",
       "cover": "https://fr.web.img6.acsta.net/c_310_420/pictures/19/04/12/11/43/3558804.jpg",
-      "rating": 4.12,
+      "rating": 2.12,
       "reviews": [
       ]
     },
@@ -49,7 +74,7 @@
       "id": 6,
       "name": "Mission: Impossible - Rogue Nation",
       "cover": "https://fr.web.img6.acsta.net/c_310_420/pictures/15/06/26/09/01/245552.jpg",
-      "rating": 4.95,
+      "rating": 5,
       "reviews": [
       ]
     },
@@ -59,6 +84,12 @@
       "cover": "https://fr.web.img3.acsta.net/c_310_420/medias/nmedia/18/94/54/41/20526204.jpg",
       "rating": 4.95,
       "reviews": [
+        {
+          "author": "Albus Dumbledore",
+          "published_on": "2021-10-13 11:27:39",
+          "review": "Awesome movie!",
+          "rating": 4.5
+        }
       ]
     },
     {
@@ -67,14 +98,26 @@
       "cover": "https://fr.web.img4.acsta.net/c_310_420/medias/nmedia/18/86/68/30/20093574.jpg",
       "rating": 4.95,
       "reviews": [
+        {
+          "author": "Albus Dumbledore",
+          "published_on": "2021-10-13 11:27:39",
+          "review": "Awesome movie!",
+          "rating": 4.5
+        }
       ]
     },
     {
       "id": 9,
       "name": "Matrix",
       "cover": "https://fr.web.img4.acsta.net/c_310_420/medias/04/34/49/043449_af.jpg",
-      "rating": 4.95,
+      "rating": 0.95,
       "reviews": [
+        {
+          "author": "Albus Dumbledore",
+          "published_on": "2021-10-13 11:27:39",
+          "review": "Awesome movie!",
+          "rating": 4.5
+        }
       ]
     },
     {
@@ -83,6 +126,18 @@
       "cover": "https://fr.web.img4.acsta.net/c_310_420/medias/nmedia/18/86/89/36/20531934.jpg",
       "rating": 4.95,
       "reviews": [
+        {
+          "author": "Albus Dumbledore",
+          "published_on": "2021-10-13 11:27:39",
+          "review": "Awesome movie!",
+          "rating": 4.5
+        },
+        {
+          "author": "Albus Dumbledore",
+          "published_on": "2021-10-13 11:27:39",
+          "review": "Awesome movie!",
+          "rating": 4.5
+        }
       ]
     },
     {
