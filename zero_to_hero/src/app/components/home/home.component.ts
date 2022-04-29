@@ -10,16 +10,18 @@ export class HomeComponent implements OnInit {
 
   urlTrendingMovies = "http://localhost:4200/assets/data/trending-movies.json"
   urlTheatreMovies = "http://localhost:4200/assets/data/theatre-movies.json"
+  urlPopularMovies = "http://localhost:4200/assets/data/popular-movies.json"
   
-  trendingMovies: any
-  
+  trendingMovies: any  
   theatreMovies: any
+  popularMovies: any
 
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
     this.getTrendingMovies()
     this.getTheatreMovies()
+    this.getPopularMovies()
   }
 
   getTrendingMovies() {
@@ -32,6 +34,12 @@ export class HomeComponent implements OnInit {
   getTheatreMovies() {
     this.http.get(this.urlTheatreMovies).subscribe((movies) => {
       this.theatreMovies = movies
+    })
+
+  }
+  getPopularMovies() {
+    this.http.get(this.urlPopularMovies).subscribe((movies) => {
+      this.popularMovies = movies
     })
   }
 

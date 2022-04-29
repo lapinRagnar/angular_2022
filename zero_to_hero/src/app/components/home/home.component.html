@@ -1,14 +1,15 @@
 <app-header></app-header>
 
 <div class="home-container">
+
     <div class="all-movies">
 
-        <!-- section popular movies -->
+        <!-- section tendance movies -->
 
         <div class="trending-movies">
             <div class="top">
                 <h4>Les tendances</h4>
-                <div class="view-all">voir</div>
+                <div class="view-all">tout voir</div>
             </div>
             <div class="movies-thumbnail">
                 <div class="movie" *ngFor="let movie of trendingMovies">
@@ -34,7 +35,7 @@
 
         <div class="theatre-movies">
             <div class="top">
-                <h4>film populaire - théatre</h4>
+                <h4>théatre</h4>
                 <div class="view-all">voir</div>
             </div>
             <div class="movies-thumbnail">
@@ -57,7 +58,26 @@
             </div>
         </div>
 
+    </div>
+    <div class="popular-movies">
+        <h4>Legende de tous le temps</h4>
+
+        <div class="movies" *ngFor="let movie of popularMovies">
+
+            <div class="movie">
+
+                <div class="detail">
+                    <div class="name"> {{ movie.name }} </div>
+                    <div class="rating">
+                        <span class="rating-value"> {{ movie.rating}} </span>
+                        <app-star-rating [rating]="movie.rating" [isReadOnly]="true" ></app-star-rating>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="view-all">tout voir</div>
 
     </div>
-    <div class="popular-movies"></div>
 </div>
