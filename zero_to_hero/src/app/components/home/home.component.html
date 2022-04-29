@@ -12,12 +12,16 @@
                 <div class="view-all">tout voir</div>
             </div>
             <div class="movies-thumbnail">
-                <div class="movie" *ngFor="let movie of trendingMovies">
+                <div 
+                    class="movie" 
+                    *ngFor="let movie of trendingMovies"
+                    (click)="goToTheMoviePage('film', movie.id)"    
+                >
                     <div class="cover">
                         <img [src]="movie.cover" alt="">
                     </div>
                     <div class="detail">
-                        <div class="name"> {{ movie.name }} </div>
+                        <div class="name" (click)="goToTheMoviePage('film', movie.id)" > {{ movie.name }} </div>
                         <div class="rating"> 
 
                             <span class="rating-value"> {{ movie.rating}} </span>
