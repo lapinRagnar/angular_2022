@@ -14,7 +14,18 @@
                     </div>
                     <div class="detail">
                         <div class="name"> {{ movie.name }} </div>
-                        <div class="rating"> {{movie.rating }} </div>
+                        <div class="rating"> 
+                            
+                            <ng-template #t let-fill="fill">
+                                <span class="star" [class.full]="fill === 100">
+                                  <span class="half" [style.width.%]="fill">&hearts;</span>&hearts;
+                                </span>
+                            </ng-template>
+                              
+                            <ngb-rating [(rate)]="movie.rating" [starTemplate]="t" [readonly]="true" [max]="5"></ngb-rating>
+                              
+
+                        </div>
                     </div>
                 </div>
             </div>
