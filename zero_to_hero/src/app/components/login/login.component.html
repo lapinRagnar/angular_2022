@@ -9,14 +9,28 @@
     <div class="login-form">
         <div class="form-group">
             <label for="uname">prénom</label>
-            <input class="form-control" type="text" name="uname">
+            <input 
+                class="form-control" 
+                type="text" name="uname" 
+                [(ngModel)]="username" >
         </div>
         <div class="form-group">
             <label for="pword">mot de passe</label>
-            <input class="form-control" type="text" name="pword">
+            <input 
+                class="form-control" 
+                type="text" 
+                name="pword" 
+                [(ngModel)]="password">
         </div>
         <div class="btn-container">
-            <button class="btn btn-dark">login</button>
+
+            <div class="error"> {{errorMsg}} </div>
+            <button 
+                class="btn btn-dark"
+                (click)="login()"
+                >
+                login
+            </button>
         </div>
     </div>
 </div>

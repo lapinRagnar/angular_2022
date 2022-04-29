@@ -7,9 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
+  username = ""
+  password = ""
+  errorMsg = ""
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  login() {
+    if (this.username.trim().length === 0) {
+      this.errorMsg = "le prenom est requis!"
+    } else
+    if (this.password.trim().length === 0) {
+      this.errorMsg = "le mot de passe est requis!"
+    } else 
+    {
+      this.errorMsg = ""
+    }
   }
 
 }
