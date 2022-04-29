@@ -2,13 +2,43 @@
 
 <div class="home-container">
     <div class="all-movies">
+
+        <!-- section popular movies -->
+
         <div class="trending-movies">
             <div class="top">
-                <h4>tes tendances</h4>
+                <h4>Les tendances</h4>
                 <div class="view-all">voir</div>
             </div>
             <div class="movies-thumbnail">
                 <div class="movie" *ngFor="let movie of trendingMovies">
+                    <div class="cover">
+                        <img [src]="movie.cover" alt="">
+                    </div>
+                    <div class="detail">
+                        <div class="name"> {{ movie.name }} </div>
+                        <div class="rating"> 
+
+                            <span class="rating-value"> {{ movie.rating}} </span>
+                            
+                            <app-star-rating [rating]="movie.rating" [isReadOnly]="true" ></app-star-rating>
+                              
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- section theatre movies -->
+
+        <div class="theatre-movies">
+            <div class="top">
+                <h4>film populaire - théatre</h4>
+                <div class="view-all">voir</div>
+            </div>
+            <div class="movies-thumbnail">
+                <div class="movie" *ngFor="let movie of theatreMovies">
                     <div class="cover">
                         <img [src]="movie.cover" alt="">
                     </div>
@@ -26,6 +56,8 @@
                 </div>
             </div>
         </div>
+
+
     </div>
     <div class="popular-movies"></div>
 </div>
