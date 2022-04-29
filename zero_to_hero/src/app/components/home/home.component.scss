@@ -49,25 +49,18 @@
 
                     .rating {
 
-                        .star {
-                            position: relative;
-                            display: inline-block;
-                            font-size: 2rem;
-                            color: #d3d3d3;
-                            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-                            cursor: pointer;
-                        }
-
-                        .full {
-                            color: rgb(0, 255, 106);
-                        }
-                        .half {
+                        padding-right: 45px;
+                        position: relative;
+                    
+                        .rating-value {
+                            background-color: red;
                             position: absolute;
-                            display: inline-block;
-                            overflow: hidden;
-                            color: rgb(178, 72, 137);
+                            top: 10px;
+                            right: 0;
+                            font-weight: bold;
                         }
-
+                        
+                        
                     }
                 }
             }
@@ -81,3 +74,4 @@
         font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     }
 }
+
