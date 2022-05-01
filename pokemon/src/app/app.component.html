@@ -13,5 +13,11 @@
     aucun pokemon! 
 </p>
 
+<hr>
+
+<p *ngFor="let pokemon of pokemonList">
+    {{ pokemon.name}}
+</p>
+
 
 <router-outlet></router-outlet>
