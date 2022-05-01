@@ -1,13 +1,17 @@
 <h1>Liste de pokemons - </h1>
-<p>{{ pokemonList[0].name }}</p>
 
 <input 
     #mavariableInput 
     (keyup.enter)="selectPokemon(mavariableInput.value)"
-    type="number" 
+    type="number" placeholder="donner le num du pokemon"
 >
 
-<p>le pokemon selectionné est : {{pokemonSelected?.name}} </p>
+<p *ngIf="pokemonSelected">
+    le pokemon selectionné est : {{pokemonSelected?.name}} 
+</p>
+<p *ngIf="!pokemonSelected">
+    aucun pokemon! 
+</p>
 
 
 <router-outlet></router-outlet>
