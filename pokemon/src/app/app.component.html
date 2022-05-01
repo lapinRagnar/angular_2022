@@ -1,23 +1,22 @@
-<h1>Liste de pokemons - </h1>
+<h1 class="center">Liste de pokemons - </h1>
 
-<input 
-    #mavariableInput 
-    (keyup.enter)="selectPokemon(mavariableInput.value)"
-    type="number" placeholder="donner le num du pokemon"
->
-
-<p *ngIf="pokemonSelected">
-    le pokemon selectionné est : {{pokemonSelected?.name}} 
-</p>
-<p *ngIf="!pokemonSelected">
-    aucun pokemon! 
-</p>
-
-<hr>
-
-<p *ngFor="let pokemon of pokemonList">
-    {{ pokemon.name}}
-</p>
+<div class="container">
+    <div class="row">
+        <div *ngFor="let pokemon of pokemonList" class="col m4 s6">
+            <div class="card horizontal">
+                <div class="card-image">
+                    <img [src]="pokemon.picture" alt="">
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <p>{{pokemon.name}} </p>
+                        <p><small>{{pokemon.created}} </small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <router-outlet></router-outlet>
