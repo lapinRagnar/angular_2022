@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { POKEMONS } from './mock-pokemon-list';
 import { Pokemon } from './pokemonType';
 
@@ -10,14 +10,16 @@ import { Pokemon } from './pokemonType';
 export class AppComponent implements OnInit {
   
   pokemonList: Pokemon[] = POKEMONS;
+  @Input() valeur: any
 
   ngOnInit() {
     console.table(this.pokemonList)
-    this.selectPokemon(this.pokemonList[0])
   }
 
-  selectPokemon(pokemon: Pokemon) {
-    console.log(`vous avez selectionner ${pokemon.name} `)
+  selectPokemon(event: MouseEvent) {
+    const index: number = +(event.target as HTMLInputElement).value
+    console.log(`tu as selectionné ${this.pokemonList[index].name} `)
+    this.valeur =  this.pokemonList[index].name
   }
 
 }

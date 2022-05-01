@@ -1,4 +1,8 @@
 <h1>Liste de pokemons - </h1>
-<p (click)="selectPokemon(pokemonList[0])" >{{ pokemonList[0].name }}</p>
+<p>{{ pokemonList[0].name }}</p>
+
+<input type="number" (click)="selectPokemon($event)">
+
+<p>tu as selectionné {{valeur}}</p>
 
 <router-outlet></router-outlet>
