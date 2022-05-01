@@ -1,14 +1,13 @@
 .movie-container {
-    width: 80%;
+    width: 98%;
     margin: 0 auto;
-    min-width: 400px;
-
+    background: rgba(192, 205, 197, 0.352);
 
     .top {
         display: flex;
 
         .left {
-            width: 750px;
+            width: 30%;
             .name {
                 font-size: 36px;
                 font-weight: bold;
@@ -36,15 +35,18 @@
 
 
         .right {
-            width: 50%;
-            padding-top: 10px;
+            width: 20%;
+            padding-top: 80px;
             .title {
                 margin-bottom: 10px;
             }
 
             .rating-form{
                 .form-group {
-                   margin-top: 20px; 
+                   margin-top: 10px; 
+                   .rating {
+                      background-color: red;
+                   }
                 }
 
                 label {
@@ -58,7 +60,7 @@
             }
 
             .btn-container {
-                margin-top: 30px;
+                margin-top: 10px;
             }
         }
 
@@ -72,7 +74,7 @@
         }
 
         .reviews{
-            width: 1000px;
+            width: 30%;
             .review{
                 margin-bottom: 5px;
                 background-color: #f1f1f1;
@@ -93,15 +95,19 @@
                     }
 
                     .review-right{
+
                         .rating {
                             display: flex;
                             align-items: center;
+                            flex-direction: column;
                         }
 
                         .rating-value{
                             margin-left: 20px;
                             font-weight: bold;
                         }
+
+
                     }
                 }
             }

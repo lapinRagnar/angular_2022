@@ -9,13 +9,13 @@
           "author": "Albus Dumbledore",
           "published_on": "2021-10-13 11:27:39",
           "review": "Awesome movie!",
-          "rating": 4.5
+          "rating": 3.5
         },
         {
           "author": "moi moi",
           "published_on": "2021-10-13 11:27:39",
           "review": "Awesome movie!",
-          "rating": 4.5
+          "rating": 1.5
         },
         {
           "author": "le plateau",
@@ -27,7 +27,7 @@
           "author": "dahalobe ooh",
           "published_on": "2021-10-13 11:27:39",
           "review": "Awesome movie!",
-          "rating": 4.5
+          "rating": 0.5
         }
 
       ]
