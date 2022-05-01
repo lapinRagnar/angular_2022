@@ -2,11 +2,12 @@
 <p>{{ pokemonList[0].name }}</p>
 
 <input 
-    #mavariable 
-    (keyup)="0"
-    type="text" 
+    #mavariableInput 
+    (keyup)="selectPokemon(mavariableInput.value)"
+    type="number" 
 >
 
-<p>tu as selectionné {{mavariable.value}}</p>
+<p>le pokemon selectionné est : {{pokemonSelected?.name}} </p>
+
 
 <router-outlet></router-outlet>

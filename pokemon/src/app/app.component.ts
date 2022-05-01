@@ -10,16 +10,25 @@ import { Pokemon } from './pokemonType';
 export class AppComponent implements OnInit {
   
   pokemonList: Pokemon[] = POKEMONS;
-  @Input() valeur: any
+  
+  pokemonSelected: Pokemon|undefined
+
 
   ngOnInit() {
     console.table(this.pokemonList)
   }
 
-  selectPokemon(event: MouseEvent) {
-    const index: number = +(event.target as HTMLInputElement).value
-    console.log(`tu as selectionné ${this.pokemonList[index].name} `)
-    this.valeur =  this.pokemonList[index].name
+  selectPokemon(pokemonId: string) {
+    
+    const pokemon: Pokemon|undefined = this.pokemonList.find( pokemon => pokemon.id == +pokemonId )
+    
+    if (pokemon) {
+      console.log(`tu as selectionné le pokemon ${pokemon?.name} `)
+      this.pokemonSelected = pokemon
+    } else {
+      console.log(`ce pokemon n'existe pas `)
+      this.pokemonSelected = pokemon
+    }
   }
 
 }
