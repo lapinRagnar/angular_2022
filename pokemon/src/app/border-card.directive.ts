@@ -1,22 +1,28 @@
-import { ElementRef, HostListener } from '@angular/core';
+import { ElementRef, HostListener, Input } from '@angular/core';
 import { Directive } from '@angular/core';
 
 @Directive({
-  selector: '[pkmnBorderCard]'
+  selector: '[pkmnBorderCard]',
+
 })
 export class BorderCardDirective {
 
+  private initialColor: string = '#A3F56E'
+  private defaultColor: string = '#CFBF1F'
+  private defaultHeight: number = 180
+
   constructor(private elementRef: ElementRef ) {
-    this.setHeight(180)
-    this.setBorder('#a3f1f1')
+    this.setHeight(this.defaultHeight)
+    this.setBorder(this.initialColor)
   }
 
+
   @HostListener('mouseenter') onMouseEnter() {
-    this.setBorder('#529688')
+    this.setBorder(this.defaultColor)
   }
 
   @HostListener('mouseleave') onMouseLeave() {
-    this.setBorder('#f1f1f1')
+    this.setBorder(this.initialColor)
   }
 
   setHeight(height: number) {
