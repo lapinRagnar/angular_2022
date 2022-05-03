@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Pokemon } from '../pokemonType';
 import { POKEMONS } from './../mock-pokemon-list';
@@ -11,9 +12,14 @@ export class ListPokemonComponent implements OnInit {
 
   pokemonList: Pokemon[] = POKEMONS;
   
+  constructor(private router: Router) {}
 
   ngOnInit() {
     console.table(this.pokemonList)
-  }  
+  } 
+  
+  goToPokemon(pokemon: Pokemon) {
+    this.router.navigate(['/pokemon', pokemon.id])
+  }
 
 }
