@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { BorderCardDirective } from './border-card.directive';
 import { PokemonTypeColorPipe } from './pokemon-type-color.pipe';
 import { DateTimeAgoPipe } from './date-time-ago.pipe';
+import { ListPokemonComponent } from './list-pokemon/list-pokemon.component';
+import { DetailPokemonComponent } from './detail-pokemon/detail-pokemon.component';
 
 
 @NgModule({
@@ -15,6 +17,8 @@ import { DateTimeAgoPipe } from './date-time-ago.pipe';
     BorderCardDirective,
     PokemonTypeColorPipe,
     DateTimeAgoPipe,
+    ListPokemonComponent,
+    DetailPokemonComponent,
   ],
   imports: [
     BrowserModule,
