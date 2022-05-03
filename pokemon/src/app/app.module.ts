@@ -9,6 +9,7 @@ import { PokemonTypeColorPipe } from './pokemon-type-color.pipe';
 import { DateTimeAgoPipe } from './date-time-ago.pipe';
 import { ListPokemonComponent } from './list-pokemon/list-pokemon.component';
 import { DetailPokemonComponent } from './detail-pokemon/detail-pokemon.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { DetailPokemonComponent } from './detail-pokemon/detail-pokemon.componen
     DateTimeAgoPipe,
     ListPokemonComponent,
     DetailPokemonComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
