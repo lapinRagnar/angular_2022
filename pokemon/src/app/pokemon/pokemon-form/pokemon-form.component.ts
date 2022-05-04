@@ -39,6 +39,9 @@ export class PokemonFormComponent implements OnInit {
 
   isTypesValid(type: string): boolean {
     
+    console.log("je suis la ooh");
+    
+
     if (this.types.length == 1 && this.hasType(type) ) {
       return false
     }

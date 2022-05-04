@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { Pokemon } from 'src/app/pokemon/pokemonType';
-import { POKEMONS } from 'src/app/pokemon/mock-pokemon-list';
 import { PokemonService } from 'src/app/pokemon/pokemon.service';
 
 @Component({
@@ -30,8 +29,8 @@ export class DetailPokemonComponent implements OnInit {
     this.router.navigate(['/'])
   }
 
-  goToPokemonForm() {
-    this.router.navigate([`/pokemon/1/edit`])
+  goToEditPokemon(pokemon: Pokemon) {
+    this.router.navigate([`/edit/pokemon`, pokemon.id])
   }
 
 }
