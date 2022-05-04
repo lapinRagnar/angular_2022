@@ -37,7 +37,16 @@ export class PokemonFormComponent implements OnInit {
     }
   }
 
-  isTypesValid(type: string) {
+  isTypesValid(type: string): boolean {
+    
+    if (this.types.length == 1 && this.hasType(type) ) {
+      return false
+    }
+
+    if (this.types.length == 1 && !this.hasType(type) ) {
+      return false
+    } 
+
     return true
   }
 
