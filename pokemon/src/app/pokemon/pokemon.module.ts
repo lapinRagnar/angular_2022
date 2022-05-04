@@ -8,6 +8,7 @@ import { PokemonTypeColorPipe } from './pokemon-type-color.pipe';
 import { DateTimeAgoPipe } from './date-time-ago.pipe';
 import { RouterModule, Routes } from '@angular/router';
 import { PokemonService } from './pokemon.service';
+import { FormsModule } from '@angular/forms';
 
 
 const pokemonRoutes: Routes = [
@@ -26,6 +27,7 @@ const pokemonRoutes: Routes = [
   ],
   imports: [
     CommonModule,
+    FormsModule,
     RouterModule.forChild(pokemonRoutes)
   ],
   providers: [
