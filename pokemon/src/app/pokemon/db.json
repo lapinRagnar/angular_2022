@@ -7,8 +7,7 @@
       "cp": 5,
       "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png",
       "types": [
-        "Plante",
-        "Poison"
+        "Plante"
       ],
       "created": "2022-01-04T16:34:27.909Z"
     },
@@ -144,8 +143,7 @@
       "types": [
         "Normal",
         "Elektric",
-        "Poison",
-        "Fée"
+        "Poison"
       ],
       "created": "2022-03-04T22:09:55.100Z",
       "id": 13

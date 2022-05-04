@@ -22,6 +22,8 @@ export class PokemonFormComponent implements OnInit {
   ngOnInit(): void {
     this.types = this.pokemonService.getPokemonTypeList()
     this.isAddForm = this.router.url.includes('add')
+    console.log('je suis la aaa',this.pokemon.types);
+    
   }
 
   hasType(type: string): boolean {
@@ -41,14 +43,21 @@ export class PokemonFormComponent implements OnInit {
 
   isTypesValid(type: string): boolean {    
 
-    if ((this.types.length == 1 ) && this.hasType(type) ) {
+    
+    
+    if (this.hasType(type) && this.pokemon.types.length == 1 ) {
+      console.log("faux");
+      
       return false
     }
 
-    if (this.types.length < 3 && !this.hasType(type) ) {
+    if (!this.hasType(type) && this.pokemon.types.length > 2 ) {
+      console.log("faux 2");
+      
       return false
     } 
-
+    console.log("vrai");
+    
     return true
   }
 
