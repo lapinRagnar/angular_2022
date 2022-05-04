@@ -1,10 +1,9 @@
 {
-  "pokemon" : 
-  [
+  "pokemon": [
     {
       "id": 1,
       "name": "Bulbizarre",
-      "hp": 25,
+      "hp": 150,
       "cp": 5,
       "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png",
       "types": [
@@ -137,6 +136,5 @@
       ],
       "created": "2022-05-04T16:34:27.910Z"
     }
-
-  ] 
+  ]
 }

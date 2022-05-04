@@ -37,16 +37,13 @@ export class PokemonFormComponent implements OnInit {
     }
   }
 
-  isTypesValid(type: string): boolean {
-    
-    console.log("je suis la ooh");
-    
+  isTypesValid(type: string): boolean {    
 
-    if (this.types.length == 1 && this.hasType(type) ) {
+    if ((this.types.length == 1 ) && this.hasType(type) ) {
       return false
     }
 
-    if (this.types.length == 1 && !this.hasType(type) ) {
+    if (this.types.length < 3 && !this.hasType(type) ) {
       return false
     } 
 
@@ -54,8 +51,11 @@ export class PokemonFormComponent implements OnInit {
   }
 
   onSubmit() {
+    this.pokemonService.updatePokemon(this.pokemon).subscribe(
+      (pokemon) => this.router.navigate(['/pokemon', pokemon.id])
+    )
     console.log('le formulaire a été soumis')
-    this.router.navigate(['/pokemon', this.pokemon.id])
+    
   }
 
 }
