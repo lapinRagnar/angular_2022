@@ -37,6 +37,13 @@ export class PokemonService {
     )
   }
 
+  deletePokemonById(pokemonId: number): Observable<any> {
+    return this.http.delete(`${this.apiPokemonUrl}/${pokemonId}`).pipe(
+      tap((response) => this.log(response)),
+      catchError(error => this.handleError(error, undefined ))   
+    )
+  }
+
   private log(response: any) {
     console.table(response)
   }
