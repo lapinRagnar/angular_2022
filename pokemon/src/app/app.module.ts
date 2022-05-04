@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { PokemonModule } from './pokemon/pokemon.module';
 
-
 @NgModule({
   declarations: [
     AppComponent,
