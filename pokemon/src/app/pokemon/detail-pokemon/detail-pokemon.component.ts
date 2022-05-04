@@ -30,4 +30,8 @@ export class DetailPokemonComponent implements OnInit {
     this.router.navigate(['/'])
   }
 
+  goToPokemonForm() {
+    this.router.navigate([`/pokemon/1/edit`])
+  }
+
 }
