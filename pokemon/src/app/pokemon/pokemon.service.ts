@@ -3,9 +3,7 @@ import { Injectable } from '@angular/core';
 import { Pokemon } from 'src/app/pokemon/pokemonType';
 import { POKEMONS } from 'src/app/pokemon/mock-pokemon-list';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class PokemonService {
 
   getPokemonList(): Pokemon[] {
