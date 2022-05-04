@@ -9,6 +9,7 @@ import { DateTimeAgoPipe } from './date-time-ago.pipe';
 import { RouterModule, Routes } from '@angular/router';
 import { PokemonService } from './pokemon.service';
 import { FormsModule } from '@angular/forms';
+import { PokemonFormComponent } from './pokemon-form/pokemon-form.component';
 
 
 const pokemonRoutes: Routes = [
@@ -23,7 +24,8 @@ const pokemonRoutes: Routes = [
     DetailPokemonComponent,
     BorderCardDirective,
     PokemonTypeColorPipe,
-    DateTimeAgoPipe
+    DateTimeAgoPipe,
+    PokemonFormComponent
   ],
   imports: [
     CommonModule,
