@@ -3,7 +3,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, tap, catchError, of } from 'rxjs';
 
 import { Pokemon } from 'src/app/pokemon/pokemonType';
-import { POKEMONS } from 'src/app/pokemon/mock-pokemon-list';
 
 @Injectable()
 export class PokemonService {
@@ -12,6 +11,13 @@ export class PokemonService {
   constructor(
     private http: HttpClient
   ) {}
+
+  searchPokemonList(term: string): Observable<Pokemon[]> {
+    return this.http.get<Pokemon[]>(`${this.apiPokemonUrl}/?name${term}`).pipe(
+      tap(response => this.log(response) ),
+      catchError(error => this.handleError(error, [] ))    
+    )
+  }
 
   getPokemonList():  Observable<Pokemon[]> {
     return this.http.get<Pokemon[]>(this.apiPokemonUrl).pipe(
