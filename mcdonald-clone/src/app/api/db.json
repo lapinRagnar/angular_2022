@@ -1,0 +1,179 @@
+{
+    "nos_menu": [
+        {
+            "id": 1,
+            "name": "Le Menu Best Of",
+            "image": "https://eu-images.contentstack.com/v3/assets/blt5004e64d3579c43f/blt552f0f8278bf324f/6077ee727d99e6231800b54d/menu_best_of.png?auto=webp&width=1280&disable=upscale"
+
+        },
+        {
+            "id": 2,
+            "name": "Le Menu Maxi Best Of TM",
+            "image": "https://eu-images.contentstack.com/v3/assets/blt5004e64d3579c43f/blt9f3b60ebeab2687f/60cb109580e22b37d43c4089/99000023_Large.jpg?auto=webp&width=1280&disable=upscale"
+        },
+        {
+            "id": 3,
+            "name": "Le Menu McFirst TM",
+            "image": "https://eu-images.contentstack.com/v3/assets/blt5004e64d3579c43f/blt2bac6e3ba9f8ff4d/61d7155272d47127d278acc5/menu-mc-first.png?auto=webp&width=1280&disable=upscale"
+        },
+        {
+            "id": 4,
+            "name": "Le Menu Happy Meal TM",
+            "image": "https://eu-images.contentstack.com/v3/assets/blt5004e64d3579c43f/blte32d0764681be93f/6266ce031ecf040608760e74/400x400_COMPO-PTITS-CONCOMBRES-HAMBURGER_LAD.png?auto=webp&width=1280&disable=upscale"
+        },
+        {
+            "id": 5,
+            "name": "Le Menu Salade",
+            "image": "https://eu-images.contentstack.com/v3/assets/blt5004e64d3579c43f/blt42a7593b90d541d3/620f8f7e8e4d0461c7a002bd/MENU_SALADE_BOISSON.png?auto=webp&width=1280&disable=upscale"
+        }
+    ],
+    "nos_burger" : [
+        {
+            "id": 1,
+            "name": "Le Big Mac TM",
+            "image": "https://eu-images.contentstack.com/v3/assets/blt5004e64d3579c43f/blt4e32a970bffd0792/61d866010f60435c58f20a0a/big-mac.png?auto=webp&width=1280&disable=upscale"
+        },
+        {
+            "id": 2,
+            "name": "Le McChicken TM",
+            "image": "https://eu-images.contentstack.com/v3/assets/blt5004e64d3579c43f/blt12c4ba5508646dae/615db7e1e3ec1729bb7dca4d/2154.jpg?auto=webp&width=1280&disable=upscale"
+        },
+        {
+            "id": 3,
+            "name": "Le Filet-O-Fish TM",
+            "image": "https://eu-images.contentstack.com/v3/assets/blt5004e64d3579c43f/blt6e07b794013d8694/61f0131b31d27121704958d1/FILET_O_FISH_-_2050.png?auto=webp&width=1280&disable=upscale"
+        },
+        {
+            "id": 4,
+            "name": "Le Double Filet-O-Fish TM",
+            "image": "https://eu-images.contentstack.com/v3/assets/blt5004e64d3579c43f/blt552f0f8278bf324f/6077ee727d99e6231800b54d/menu_best_of.png?auto=webp&width=1280&disable=upscale"
+        },
+        {
+            "id": 5,
+            "name": "Le Cheesseburger",
+            "image": "https://eu-images.contentstack.com/v3/assets/blt5004e64d3579c43f/blt5718be23ff804bbe/61d86677d562a95eb8bd4179/cheeseburger.png?auto=webp&width=1280&disable=upscale"
+        },
+        {
+            "id": 6,
+            "name": "Le Cheesseburger Bacon",
+            "image": "https://eu-images.contentstack.com/v3/assets/blt5004e64d3579c43f/blt3b6c0b887e135571/62441d8783c5cc5bbcabdc94/CHEESE_BACON.png?auto=webp&width=1280&disable=upscale"
+        },
+        {
+            "id": 7,
+            "name": "Le Double Cheesseburger",
+            "image": "https://eu-images.contentstack.com/v3/assets/blt5004e64d3579c43f/blt235efe844da162e1/6077ee03ed7ed32e4a239c8c/6c7a7522998d2337713e844c49c07c01bd388ae0.png?auto=webp&width=1280&disable=upscale"
+        },
+        {
+            "id": 8,
+            "name": "Le Triple Cheesseburger",
+            "image": "https://eu-images.contentstack.com/v3/assets/blt5004e64d3579c43f/blt7bd616d07bebe8a5/616448bd6d339111180ad182/3008.jpg?auto=webp&width=1280&disable=upscale"
+        },
+        {
+            "id": 9,
+            "name": "Le Triple Cheesseburger Bacon",
+            "image": "https://eu-images.contentstack.com/v3/assets/blt5004e64d3579c43f/blt97a9f9837c3a9b6a/615dbd97b084d018488c0a60/2803.jpg?auto=webp&width=1280&disable=upscale"
+        },
+        {
+            "id": 10,
+            "name": "Le Chicken McNuggets TM",
+            "image": "https://eu-images.contentstack.com/v3/assets/blt5004e64d3579c43f/blt8e73c57a90276fd9/620fd69aab1b594c886855ca/SACHET_4_MCNUGGETS_DD.png?auto=webp&width=1280&disable=upscale"
+        },
+        {
+            "id": 11,
+            "name": "Le McFirst TM Boef",
+            "image": "https://eu-images.contentstack.com/v3/assets/blt5004e64d3579c43f/blt7abd5bdc6438c1be/615dc41c2e35f3558b3a962b/10733.jpg?auto=webp&width=1280&disable=upscale"
+        }
+    ],
+    "nos_salade" : [
+        {
+            "id": 1,
+            "name": "Le chevre & Bacon",
+            "image": "https://eu-images.contentstack.com/v3/assets/blt5004e64d3579c43f/blt365358e39f7c6191/62610d3a394abb652c23a2c2/COMPO_CHEVRE_BACON_INGREDIENTS.png?auto=webp&width=1280&disable=upscale"
+        },
+        {
+            "id": 2,
+            "name": "Le Classic Caesar",
+            "image": "https://eu-images.contentstack.com/v3/assets/blt5004e64d3579c43f/blt365358e39f7c6191/62610d3a394abb652c23a2c2/COMPO_CHEVRE_BACON_INGREDIENTS.png?auto=webp&width=1280&disable=upscale"
+        },
+        {
+            "id": 3,
+            "name": "L'Italian Mozza & Pasta",
+            "image": "https://eu-images.contentstack.com/v3/assets/blt5004e64d3579c43f/bltd9c4d8a195d90cc7/61dcb1b238c6045a491c1cfd/italian-mozza-pasta.png?auto=webp&width=1280&disable=upscale"
+        }
+        
+    ],
+    "petit_faim": [
+        {
+            "id": 1,
+            "name": "Le Croque McDo TM",
+            "image": "https://eu-images.contentstack.com/v3/assets/blt5004e64d3579c43f/blt8f125a846d60b3e7/607ffe5cf77631234c4b45db/66789245c6dd98a5cd0730195536ee9b46c494bb.png?auto=webp&width=1280&disable=upscale"
+        },
+        {
+            "id": 2,
+            "name": "Le P'tit Wrap Bœuf Deluxe",
+            "image": "https://eu-images.contentstack.com/v3/assets/blt5004e64d3579c43f/bltf5c226e4235804ee/624b225480cf5f6d0ee3a49c/12645.jpg?auto=webp&width=1280&disable=upscale"
+        },
+        {
+            "id": 3,
+            "name": "Le P'tit Wrap Chèvre",
+            "image": "https://eu-images.contentstack.com/v3/assets/blt5004e64d3579c43f/bltd8c5c4fc1ab2310f/624b503b6acf3533dbd5f597/PTIT_WRAP_CHEVRE_2022.png?auto=webp&width=1280&disable=upscale"
+        },
+        {
+            "id": 4,
+            "name": "Le P'tit Ranch",
+            "image": "https://eu-images.contentstack.com/v3/assets/blt5004e64d3579c43f/bltf105d5db421762ee/624b500209b7e235ce508112/PTIT_WRAP_RANCH_2022.png?auto=webp&width=1280&disable=upscale"
+        },
+        {
+            "id": 5,
+            "name": "Les Chicken McNuggets TM",
+            "image": "https://eu-images.contentstack.com/v3/assets/blt5004e64d3579c43f/blt8e73c57a90276fd9/620fd69aab1b594c886855ca/SACHET_4_MCNUGGETS_DD.png?auto=webp&width=1280&disable=upscale"
+        },
+        {
+            "id": 6,
+            "name": "Le Hamburger",
+            "image": "https://eu-images.contentstack.com/v3/assets/blt5004e64d3579c43f/bltff6e6ab1061d3847/615db75e8850556ef9d6d98b/2000.jpg?auto=webp&width=1280&disable=upscale"
+        }
+
+    ],
+    "nos_boisson": [
+        {
+            "id": 1,
+            "type": {
+                "boissons_froides": [ 
+                    {
+                        "name": "Eau By Mcdo - Plate Nature",
+                        "image": "https://eu-images.contentstack.com/v3/assets/blt5004e64d3579c43f/blta66db817bb5642be/6217a599c27bcd6ae2b6b9f8/Cup_eau.png?auto=webp&width=1280&disable=upscale"
+                    },
+                    {
+                        "name": "Eau By Mcdo - Pétillante ",
+                        "image": "https://eu-images.contentstack.com/v3/assets/blt5004e64d3579c43f/blta66db817bb5642be/6217a599c27bcd6ae2b6b9f8/Cup_eau.png?auto=webp&width=1280&disable=upscale"
+                    }
+                ]
+            } 
+                
+            
+        }
+    ],
+    "nos_dessert": [
+        {
+            "id": 1,
+            "name": "Le McFlurry",
+            "image": "https://eu-images.contentstack.com/v3/assets/blt5004e64d3579c43f/bltd04f6e1a13e79a5e/624421c8e144045c0061f2bb/McFlurry.png?auto=webp&width=1280&disable=upscale"
+        },
+        {
+            "id": 2,
+            "name": "Le Sundae",
+            "image": "https://eu-images.contentstack.com/v3/assets/blt5004e64d3579c43f/blt47ef177a71f4f706/61fab4f6f50c102811ace4b9/CATEGORIE_SUNDAE.png?auto=webp&width=1280&disable=upscale"
+        },
+        {
+            "id": 3,
+            "name": "Le Very Parfait",
+            "image": "https://eu-images.contentstack.com/v3/assets/blt5004e64d3579c43f/blt30602dfdbb832471/61fab495e7c3164f3545a208/CATEGORIE_VERY_PARFAIT.png?auto=webp&width=1280&disable=upscale"
+        },
+        {
+            "id": 4,
+            "name": "Le P'ti Glacé Saveur Vanille",
+            "image": "https://eu-images.contentstack.com/v3/assets/blt5004e64d3579c43f/bltaf8cc744cb26a389/61d863b032ec9d3f29aa2963/1786.jpg?auto=webp&width=1280&disable=upscale"
+        }
+    ]
+}
