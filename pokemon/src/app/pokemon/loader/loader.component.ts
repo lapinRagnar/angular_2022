@@ -3,9 +3,17 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-loader',
   template: `
-    <p>
-      loader works!
-    </p>
+    <div class="preloader-wrapper big active">
+      <div class="spinner-layer spinner-blue">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>
   `,
   styleUrls: ['./loader.component.scss']
 })
