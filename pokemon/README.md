@@ -1,5 +1,13 @@
 # Pokemon
 
+il faut aller dans le dossier pokemon, et lancer la commande :
+
+> json-server --watch db.json
+
+pour lancer la base de donnée sur json-server
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.4.
 
 ## Development server
